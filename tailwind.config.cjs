@@ -2,12 +2,11 @@
 const defaultTheme = require('tailwindcss/defaultTheme')
 const colors = require('tailwindcss/colors')
 module.exports = {
-  content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}', './public/logos/**/*.svg'],
+  content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
   theme: {
      animation: {
-        marquee: 'marquee 60s linear infinite',
-        marqueefast: 'marquee 10s linear infinite',
-        marquee2: 'marquee2 60s linear infinite',
+        marquee: 'marquee 25s linear infinite',
+        marquee2: 'marquee2 25s linear infinite',
         'fade-in': 'fade-in 0.5s linear forwards',
       },
       keyframes: {
@@ -144,18 +143,6 @@ module.exports = {
       700: "#0F0099",
       800: "#0A0066",
       900: "#050033"
-        },
-        sky: {
-          50: '#391D9E',
-          100: '#4121B1',
-          200: '#4926C5',
-          300: '#512BD8',
-          400: '#5930EC',
-          500: '#6236FF',
-          600: '#674DFF',
-          700: '#7064FF',
-          800: '#7B7BFF',
-          900: '#9299FF',
         },
         vulcan: {
           '50': '#BACDD5',

@@ -1,0 +1,105 @@
+---
+import { getCollection } from "astro:content";
+const allPosts = await getCollection("posts");
+import EntriesTwo from "../components/entries/EntriesTwo.astro";
+
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Verticalgrid from "../components/assets/VerticalGrid.astro";
+import CtaFive from "../components/ctas/CtaFive.astro";
+import { AstroSeo } from "@astrolib/seo";
+---
+
+<!---
+Use AstroSeo in all the pages you want different Seo than the index page
+-->
+<AstroSeo
+  title="Blog  02"
+  description="Your site description goes here"
+  canonical="https://www.lexingtonthemes.com"
+  openGraph={{
+    url: "https://www.lexingtonthemes.com",
+    title: "Open Graph Title",
+    description: "Open Graph Description",
+    images: [
+      {
+        url: "https://www.lexingtonthemes.com/opengraph/social-og.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Social open graph",
+        type: "image/jpeg",
+      },
+      {
+        url: "https://www.lexingtonthemes.com/opengraph/twitter-og.jpg",
+        width: 4096,
+        height: 4096,
+        alt: "Twitter open graph",
+        type: "image/jpeg",
+      },
+      { url: "https://www.lexingtonthemes.com/opengraph/social-og.jpg" },
+      { url: "https://www.lexingtonthemes.com/opengraph/twitter-og.jpg" },
+    ],
+    site_name: "YourSitesName",
+  }}
+  twitter={{
+    handle: "@TwitterHandle",
+    site: "@site",
+    cardType: "summary_large_image",
+  }}
+/>
+<BaseLayout>
+  <section
+    aria-labelledby="cta"
+    id="cta "
+    class="relative border-t border-white/5 overflow-hidden">
+    <Verticalgrid />
+
+    <div
+      class="max-w-7xl px-8 md:px-12 lg:px-32 mx-auto py-32 lg:py-36 relative">
+      <div
+        class="text-center border border-white/5 bg-vulcan-900 rounded-3xl overflow-hidden p-4 lg:p-20">
+        <div
+          class="relative items-center gap-12 m-auto lg:inline-flex md:order-first">
+          <div class="max-w-xl text-center">
+            <div>
+              <div class="lg:inline-flex items-center gap-3">
+                <p
+                  class="bg-gradient-to-r from-cyan-400 via-cyan-500 to-indigo-500 text-transparent bg-clip-text mt-3 lg:mt-0">
+                  Blog 2
+                </p>
+              </div>
+              <p class="text-3xl mt-8 font-normal text-white">
+                Welcome to Navy blog
+              </p>
+              <p class="max-w-2xl mt-4 text-sm text-slate-400">
+                Learn about the newest tech trends
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="max-w-7xl px-8 md:px-12 lg:px-32 mx-auto py-12 relative">
+      <ol
+        class="grid grid-cols-1 gap-x-8 lg:gap-x-24 gap-y-12 lg:gap-y-24 lg:grid-cols-1 sm:grid-cols-2"
+        role="list">
+        {
+          allPosts
+            .slice()
+            .map((post) => (
+              <EntriesTwo
+                url={"/posts/" + post.slug}
+                title={post.data.title}
+                description={post.data.description}
+                alt={post.data.title}
+                pubDate={post.data.pubDate.toString().slice(0, 10)}
+                author={post.data.author}
+                image={post.data.image.url}
+              />
+            ))
+        }
+      </ol>
+    </div>
+  </section>
+
+  <CtaFive />
+</BaseLayout>

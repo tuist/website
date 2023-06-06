@@ -14,13 +14,14 @@
           Fully automated, fully supported
         </p>
         <p class="max-w-2xl mt-4 text-sm text-slate-400">
-          Join the vibrant Tuist community of passionate users, contributors, and maintainers who are ready to support you every step of the way on your journey.
+          Self-serve or work with a representative—we're here to help with the
+          capital journey that works for you.
         </p>
       </div>
       <div class="col-span-2">
         <div x-data="{ active: false }" class="mx-auto w-full space-y-4">
           <div class="space-y-3 divide-y divide-white/5">
-            <div class="font-semibold text-white">Project generation</div>
+            <div class="font-semibold text-white">General</div>
 
             <div
               class=""
@@ -40,7 +41,7 @@
                   :aria-expanded="expanded"
                   class="flex w-full items-center justify-between tracking-wide text-sm text-slate-400 focus:text-cyan-400 py-3 text-left"
                   aria-expanded="false">
-                  <span>Can I automate the migration?</span>
+                  <span>Can I buy only this template?</span>
                   <span
                     x-show="expanded"
                     aria-hidden="true"
@@ -56,7 +57,10 @@
 
               <div x-show="expanded" x-collapse="" style="display: none;">
                 <div class="text-sm text-slate-400 pt-5">
-                  While we offer tools to assist in the migration process, automating it reliably can be challenging due to Xcode projects' implicit configurations resolved at build-time. Therefore, we recommend a manual approach, which presents a valuable opportunity to clean up your project and achieve greater consistency.
+                  Absolutely, you can purchase the template from the navigation
+                  button or <a href="#" class="text-cyan-500 hover:text-white"
+                    >click here.</a
+                  >
                 </div>
               </div>
             </div>
@@ -78,7 +82,7 @@
                   :aria-expanded="expanded"
                   class="flex w-full items-center justify-between tracking-wide text-sm text-slate-400 focus:text-cyan-400 py-3 text-left"
                   aria-expanded="false">
-                  <span>How does it compare to other generation tools?</span>
+                  <span>Is there a template demo available?</span>
                   <span
                     x-show="expanded"
                     aria-hidden="true"
@@ -94,7 +98,7 @@
 
               <div x-show="expanded" x-collapse="" style="display: none;">
                 <div class="text-sm text-slate-400 pt-5">
-                  Unlike other project generation tools, Tuist goes beyond simply generating projects. We view project generation as a means to an end, leveraging the project information to validate, optimize, and automate workflows. With our Swift-based solution, teams are spared the burden of building and maintaining their own tooling upon project generation, ensuring a streamlined and efficient development process.
+                  You are previewing the whole template right now.
                 </div>
               </div>
             </div>
@@ -115,7 +119,7 @@
                   :aria-expanded="expanded"
                   class="flex w-full items-center justify-between tracking-wide text-sm text-slate-400 focus:text-cyan-400 py-3 text-left"
                   aria-expanded="false">
-                  <span>How strong is the dependency on Tuist?</span>
+                  <span>What does "free updates" mean?</span>
                   <span
                     x-show="expanded"
                     aria-hidden="true"
@@ -131,12 +135,44 @@
 
               <div x-show="expanded" x-collapse="" style="display: none;">
                 <div class="text-sm text-slate-400 pt-5">
-                  It's weak. The generated projects don't include any references to Tuist. If you ever decide to move away from Tuist or if we discontinue maintaining the tool, you can simply add the generated Xcode project to your Git repository, and you're good to go. Making it easier for users to transition away from Tuist is a design principle we adhere to.
+                  When you purchase any Lexington product, any improvements to
+                  that product will always be free for anyone who owns that
+                  product.
+                </div>
+                <div class="text-sm text-slate-400 pt-5">
+                  <strong>Individual templates:</strong> When you buy an individual
+                  template, any improvements we make to that template will be available
+                  to you as part of your original purchase.
+                </div>
+                <div class="text-sm text-slate-400 pt-5">
+                  So if a bug gets fixed or upgrade the template to use the
+                  latest version of Astro, Alpinejs or Tailwind CSS you can
+                  download an updated version of the template free of charge.
+                </div>
+                <div class="text-sm text-slate-400 pt-5">
+                  Any new templates released are considered separate products,
+                  and can be purchased separately or you can also buy the <a
+                    href="#"
+                    class="text-cyan-500 hover:text-white">Bundle.</a
+                  > whic includes all templates.
+                </div>
+                <div class="text-sm text-slate-400 pt-5">
+                  <strong>Lexington bundle:</strong> When you purchase the Lexington
+                  Bunlde license, you get access to every site template available
+                  today, plus any new templates or component packages released in
+                  the future at no additional cost.
+                </div>
+                <div class="text-sm text-slate-400 pt-5">
+                  This means that if a brand new social media website template
+                  or new component package is added to Lexington Bundle ( all
+                  templates are inclued in the Bundle ), access to those
+                  products are included in your original purchase, with no
+                  upgrade cost.
                 </div>
               </div>
             </div>
 
-            <div class="font-semibold text-white pt-12">Cache</div>
+            <div class="font-semibold text-white pt-12">Compatibility</div>
             <div
               x-data="{
         id: 4,
@@ -154,7 +190,7 @@
                   :aria-expanded="expanded"
                   class="flex w-full items-center justify-between tracking-wide text-sm text-slate-400 focus:text-cyan-400 py-3 text-left"
                   aria-expanded="false">
-                  <span>What do I need for caching to work?</span>
+                  <span>Are design files included?</span>
                   <span
                     x-show="expanded"
                     aria-hidden="true"
@@ -170,7 +206,16 @@
 
               <div x-show="expanded" x-collapse="" style="display: none;">
                 <div class="text-sm text-slate-400 pt-5">
-                  To enable caching, you'll need to define your projects with Tuist and ensure that the configuration is explicit. If there are any implicit configurations that Tuist is not aware of, such as build-time linking, the build artifacts won't be cached. Additionally, there may be certain project scenarios that are not handled seamlessly. However, we are more than willing to collaborate with you to iterate and find solutions to make them work effectively.
+                  No, design assets for tools like Figma, Sketch, Penpot or
+                  Adobe XD are not included.
+                </div>
+
+                <div class="text-sm text-slate-400 pt-5">
+                  I do not offer or produce design files as part of my own
+                  design and development process, so building these extra
+                  resources means I can't spend as much time creating new
+                  templates in code which is where I believes I can provide the
+                  most value.
                 </div>
               </div>
             </div>
@@ -191,7 +236,7 @@
                   :aria-expanded="expanded"
                   class="flex w-full items-center justify-between tracking-wide text-sm text-slate-400 focus:text-cyan-400 py-3 text-left"
                   aria-expanded="false">
-                  <span>How does it work?</span>
+                  <span>What JS framework is used?</span>
                   <span
                     x-show="expanded"
                     aria-hidden="true"
@@ -207,7 +252,16 @@
 
               <div x-show="expanded" x-collapse="" style="display: none;">
                 <div class="text-sm text-slate-400 pt-5">
-                  The process involves generating a fingerprint for each target in the project targets graph, which takes into account their metadata, dependencies on files and other targets. This fingerprint serves as an indicator of whether any changes have occurred and if the target needs to be recompiled. During the generation phase, we check the cache for targets using their fingerprint. If pre-existing binaries are found, we utilize them instead of generating new targets with the corresponding source files.
+                  I am not using any Framework, all the templates are built
+                  using Astro.Build but some of the components are built using
+                  Alpine.js. I am using Alpinejs on toggles, tabs, sliders,
+                  pricing table toggles, hamburguer menus,...
+                </div>
+
+                <div class="text-sm text-slate-400 pt-5">
+                  I belive that to make the templates less opinionated, I would
+                  leave the customer to choose the stack they want now that you
+                  can add any framework on Astro anytime.
                 </div>
               </div>
             </div>
@@ -228,7 +282,7 @@
                   :aria-expanded="expanded"
                   class="flex w-full items-center justify-between tracking-wide text-sm text-slate-400 focus:text-cyan-400 py-3 text-left"
                   aria-expanded="false">
-                  <span>Can I share the cache across environments?</span>
+                  <span>What version of the techs are you using?</span>
                   <span
                     x-show="expanded"
                     aria-hidden="true"
@@ -244,7 +298,131 @@
 
               <div x-show="expanded" x-collapse="" style="display: none;">
                 <div class="text-sm text-slate-400 pt-5">
-                  Absolutely! To achieve this, you'll require a server that adheres to a predefined contract. You have the option to devise your own solution or leverage Tuist Cloud, which not only enables cache sharing but also offers additional useful features for building apps at scale.
+                  The templates are always going to be updated to the last
+                  versions available if this ones have breaking changes.
+                </div>
+              </div>
+            </div>
+            <div
+              x-data="{
+        id: 7,
+        get expanded() {
+            return this.active === this.id
+        },
+        set expanded(value) {
+            this.active = value ? this.id : null
+        },
+    }"
+              role="region">
+              <h2>
+                <button
+                  x-on:click="expanded = !expanded"
+                  :aria-expanded="expanded"
+                  class="flex w-full items-center justify-between tracking-wide text-sm text-slate-400 focus:text-cyan-400 py-3 text-left"
+                  aria-expanded="false">
+                  <span>What browsers are supported?</span>
+                  <span
+                    x-show="expanded"
+                    aria-hidden="true"
+                    class="ml-4"
+                    style="display: none;"
+                    >−
+                  </span>
+                  <span x-show="!expanded" aria-hidden="true" class="ml-4"
+                    >+
+                  </span>
+                </button>
+              </h2>
+
+              <div x-show="expanded" x-collapse="" style="display: none;">
+                <div class="text-sm text-slate-400 pt-5">
+                  The templates in Lexington are designed to work in the latest,
+                  stable releases of all major browsers, including Chrome,
+                  Firefox, Safari, Arc and Edge.
+                </div>
+              </div>
+            </div>
+
+            <div class="font-semibold text-white pt-12">Licensing</div>
+            <div
+              x-data="{
+        id: 8,
+        get expanded() {
+            return this.active === this.id
+        },
+        set expanded(value) {
+            this.active = value ? this.id : null
+        },
+    }"
+              role="region">
+              <h2>
+                <button
+                  x-on:click="expanded = !expanded"
+                  :aria-expanded="expanded"
+                  class="flex w-full items-center justify-between tracking-wide text-sm text-slate-400 focus:text-cyan-400 py-3 text-left"
+                  aria-expanded="false">
+                  <span>How do your licenses work?</span>
+                  <span
+                    x-show="expanded"
+                    aria-hidden="true"
+                    class="ml-4"
+                    style="display: none;"
+                    >−
+                  </span>
+                  <span x-show="!expanded" aria-hidden="true" class="ml-4"
+                    >+
+                  </span>
+                </button>
+              </h2>
+
+              <div x-show="expanded" x-collapse="" style="display: none;">
+                <div class="text-sm text-slate-400 pt-5">
+                  Read about the licenses <a
+                    href="https://lexingtonthemes.com/license.html"
+                    class="text-cyan-500 hover:text-white">right here.</a
+                  > to se all the demo pages and sections on the live version,
+                </div>
+              </div>
+            </div>
+
+            <div class="font-semibold text-white pt-12">Support</div>
+            <div
+              x-data="{
+        id: 9,
+        get expanded() {
+            return this.active === this.id
+        },
+        set expanded(value) {
+            this.active = value ? this.id : null
+        },
+    }"
+              role="region">
+              <h2>
+                <button
+                  x-on:click="expanded = !expanded"
+                  :aria-expanded="expanded"
+                  class="flex w-full items-center justify-between tracking-wide text-sm text-slate-400 focus:text-cyan-400 py-3 text-left"
+                  aria-expanded="false">
+                  <span> Please email us at</span>
+                  <span
+                    x-show="expanded"
+                    aria-hidden="true"
+                    class="ml-4"
+                    style="display: none;"
+                    >−
+                  </span>
+                  <span x-show="!expanded" aria-hidden="true" class="ml-4"
+                    >+
+                  </span>
+                </button>
+              </h2>
+
+              <div x-show="expanded" x-collapse="" style="display: none;">
+                <div class="text-sm text-slate-400 pt-5">
+                  <a
+                    href="mailto:michael@andreuzza.com"
+                    class="text-cyan-500 hover:text-white">right here.</a
+                  >
                 </div>
               </div>
             </div>

@@ -2,33 +2,44 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Cookies from "../components/Infopages/Cookies.astro";
 import { AstroSeo } from "@astrolib/seo";
-import metadata from '../utils/metadata.json';
 ---
 
+<!---
+Use AstroSeo in all the pages you want different Seo than the index page
+-->
 <AstroSeo
-title="Cookie Policy - Tuist Cloud"
-description=`Read about Tuist Cloud's cookie policy.`
-canonical={metadata.url}
-openGraph={{
-  url: metadata.url,
-  title: "Cookie Policy",
-  description: `Read about Tuist Cloud's cookie policy.`,
-  images: [
-    {
-      url: `${metadata.url}/og-images/cookies.jpg`,
-      alt: "Tuist Cloud's cookie policy",
-      type: "image/jpg",
-      height: 630,
-      width: 1200
-    },
-  ],
-  site_name: "Tuist",
-}}
-twitter={{
-  handle: "@tuistio",
-  site: "@tuistio",
-  cardType: "summary_large_image",
-}}
+  title="Cookies"
+  description="Your site description goes here"
+  canonical="https://www.lexingtonthemes.com"
+  openGraph={{
+    url: "https://www.lexingtonthemes.com",
+    title: "Open Graph Title",
+    description: "Open Graph Description",
+    images: [
+      {
+        url: "https://www.lexingtonthemes.com/opengraph/social-og.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Social open graph",
+        type: "image/jpeg",
+      },
+      {
+        url: "https://www.lexingtonthemes.com/opengraph/twitter-og.jpg",
+        width: 4096,
+        height: 4096,
+        alt: "Twitter open graph",
+        type: "image/jpeg",
+      },
+      { url: "https://www.lexingtonthemes.com/opengraph/social-og.jpg" },
+      { url: "https://www.lexingtonthemes.com/opengraph/twitter-og.jpg" },
+    ],
+    site_name: "YourSitesName",
+  }}
+  twitter={{
+    handle: "@TwitterHandle",
+    site: "@site",
+    cardType: "summary_large_image",
+  }}
 />
 <BaseLayout>
   <Cookies />
