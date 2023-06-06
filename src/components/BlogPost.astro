@@ -1,0 +1,12 @@
+---
+const { title, url, description } = Astro.props;
+---
+
+<a class="text-lg group capitalize py-12" href={url}>
+  <p class="text-lg text-white group-hover:text-cyan-400 duration-200">
+    {title}
+  </p>
+  <p class="text-sm text-slate-400 mt-3">
+    {description}
+  </p>
+</a>

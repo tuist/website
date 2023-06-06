@@ -1,0 +1,145 @@
+---
+import BaseLayout from "./BaseLayout.astro";
+const { frontmatter } = Astro.props;
+import { AstroSeo } from "@astrolib/seo";
+---
+
+<AstroSeo
+  title={frontmatter.title}
+  description={frontmatter.description}
+  canonical="https://www.lexingtonthemes.com"
+  openGraph={{
+    url: "https://www.lexingtonthemes.com",
+    title: "Title",
+    description: "Description",
+    images: [
+      {
+        url: "https://www.lexingtonthemes.com/opengraph/social-og.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Social open graph",
+        type: "image/jpeg",
+      },
+      {
+        url: "https://www.lexingtonthemes.com/opengraph/twitter-og.jpg",
+        width: 4096,
+        height: 4096,
+        alt: "Twitter open graph",
+        type: "image/jpeg",
+      },
+      { url: "https://www.lexingtonthemes.com/opengraph/social-og.jpg" },
+      { url: "https://www.lexingtonthemes.com/opengraph/twitter-og.jpg" },
+    ],
+    site_name: "YourSitesName",
+  }}
+  twitter={{
+    handle: "@TwitterHandle",
+    site: "@site",
+    cardType: "summary_large_image",
+  }}
+/>
+<BaseLayout>
+  <section class="relative overflow-x-hidden">
+    <svg
+      class="absolute blur-3xl right-0 top-0 opacity-80"
+      width="50%"
+      height="100%"
+      viewBox="0 0 400 400"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg">
+      <g clip-path="url(#clip0_17_60)">
+        <g filter="url(#filter0_f_17_60)">
+          <path d="M128.6 0H0V322.2L332.5 211.5L128.6 0Z" fill="#4D07E3"></path>
+          <path d="M0 322.2V400H240H320L332.5 211.5L0 322.2Z" fill="#4C00FF"
+          ></path>
+          <path d="M320 400H400V78.75L332.5 211.5L320 400Z" fill="#B5BFF1"
+          ></path>
+          <path d="M400 0H128.6L332.5 211.5L400 78.75V0Z" fill="#7fcef3"></path>
+        </g>
+      </g>
+      <defs>
+        <filter
+          id="filter0_f_17_60"
+          x="-159.933"
+          y="-159.933"
+          width="719.867"
+          height="719.867"
+          filterUnits="userSpaceOnUse"
+          color-interpolation-filters="sRGB">
+          <feFlood flood-opacity="0" result="BackgroundImageFix"></feFlood>
+          <feBlend
+            mode="normal"
+            in="SourceGraphic"
+            in2="BackgroundImageFix"
+            result="shape"></feBlend>
+          <feGaussianBlur
+            stdDeviation="79.9667"
+            result="effect1_foregroundBlur_17_60"></feGaussianBlur>
+        </filter>
+      </defs>
+    </svg>
+    <div
+      class="max-w-7xl px-8 md:px-12 relative lg:px-32 mx-auto py-32 lg:pt-56">
+      <div class="max-w-3xl">
+        {
+          frontmatter.tags.map((tag) => (
+            <span class="text-transparent bg-clip-text font-medium tracking-widest bg-gradient-to-r from-cyan-400 via-cyan-500 to-indigo-500 text-xs uppercase">
+              <a href={`/tags/${tag}`}>{tag}</a> -
+            </span>
+          ))
+        }
+
+        <p class="text-3xl mt-8 font-normal text-white">
+          {frontmatter.title}
+        </p>
+        <p class="mt-2 text-base text-slate-400">{frontmatter.description}</p>
+        <div class="items-center inline-flex gap-3 mt-10 w-full">
+          <div class="items-center inline-flex space-x-1 w-full">
+            <p class="font-medium text-white text-sm">
+              Written by: {frontmatter.author}
+            </p><span aria-hidden="true">·</span><div
+              class="flex text-slate-400 text-sm">
+              <time datetime={frontmatter.pubDate.toString().slice(0, 10)}
+                >{frontmatter.pubDate.toString().slice(0, 10)}</time
+              >
+            </div>
+          </div>
+          <div class="flex flex-col space-y-3 text-left mt-3 lg:mt-0 w-full">
+            <span class="isolate inline-flex rounded-2xl lg:ml-auto">
+              <a
+                href="#"
+                type="button"
+                class="relative transition duration-500 ease-in-out transform inline-flex items-center rounded-l-lg border border-slate-700 bg-vulcan-900 px-4 py-2 text-xs font-light text-white hover:bg-white/5 focus:z-10 focus:border-cyan-300 focus:outline-none focus:ring-1 focus:ring-cyan-300"
+                >Linkedin</a
+              >
+              <a
+                href="#"
+                type="button"
+                class="relative transition duration-500 ease-in-out transform -ml-px inline-flex items-center border border-slate-700 dark px-4 py-2 text-xs font-light text-white hover:bg-white/5 focus:z-10 focus:border-cyan-300 focus:outline-none focus:ring-1 focus:ring-cyan-300">
+                Twitter
+              </a>
+              <a
+                href="#"
+                type="button"
+                class="relative transition duration-500 ease-in-out transform -ml-px inline-flex items-center rounded-r-lg border border-slate-700 dark px-4 py-2 text-xs font-light text-white hover:bg-white/5 focus:z-10 focus:border-cyan-300 focus:outline-none focus:ring-1 focus:ring-cyan-300"
+                >Facebook</a
+              >
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="relative">
+    <div class="max-w-7xl px-8 md:px-12 lg:px-32 mx-auto py-12 relative">
+      <div class="grid grid-cols-1 gap-10 xl:gap-24">
+        <div>
+          <div
+            class="prose prose-blockquote:border-l-white prose-a:text-cyan-500 hover:prose-a:text-white prose-headings:font-normal prose-headings:text-white prose-li:marker:text-cyan-500 text-slate-400 prose-code:text-white prose-blockquote:text-white/70">
+            <slot />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

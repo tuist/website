@@ -1,0 +1,59 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import BlogPost from "../../components/BlogPost.astro";
+import { getCollection } from "astro:content";
+
+export async function getStaticPaths() {
+  const allPosts = await getCollection("posts");
+  const uniqueTags = [
+    ...new Set(allPosts.map((post) => post.data.tags).flat()),
+  ];
+
+  return uniqueTags.map((tag) => {
+    const filteredPosts = allPosts.filter((post) =>
+      post.data.tags.includes(tag)
+    );
+    return {
+      params: { tag },
+      props: { posts: filteredPosts },
+    };
+  });
+}
+
+const { tag } = Astro.params;
+const { posts } = Astro.props;
+---
+
+<BaseLayout pageTitle={tag}>
+  <section>
+    <div
+      class="max-w-7xl px-8 md:px-12 lg:px-32 mx-auto py-12 lg:py-32 relative">
+      <div class="max-w-2xl">
+        <div>
+          <span
+            class="bg-gradient-to-r from-cyan-400 via-cyan-500 to-indigo-500 text-transparent bg-clip-text lg:pl-4 lg:border-l border-white mt-3 lg:mt-0"
+            >Tags</span
+          ><p class="text-3xl mt-8 font-normal text-white">
+            Posts tagged with {tag}
+          </p>
+        </div>
+      </div>
+
+      <ol
+        role="list"
+        class="flex flex-col divide-y divide-white/20 mt-12 lg:mt-24 ">
+        {
+          posts.map((post) => (
+            <li class="flex justify-between" aria-label="{tag}">
+              <BlogPost
+                url={"/posts/" + post.slug}
+                title={post.data.title}
+                description={post.data.description}
+              />
+            </li>
+          ))
+        }
+      </ol>
+    </div>
+  </section>
+</BaseLayout>
