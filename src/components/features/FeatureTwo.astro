@@ -2,23 +2,41 @@
 import { Code } from "astro/components";
 import Verticalgrid from "../assets/VerticalGrid.astro";
 ---
+
 <section aria-labelledby="Featuretwo" id="Featuretwo " class="relative">
   <Verticalgrid />
   <div
-    class="max-w-7xl px-8 md:px-12 lg:px-32 mx-auto py-12 lg:py-24 relative space-y-24">
+    class="max-w-7xl px-8 md:px-12 lg:px-32 mx-auto py-12 lg:py-24 relative space-y-24"
+  >
     <div class="grid grid-cols-1 gap-4 mt-6 list-none lg:grid-cols-2 lg:gap-24">
       <div>
         <span
           class="text-transparent bg-clip-text font-medium tracking-widest bg-gradient-to-r from-cyan-400 via-teal-500 to-indigo-500 text-xs uppercase"
-          >Feature </span
-        ><p class="text-3xl mt-8 font-normal text-white">
-          This feature is perfect for special events
+          >Tuist
+        </span><p class="text-3xl mt-8 font-normal text-white">
+          Supercharge your Xcode development workflows
         </p>
         <p class="max-w-2xl mt-4 text-lg text-slate-400">
-          Our baking platform allows for custom recipes and products to be
-          added, giving your users the ability to order unique items that are
-          not listed on the menu.
+          Effortlessly build, test, and deploy your Xcode projects with Tuist's revolutionary automation and project management features.
         </p>
+        <div
+          class="flex flex-col gap-3 sm:flex-row lg:items-center justify-center lg:justify-start mt-12"
+        >
+          <div class="flex flex-col sm:flex-row">
+            <a
+              class="inline-flex items-center justify-center w-full px-6 py-3 text-center text-white hover:to-indigo-400 duration-200 bg-gradient-to-r from-sky-400 to-indigo-500 font-medium hover:bg-white/5 rounded-xl hover:text-white focus:outline-none focus-visible:outline-black focus-visible:ring-black"
+              href="/overview"
+              >Get started
+            </a>
+          </div>
+          <div class="flex flex-col sm:flex-row">
+            <a
+              class="inline-flex items-center justify-center px-6 py-3 font-normal text-white bg-white/5 rounded-xl group focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-2 hover:bg-transparent duration-200 border-2 border-white/10 active:bg-cyan-50 active:text-white focus-visible:outline-cyan-50 hover:border-white hover:text-white"
+              href="https://lexingtonthemes.lemonsqueezy.com/checkout/buy/cad98266-24b3-47fd-99a6-e65ad9af37f6"
+              >Users &nbsp; &nbsp; &rarr;
+            </a>
+          </div>
+        </div>
         <div class="mt-12 gap-3">
           <ul class="list-none" role="list">
             <li>
@@ -29,7 +47,8 @@ import Verticalgrid from "../assets/VerticalGrid.astro";
                   viewBox="0 0 24 24"
                   stroke-width="1.5"
                   stroke="currentColor"
-                  class="w-5 h-5 text-cyan-400">
+                  class="w-5 h-5 text-cyan-400"
+                >
                   <path
                     stroke-linecap="round"
                     stroke-linejoin="round"
@@ -38,8 +57,8 @@ import Verticalgrid from "../assets/VerticalGrid.astro";
                 </svg>
                 <p class="ml-2 text-sm leading-6 text-slate-400">
                   <strong class="font-semibold text-slate-100"
-                    >Access real-time financing</strong
-                  > — in your dreams.
+                    >Zero Git conficts</strong
+                  > — in .pbxproj files.
                 </p>
               </div>
             </li>
@@ -51,7 +70,8 @@ import Verticalgrid from "../assets/VerticalGrid.astro";
                   viewBox="0 0 24 24"
                   stroke-width="1.5"
                   stroke="currentColor"
-                  class="w-5 h-5 text-cyan-400">
+                  class="w-5 h-5 text-cyan-400"
+                >
                   <path
                     stroke-linecap="round"
                     stroke-linejoin="round"
@@ -60,8 +80,8 @@ import Verticalgrid from "../assets/VerticalGrid.astro";
                 </svg>
                 <p class="ml-2 text-sm leading-6 text-slate-400">
                   <strong class="font-semibold text-slate-100"
-                    >Bank-level security
-                  </strong> — ain't no big deal.
+                    >Faster Xcode
+                  </strong> — with focused projects.
                 </p>
               </div>
             </li>
@@ -73,7 +93,8 @@ import Verticalgrid from "../assets/VerticalGrid.astro";
                   viewBox="0 0 24 24"
                   stroke-width="1.5"
                   stroke="currentColor"
-                  class="w-5 h-5 text-cyan-400">
+                  class="w-5 h-5 text-cyan-400"
+                >
                   <path
                     stroke-linecap="round"
                     stroke-linejoin="round"
@@ -82,8 +103,8 @@ import Verticalgrid from "../assets/VerticalGrid.astro";
                 </svg>
                 <p class="ml-2 text-sm leading-6 text-slate-400">
                   <strong class="font-semibold text-slate-100"
-                    >Built to scale</strong
-                  > — the weight you put on christmas.
+                    >Faster builds</strong
+                  > — through local and remote caches.
                 </p>
               </div>
             </li>
@@ -94,234 +115,73 @@ import Verticalgrid from "../assets/VerticalGrid.astro";
         <div
           x-data
           x-tabs
-          class="w-full lg:border border-white/10 lg:rounded-3xl lg:p-10">
+          class="w-full lg:border border-white/10 lg:rounded-3xl lg:p-10"
+        >
           <div x-tabs:list class="-mb-px flex items-stretch gap-3">
             <button
               x-tabs:tab
               type="button"
               :class="$tab.isSelected ? ' border-b border-cyan-500 focus:border-cyan-500' : 'bg-transparent'"
               class="inline-flex text-white font-semibold py-2 text-xs"
-              >Astro Config</button
+              >Project.swift</button
             >
             <button
               x-tabs:tab
               type="button"
               :class="$tab.isSelected ? ' border-b border-cyan-500 focus:border-cyan-500' : 'bg-transparent'"
               class="inline-flex text-white font-semibold3 py-2 text-xs"
-              >Also Astro config
+              >Workspace.swift
             </button>
           </div>
           <div x-tabs:panels class="mt-6">
             <section
               x-tabs:panel
-              class="text-xs font-mono shadow-3xl mt-4 rounded-2xl overflowhidden p-4 bg-[#1c1e28] h-full">
-              <Code
-                code={`
-import { defineConfig } from 'astro/config';
-import compress from "astro-compress";
-import partytown from "@astrojs/partytown";
-import sitemap from "@astrojs/sitemap";
-import tailwind from "@astrojs/tailwind";
-import image from "@astrojs/image";
-import image from "@astrojs/image";
-import compress from "astro-compress";
-import partytown from "@astrojs/partytown";
-import sitemap from "@astrojs/sitemap";
-import tailwind from "@astrojs/tailwind";
-import image from "@astrojs/image";
-import compress from "astro-compress";
-import partytown from "@astrojs/partytown";
-import sitemap from "@astrojs/sitemap";
-// https://astro.build/config
-export default defineConfig({
-   site: 'https://lexingtonthemes.com',
-  integrations: [tailwind(), image(), sitemap()]
-});}'`}
-                lang="js"
-                theme="css-variables"
-              />
-            </section>
-            <section
-              x-tabs:panel
-              class="text-xs font-mono mt-4 rounded-3xl hadow-2xl overflowhidden p-4 bg-[#1c1e28] h-full">
-              <Code
-                code={`
-import { defineConfig } from 'astro/config';
-import tailwind from "@astrojs/tailwind";
-import image from "@astrojs/image";
-import compress from "astro-compress";
-import partytown from "@astrojs/mdx";
-import sitemap from "@astrojs/sitemap";
-import image from "@astrojs/image";
-import compress from "astro-vue";
-import partytown from "@astrojs/partytown";
-import sitemap from "@astrojs/sitemap";
-// https://astro.build/config
-export default defineConfig({
-   site: 'https://lexingtonthemes.com',
-  integrations: [tailwind(),  sitemap()]
-});}'`}
-                lang="js"
-                theme="css-variables"
-              />
-            </section>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="grid grid-cols-1 gap-4 mt-6 list-none lg:grid-cols-2 lg:gap-24">
-      <div>
-        <span
-          class="text-transparent bg-clip-text font-medium tracking-widest bg-gradient-to-r from-cyan-400 via-teal-500 to-indigo-500 text-xs uppercase"
-          >THIS ONE TOO</span
-        ><p class="text-3xl mt-8 font-normal text-white">
-          Scalable and High-performance
-        </p>
-        <p class="max-w-2xl mt-4 text-lg text-slate-400">
-          Our baking platform is built for high-performance and scalability,
-          capable of handling a high volume of orders and user traffic.
-        </p>
-        <div class="mt-12 gap-3">
-          <ul class="list-none" role="list">
-            <li>
-              <div class="relative py-2 flex items-start">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke-width="1.5"
-                  stroke="currentColor"
-                  class="w-5 h-5 text-cyan-400">
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-                  ></path>
-                </svg>
-                <p class="ml-2 text-sm leading-6 text-slate-400">
-                  <strong class="font-semibold text-slate-100"
-                    >Access real-time financing</strong
-                  > — in your dreams.
-                </p>
-              </div>
-            </li>
-            <li>
-              <div class="relative py-2 flex items-start">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke-width="1.5"
-                  stroke="currentColor"
-                  class="w-5 h-5 text-cyan-400">
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-                  ></path>
-                </svg>
-                <p class="ml-2 text-sm leading-6 text-slate-400">
-                  <strong class="font-semibold text-slate-100"
-                    >Bank-level security
-                  </strong> — ain't no big deal.
-                </p>
-              </div>
-            </li>
-            <li>
-              <div class="relative py-2 flex items-start">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke-width="1.5"
-                  stroke="currentColor"
-                  class="w-5 h-5 text-cyan-400">
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-                  ></path>
-                </svg>
-                <p class="ml-2 text-sm leading-6 text-slate-400">
-                  <strong class="font-semibold text-slate-100"
-                    >Built to scale</strong
-                  > — the weight you put on christmas.
-                </p>
-              </div>
-            </li>
-          </ul>
-        </div>
-      </div>
-      <div class="lg:mt-0 mt-12 h-full lg:order-first">
-        <div
-          x-data
-          x-tabs
-          class="w-full lg:border border-white/10 lg:rounded-3xl lg:p-10">
-          <div x-tabs:list class="-mb-px flex items-stretch gap-3">
-            <button
-              x-tabs:tab
-              type="button"
-              :class="$tab.isSelected ? ' border-b border-cyan-500 focus:border-cyan-500' : 'bg-transparent'"
-              class="inline-flex text-white font-semibold py-2 text-xs"
-              >Bad code one</button
+              class="text-xs font-mono shadow-3xl mt-4 rounded-2xl overflowhidden p-4 bg-[#1c1e28] h-full"
             >
-            <button
-              x-tabs:tab
-              type="button"
-              :class="$tab.isSelected ? ' border-b border-cyan-500 focus:border-cyan-500' : 'bg-transparent'"
-              class="inline-flex text-white font-semibold3 py-2 text-xs"
-              >Badder code two
-            </button>
-          </div>
-          <div x-tabs:panels class="mt-6">
-            <section
-              x-tabs:panel
-              class="text-xs font-mono shadow-3xl mt-4 rounded-2xl overflowhidden p-4 bg-[#1c1e28] h-full">
               <Code
-                code={`import { defineConfig } from 'astro/config';
-import compress from "astro-compress";
-import partytown from "@astrojs/partytown";
-import sitemap from "@astrojs/sitemap";
-import tailwind from "@astrojs/tailwind";
-import image from "@astrojs/image";
-import image from "@astrojs/image";
-import compress from "astro-compress";
-import partytown from "@astrojs/partytown";
-import sitemap from "@astrojs/sitemap";
-import tailwind from "@astrojs/tailwind";
-import image from "@astrojs/image";
-import compress from "astro-compress";
-import partytown from "@astrojs/partytown";
-import sitemap from "@astrojs/sitemap";
-// https://astro.build/config
-export default defineConfig({
-   site: 'https://lexingtonthemes.com',
-  integrations: [tailwind(), image(), sitemap()]
-});}'`}
-                lang="js"
+                code={`
+import ProjectDescription
+
+let project = Project(
+    name: "Tuist",
+    targets: [
+        Target(
+            name: "Tuist",
+            platform: .iOS,
+            product: .app,
+            bundleId: "io.tuist.Tuist",
+            sources: ["Sources/**"]
+        ),
+        Target(
+            name: "TuistTests",
+            platform: .iOS,
+            product: .unitTests,
+            bundleId: "io.tuist.TuistTests",
+            sources: ["Tests/**"],
+            dependencies: [.target(name: "Tuist")]
+        )
+    ]
+)
+`}
+                lang="swift"
                 theme="css-variables"
               />
             </section>
             <section
               x-tabs:panel
-              class="text-xs font-mono mt-4 rounded-3xl hadow-2xl overflowhidden p-4 bg-[#1c1e28] h-full">
+              class="text-xs font-mono mt-4 rounded-3xl hadow-2xl overflowhidden p-4 bg-[#1c1e28] h-full"
+            >
               <Code
-                code={`import { defineConfig } from 'astro/config';
-import tailwind from "@astrojs/tailwind";
-import image from "@astrojs/image";
-import compress from "astro-compress";
-import partytown from "@astrojs/mdx";
-import sitemap from "@astrojs/sitemap";
-import image from "@astrojs/image";
-import compress from "astro-vue";
-import partytown from "@astrojs/partytown";
-import sitemap from "@astrojs/sitemap";
-// https://astro.build/config
-export default defineConfig({
-   site: 'https://lexingtonthemes.com',
-  integrations: [tailwind(),  sitemap()]
-});}'`}
-                lang="js"
+                code={`
+import ProjectDescription
+
+let workspace = Workspace(
+    name: "TuistWorkspace",
+    projects: [
+        "Projects/**",
+    ]
+)`}
+                lang="swift"
                 theme="css-variables"
               />
             </section>
