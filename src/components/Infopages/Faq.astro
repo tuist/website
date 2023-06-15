@@ -14,14 +14,13 @@
           Fully automated, fully supported
         </p>
         <p class="max-w-2xl mt-4 text-sm text-slate-400">
-          Self-serve or work with a representative—we're here to help with the
-          capital journey that works for you.
+          Join the vibrant Tuist community of passionate users, contributors, and maintainers who are ready to support you every step of the way on your journey.
         </p>
       </div>
       <div class="col-span-2">
         <div x-data="{ active: false }" class="mx-auto w-full space-y-4">
           <div class="space-y-3 divide-y divide-white/5">
-            <div class="font-semibold text-white">General</div>
+            <div class="font-semibold text-white">Project generation</div>
 
             <div
               class=""
@@ -41,7 +40,7 @@
                   :aria-expanded="expanded"
                   class="flex w-full items-center justify-between tracking-wide text-sm text-slate-400 focus:text-cyan-400 py-3 text-left"
                   aria-expanded="false">
-                  <span>Can I buy only this template?</span>
+                  <span>Can I automate the migration?</span>
                   <span
                     x-show="expanded"
                     aria-hidden="true"
@@ -57,10 +56,7 @@
 
               <div x-show="expanded" x-collapse="" style="display: none;">
                 <div class="text-sm text-slate-400 pt-5">
-                  Absolutely, you can purchase the template from the navigation
-                  button or <a href="#" class="text-cyan-500 hover:text-white"
-                    >click here.</a
-                  >
+                  While we offer tools to assist in the migration process, automating it reliably can be challenging due to Xcode projects' implicit configurations resolved at build-time. Therefore, we recommend a manual approach, which presents a valuable opportunity to clean up your project and achieve greater consistency.
                 </div>
               </div>
             </div>
@@ -82,7 +78,7 @@
                   :aria-expanded="expanded"
                   class="flex w-full items-center justify-between tracking-wide text-sm text-slate-400 focus:text-cyan-400 py-3 text-left"
                   aria-expanded="false">
-                  <span>Is there a template demo available?</span>
+                  <span>How does it compare to other generation tools?</span>
                   <span
                     x-show="expanded"
                     aria-hidden="true"
@@ -98,7 +94,7 @@
 
               <div x-show="expanded" x-collapse="" style="display: none;">
                 <div class="text-sm text-slate-400 pt-5">
-                  You are previewing the whole template right now.
+                  Unlike other project generation tools, Tuist goes beyond simply generating projects. We view project generation as a means to an end, leveraging the project information to validate, optimize, and automate workflows. With our Swift-based solution, teams are spared the burden of building and maintaining their own tooling upon project generation, ensuring a streamlined and efficient development process.
                 </div>
               </div>
             </div>
