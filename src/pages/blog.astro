@@ -1,0 +1,44 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+import BlogPosts from "../components/BlogPosts.astro";
+import { AstroSeo } from "@astrolib/seo";
+---
+
+<AstroSeo
+  title="Blog - Tuist"
+  description=`Discover engaging stories and expert insights on our blog.`
+  canonical="https://tuist.io"
+  openGraph={{
+    url: "https://tuist.io",
+    title: "Blog",
+    description: `Discover engaging stories and expert insights on our blog.`,
+    images: [
+    //   {
+    //     url: "https://tuist.io/opengraph/social-og.jpg",
+    //     width: 1200,
+    //     height: 630,
+    //     alt: "Social open graph",
+    //     type: "image/jpeg",
+    //   },
+    //   {
+    //     url: "https://tuist.io/opengraph/twitter-og.jpg",
+    //     width: 4096,
+    //     height: 4096,
+    //     alt: "Twitter open graph",
+    //     type: "image/jpeg",
+    //   },
+    //   { url: "https://tuist.io/opengraph/social-og.jpg" },
+    //   { url: "https://tuist.io/opengraph/twitter-og.jpg" },
+    ],
+    site_name: "YourSitesName",
+  }}
+  twitter={{
+    handle: "@tuistio",
+    site: "@tuistio",
+    cardType: "summary",
+  }}
+/>
+<BaseLayout>
+  <BlogPosts />
+</BaseLayout>

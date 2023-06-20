@@ -25,6 +25,11 @@ const authors = {
     'ollieatkinson': {
         name: 'Oliver Atkinson',
         github: 'https://github.com/ollieatkinson'
+    },
+    'kwridan': {
+        name: 'Kas Wridan',
+        twitter: 'https://twitter.com/kwridan',
+        github: 'https://github.com/kwridan'
     }
 }
 export default authors;
