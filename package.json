@@ -25,6 +25,7 @@
     "@astrolib/seo": "^0.3.0",
     "@tailwindcss/forms": "^0.5.3",
     "@tailwindcss/line-clamp": "^0.4.2",
-    "astro-compress": "^1.1.27"
+    "astro-compress": "^1.1.27",
+    "timeago.js": "^4.0.2"
   }
 }
