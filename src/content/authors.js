@@ -1,4 +1,4 @@
-export default {
+const authors = {
     'pepicrft': {
         name: 'Pedro Piñera',
         twitter: 'https://twitter.com/pepicrft',
@@ -27,3 +27,4 @@ export default {
         github: 'https://github.com/ollieatkinson'
     }
 }
+export default authors;
