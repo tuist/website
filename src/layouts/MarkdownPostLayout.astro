@@ -12,13 +12,13 @@ const author = authors[frontmatter.author];
 ---
 
 <AstroSeo
-  title={title}
-  description={frontmatter.description}
+  title={`${title} - Tuist`}
+  description={frontmatter.excerpt}
   canonical="https://tuist.io"
   openGraph={{
     url: `https://tuist.io${frontmatter.url}`,
     title: title,
-    description: frontmatter.description,
+    description: frontmatter.excerpt,
     // images: [
     //   {
     //     url: "https://www.lexingtonthemes.com/opengraph/social-og.jpg",
@@ -103,7 +103,7 @@ const author = authors[frontmatter.author];
         <div class="items-center inline-flex gap-3 mt-10 w-full">
           <div class="items-center inline-flex space-x-1 w-full">
             <p class="font-medium text-white text-sm">
-              Written by: {author.name}
+              Written by: {author?.name}
             </p><span aria-hidden="true">·</span><div
               class="flex text-slate-400 text-sm">
               <time datetime={date}
@@ -114,21 +114,21 @@ const author = authors[frontmatter.author];
           <div class="flex flex-col space-y-3 text-left mt-3 lg:mt-0 w-full">
             <span class="isolate inline-flex rounded-2xl lg:ml-auto">
               <a
-                href={author.github}
+                href={author?.github}
                 type="button"
                 class="relative transition duration-500 ease-in-out transform inline-flex items-center rounded-l-lg border border-slate-700 px-4 py-2 text-xs font-light text-white hover:bg-white/5 focus:z-10 focus:border-cyan-300 focus:outline-none focus:ring-1 focus:ring-cyan-300"
                 >GitHub</a
               >
               {
                 author.mastodon && <a
-                href={author.mastodon}
+                href={author?.mastodon}
                 type="button"
                 class="relative transition duration-500 ease-in-out transform inline-flex items-center border-t border-b border-slate-700 px-4 py-2 text-xs font-light text-white hover:bg-white/5 focus:z-10 focus:border-cyan-300 focus:outline-none focus:ring-1 focus:ring-cyan-300"
                 >Mastodon</a
               >
               }
               {author.twitter && <a
-                href={author.twitter}
+                href={author?.twitter}
                 type="button"
                 class="relative transition duration-500 ease-in-out transform -ml-px inline-flex items-center rounded-r-lg border border-slate-700 dark px-4 py-2 text-xs font-light text-white hover:bg-white/5 focus:z-10 focus:border-cyan-300 focus:outline-none focus:ring-1 focus:ring-cyan-300"
                 >Twitter</a
