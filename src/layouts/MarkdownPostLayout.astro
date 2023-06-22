@@ -2,7 +2,7 @@
 import BaseLayout from "./BaseLayout.astro";
 const { frontmatter } = Astro.props;
 import { AstroSeo } from "@astrolib/seo";
-import { format, render, cancel, register } from 'timeago.js';
+import { format } from 'timeago.js';
 import authors from '../content/authors.js'
 
 const date = frontmatter.url.replace("/blog/", "").split("/").slice(0,3).join("-")
@@ -100,11 +100,12 @@ const author = authors[frontmatter.author];
           {frontmatter.title}
         </p>
         <p class="mt-2 text-base text-slate-400">{frontmatter.description}</p>
-        <div class="items-center inline-flex gap-3 mt-10 w-full">
+        <div class="items-center inline-flex flex-col md:flex-row gap-3 mt-10 w-full">
           <div class="items-center inline-flex space-x-1 w-full">
             <p class="font-medium text-white text-sm">
               Written by: {author?.name}
-            </p><span aria-hidden="true">·</span><div
+            </p>
+            <span aria-hidden="true">·</span><div
               class="flex text-slate-400 text-sm">
               <time datetime={date}
                 >{timeAgoDate}</time
@@ -140,7 +141,7 @@ const author = authors[frontmatter.author];
     </div>
   </section>
   <section class="relative">
-    <div class="max-w-7xl px-8 md:px-12 lg:px-32 mx-auto py-12 relative">
+    <div class="max-w-7xl px-8 md:px-12 lg:px-32 mx-auto pb-12 md:py-12 relative">
       <div class="grid grid-cols-1 gap-10 xl:gap-24">
         <div>
           <div
