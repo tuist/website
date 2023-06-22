@@ -49,6 +49,9 @@ devDependencies:
   fast-glob:
     specifier: ^3.2.12
     version: 3.2.12
+  rollup:
+    specifier: ^3.25.1
+    version: 3.25.1
   tailwindcss:
     specifier: ^3.2.7
     version: 3.3.2
