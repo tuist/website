@@ -1,27 +1,20 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 
-import HeroTwo from "../components/heros/HeroTwo.astro";
 import LogocCloudOne from "../components/testimonials/LogoCloudOne.astro";
 import FeatureFour from "../components/features/FeatureFour.astro";
-import FeatureOne from "../components/features/FeatureOne.astro";
 import FeatureTwo from "../components/features/FeatureTwo.astro";
 import FeatureThree from "../components/features/FeatureThree.astro";
 import TestimonialOne from "../components/testimonials/TestimonialOne.astro";
-import Pricing from "../components/pricing/Pricing.astro";
 import Faq from "../components/Infopages/Faq.astro";
-import Cta from "../components/ctas/Cta.astro";
 import CtaThree from "../components/ctas/CtaThree.astro";
-
+import metadata from '../content/metadata.js';
 import { AstroSeo } from "@astrolib/seo";
 ---
 
-<!---
-Use AstroSeo in all the pages you want different Seo than the index page
--->
 <AstroSeo
-  title="Tuist"
-  description="Your missing Apple platform team."
+  title={`Tuist - ${metadata.description}`}
+  description={metadata.description}
   canonical="https://tuist.io"
   openGraph={{
     url: "https://tuist.io",
@@ -34,12 +27,12 @@ Use AstroSeo in all the pages you want different Seo than the index page
         type: "image/jpeg",
       }
     ],
-    site_name: "YourSitesName",
+    site_name: "Tuist",
   }}
   twitter={{
-    handle: "@TwitterHandle",
+    handle: "@tuistio",
     site: "@site",
-    cardType: "summary_large_image",
+    cardType: "summary",
   }}
 />
 <BaseLayout>

@@ -4,15 +4,12 @@ import Error404 from "../components/Infopages/Error404.astro";
 import { AstroSeo } from "@astrolib/seo";
 ---
 
-<!---
-Use AstroSeo in all the pages you want different Seo than the index page
--->
 <AstroSeo
   title="404"
-  description="Your site description goes here"
-  canonical="https://www.lexingtonthemes.com"
+  description="Not found page"
+  canonical="https://tuist.io"
   openGraph={{
-    url: "https://www.lexingtonthemes.com",
+    url: "https://tuist.io",
     title: "Open Graph Title",
     description: "Open Graph Description",
     images: [
@@ -22,12 +19,12 @@ Use AstroSeo in all the pages you want different Seo than the index page
         type: "image/jpeg",
       }
     ],
-    site_name: "YourSitesName",
+    site_name: "Tuist",
   }}
   twitter={{
-    handle: "@TwitterHandle",
+    handle: "@tuistio",
     site: "@site",
-    cardType: "summary_large_image",
+    cardType: "summary",
   }}
 />
 <SplashScreenLayout>
