@@ -15,8 +15,8 @@ dependencies:
     specifier: ^1.0.0
     version: 1.0.0
   '@astrolib/seo':
-    specifier: ^0.4.0
-    version: 0.4.0(astro@2.5.0)
+    specifier: ^0.3.0
+    version: 0.3.0(astro@2.5.0)
   '@tailwindcss/forms':
     specifier: ^0.5.3
     version: 0.5.3(tailwindcss@3.2.7)
@@ -32,8 +32,8 @@ dependencies:
 
 devDependencies:
   '@astrojs/image':
-    specifier: ^0.13.0
-    version: 0.13.0(astro@2.5.0)
+    specifier: ^0.17.0
+    version: 0.17.0(astro@2.5.0)
   '@astrojs/tailwind':
     specifier: ^3.1.1
     version: 3.1.1(astro@2.5.0)(tailwindcss@3.2.7)
@@ -69,10 +69,10 @@ packages:
   /@astrojs/compiler@1.5.1:
     resolution: {integrity: sha512-iIGKu/uzB8sJ5VveQf0eHrVPPFEcrvSlp4qShYMOuY2aMmK2RVXQlX9dUjtmBQ+NAokfIOb7fwCutvH+p13l+g==}
 
-  /@astrojs/image@0.13.0(astro@2.5.0):
-    resolution: {integrity: sha512-18IlEsb/mau4ji9sR7+JVPFJHtgIk7Qh/Ol+Hh/JNcPn/oMrjP6FMU3VrNHPy5Ltvw1DyzkDV4wu+jYKU/V0Hw==}
+  /@astrojs/image@0.17.0(astro@2.5.0):
+    resolution: {integrity: sha512-YSolAMFtABhmgLH5BCeGX5e7QKApgSI1XcxO+HLqHFayQKVQ9r6fwslodTjzQkqxgcWEcQKF4nFR4Sq3hAq6YQ==}
     peerDependencies:
-      astro: ^2.0.0
+      astro: ^2.6.0
       sharp: '>=0.31.0'
     peerDependenciesMeta:
       sharp:
@@ -85,7 +85,6 @@ packages:
       kleur: 4.1.5
       magic-string: 0.27.0
       mime: 3.0.0
-      slash: 4.0.0
     dev: true
 
   /@astrojs/language-server@1.0.8:
@@ -211,8 +210,8 @@ packages:
     dependencies:
       undici: 5.22.1
 
-  /@astrolib/seo@0.4.0(astro@2.5.0):
-    resolution: {integrity: sha512-pLErJ8X0+MbC36D5ZPX39rOrSk8Dx8wV4ssaNceNgavVEn70C2udupn5Jsw4bSOrEaxU8ovdciEvb9wMKV+BEQ==}
+  /@astrolib/seo@0.3.0(astro@2.5.0):
+    resolution: {integrity: sha512-u0CBicM6nj0YIav76dA8ujaLnDwIWTnTkVJMk84jXsTOGR0/lA823WNf6kxSyWbds0kgegKnu1EuU9wIqkyWNg==}
     peerDependencies:
       astro: ^1.2.1 || ^2.0.0
     dependencies:
