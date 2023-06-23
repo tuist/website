@@ -1,4 +1,4 @@
-lockfileVersion: '6.1'
+lockfileVersion: '6.0'
 
 settings:
   autoInstallPeers: false
@@ -32,8 +32,8 @@ dependencies:
 
 devDependencies:
   '@astrojs/image':
-    specifier: ^0.13.0
-    version: 0.13.0(astro@2.5.0)
+    specifier: ^0.17.0
+    version: 0.17.0(astro@2.5.0)
   '@astrojs/tailwind':
     specifier: ^3.1.1
     version: 3.1.1(astro@2.5.0)(tailwindcss@3.2.7)
@@ -69,10 +69,10 @@ packages:
   /@astrojs/compiler@1.5.1:
     resolution: {integrity: sha512-iIGKu/uzB8sJ5VveQf0eHrVPPFEcrvSlp4qShYMOuY2aMmK2RVXQlX9dUjtmBQ+NAokfIOb7fwCutvH+p13l+g==}
 
-  /@astrojs/image@0.13.0(astro@2.5.0):
-    resolution: {integrity: sha512-18IlEsb/mau4ji9sR7+JVPFJHtgIk7Qh/Ol+Hh/JNcPn/oMrjP6FMU3VrNHPy5Ltvw1DyzkDV4wu+jYKU/V0Hw==}
+  /@astrojs/image@0.17.0(astro@2.5.0):
+    resolution: {integrity: sha512-YSolAMFtABhmgLH5BCeGX5e7QKApgSI1XcxO+HLqHFayQKVQ9r6fwslodTjzQkqxgcWEcQKF4nFR4Sq3hAq6YQ==}
     peerDependencies:
-      astro: ^2.0.0
+      astro: ^2.6.0
       sharp: '>=0.31.0'
     peerDependenciesMeta:
       sharp:
@@ -85,7 +85,6 @@ packages:
       kleur: 4.1.5
       magic-string: 0.27.0
       mime: 3.0.0
-      slash: 4.0.0
     dev: true
 
   /@astrojs/language-server@1.0.8:
