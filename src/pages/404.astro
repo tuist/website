@@ -2,19 +2,20 @@
 import SplashScreenLayout from "../layouts/SplashScreenLayout.astro";
 import Error404 from "../components/Infopages/Error404.astro";
 import { AstroSeo } from "@astrolib/seo";
+import metadata from '../content/metadata.js'
 ---
 
 <AstroSeo
   title="404"
   description="Not found page"
-  canonical="https://tuist.io"
+  canonical={metadata.url}
   openGraph={{
-    url: "https://tuist.io",
+    url: metadata.url,
     title: `404 - Tuist`,
     description: "Not found page",
     images: [
       {
-        url: "https://tuist.io/images/logo.jpeg",
+        url: `${metadata.url}/images/logo.jpeg`,
         alt: "Tuist logo",
         type: "image/jpeg",
       }

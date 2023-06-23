@@ -1,6 +1,6 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-
+import metadata from '../content/metadata.js'
 import BlogPosts from "../components/BlogPosts.astro";
 import { AstroSeo } from "@astrolib/seo";
 ---
@@ -8,14 +8,14 @@ import { AstroSeo } from "@astrolib/seo";
 <AstroSeo
   title="Blog - Tuist"
   description=`Discover engaging stories and expert insights on our blog.`
-  canonical="https://tuist.io"
+  canonical={metadata.url}
   openGraph={{
-    url: "https://tuist.io",
+    url: metadata.url,
     title: "Blog",
     description: `Discover engaging stories and expert insights on our blog.`,
     images: [
       {
-        url: "https://tuist.io/images/logo.jpeg",
+        url: `${metadata.url}/images/logo.jpeg`,
         alt: "Tuist logo",
         type: "image/jpeg",
       },
