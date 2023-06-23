@@ -6,6 +6,7 @@ module.exports = {
   theme: {
      animation: {
         marquee: 'marquee 60s linear infinite',
+        marqueefast: 'marquee 10s linear infinite',
         marquee2: 'marquee2 60s linear infinite',
         'fade-in': 'fade-in 0.5s linear forwards',
       },
