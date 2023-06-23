@@ -2,7 +2,14 @@ import fs from "fs/promises";
 import satori from "satori";
 import sharp from "sharp";
 
-export default async function ogImage({ header, title, footer } = { header: "Tuist", title: "Title", footer: "Footer"} ) {
+export default async function ogImage(
+  { header, title, footer } = {
+    header: "Tuist",
+    title: "Title",
+    footer: "Footer",
+  },
+  { width, height } = { width: 1200, height: 600 }
+) {
   const regularInter = await fs.readFile(
     "./public/fonts/inter/Inter-Regular.ttf"
   );
@@ -42,7 +49,7 @@ export default async function ogImage({ header, title, footer } = { header: "Tui
                     style: {
                       fontFamily: "Inter",
                       display: "flex",
-                      fontSize: 60,
+                      fontSize: 50,
                       fontWeight: 800,
                       textAlign: "left",
                       flex: 1,
@@ -90,13 +97,13 @@ export default async function ogImage({ header, title, footer } = { header: "Tui
           fontSize: 60,
           letterSpacing: -2,
           textAlign: "center",
-          padding: 50,
+          padding: 80,
         },
       },
     },
     {
-      width: 1200,
-      height: 630,
+      width: width,
+      height: height,
       fonts: [
         {
           name: "Inter",
