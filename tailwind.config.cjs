@@ -5,8 +5,8 @@ module.exports = {
   content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
   theme: {
      animation: {
-        marquee: 'marquee 25s linear infinite',
-        marquee2: 'marquee2 25s linear infinite',
+        marquee: 'marquee 60s linear infinite',
+        marquee2: 'marquee2 60s linear infinite',
         'fade-in': 'fade-in 0.5s linear forwards',
       },
       keyframes: {
