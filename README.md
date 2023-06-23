@@ -2,6 +2,7 @@
 ⭐️ Tuist's website. Powered by [Astro](https://astro.build)
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/6406cdb0-ae41-41f5-9fc6-be151791c3ee/deploy-status)](https://app.netlify.com/sites/tuist/deploys)
+[![Website](https://github.com/tuist/website/actions/workflows/website.yml/badge.svg)](https://github.com/tuist/website/actions/workflows/website.yml)
 
 ## Development
 
