@@ -15,14 +15,14 @@ import { AstroSeo } from "@astrolib/seo";
 <AstroSeo
   title={`Tuist - ${metadata.description}`}
   description={metadata.description}
-  canonical="https://tuist.io"
+  canonical={metadata.url}
   openGraph={{
-    url: "https://tuist.io",
+    url: metadata.url,
     title: "Tuist",
     description: metadata.description,
     images: [
       {
-        url: "https://tuist.io/images/logo.jpeg",
+        url: `${metadata.url}/images/logo.jpeg`,
         alt: "Tuist logo",
         type: "image/jpeg",
       }

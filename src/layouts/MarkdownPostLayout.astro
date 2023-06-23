@@ -4,6 +4,7 @@ const { frontmatter } = Astro.props;
 import { AstroSeo } from "@astrolib/seo";
 import { format } from 'timeago.js';
 import authors from '../content/authors.js'
+import metadata from '../content/metadata.js'
 
 const date = frontmatter.url.replace("/blog/", "").split("/").slice(0,3).join("-")
 const timeAgoDate = format(date, 'en_US')
@@ -14,14 +15,14 @@ const author = authors[frontmatter.author];
 <AstroSeo
   title={title}
   description={frontmatter.excerpt}
-  canonical="https://tuist.io"
+  canonical={metadata.url}
   openGraph={{
-    url: `https://tuist.io${frontmatter.url}`,
+    url: `${metadata.url}${frontmatter.url}`,
     title: title,
     description: frontmatter.excerpt,
     images: [
     {
-        url: "https://tuist.io/images/logo.jpeg",
+        url: `${metadata.url}/images/logo.jpeg`,
         alt: "Tuist logo",
         type: "image/jpeg",
       }
