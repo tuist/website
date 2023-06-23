@@ -21,10 +21,12 @@ const author = authors[frontmatter.author];
     title: title,
     description: frontmatter.excerpt,
     images: [
-    {
-        url: `${metadata.url}/images/logo.jpeg`,
+      {
+        url: `${metadata.url}${frontmatter.url}/og-image.jpg`,
         alt: "Tuist logo",
-        type: "image/jpeg",
+        type: "image/jpg",
+        height: 630,
+        width: 1200
       }
     ],
     site_name: "Tuist",
@@ -32,7 +34,7 @@ const author = authors[frontmatter.author];
   twitter={{
     handle: "@tuistio",
     site: "@tuistio",
-    cardType: "summary",
+    cardType: "summary_large_image",
   }}
 />
 <BaseLayout>

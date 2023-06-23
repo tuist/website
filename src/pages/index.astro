@@ -22,9 +22,11 @@ import { AstroSeo } from "@astrolib/seo";
     description: metadata.description,
     images: [
       {
-        url: `${metadata.url}/images/logo.jpeg`,
+        url: `${metadata.url}/og-image.jpg`,
         alt: "Tuist logo",
-        type: "image/jpeg",
+        type: "image/jpg",
+        height: 630,
+        width: 1200
       }
     ],
     site_name: "Tuist",
@@ -32,7 +34,7 @@ import { AstroSeo } from "@astrolib/seo";
   twitter={{
     handle: "@tuistio",
     site: "@tuistio",
-    cardType: "summary",
+    cardType: "summary_large_image",
   }}
 />
 <BaseLayout>

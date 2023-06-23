@@ -2,11 +2,10 @@ import fs from "fs/promises";
 import satori from "satori";
 import sharp from "sharp";
 
-export const get = async function get({ params, request }) {
-const header = params.header ?? "Tuist"
-  const title = params.title ?? "Title"
-    const footer = params.footer ?? ""
-  const regularInter = await fs.readFile("./public/fonts/inter/Inter-Regular.ttf");
+export default async function ogImage({ header, title, footer } = { header: "Tuist", title: "Title", footer: "Footer"} ) {
+  const regularInter = await fs.readFile(
+    "./public/fonts/inter/Inter-Regular.ttf"
+  );
   const boldInter = await fs.readFile("./public/fonts/inter/Inter-Bold.ttf");
 
   const svg = await satori(
@@ -39,12 +38,11 @@ const header = params.header ?? "Tuist"
                 {
                   type: "div",
                   props: {
-                    children:
-                      title,
+                    children: title,
                     style: {
-                        fontFamily: 'Inter',
+                      fontFamily: "Inter",
                       display: "flex",
-                      fontSize: 50,
+                      fontSize: 60,
                       fontWeight: 800,
                       textAlign: "left",
                       flex: 1,
@@ -68,7 +66,7 @@ const header = params.header ?? "Tuist"
                 display: "flex",
                 flexDirection: "column",
                 justifyContent: "center",
-                alignItems: "center",
+                alignItems: "flex-start",
                 fontStyle: "normal",
                 color: "white",
                 marginTop: 30,
@@ -80,7 +78,7 @@ const header = params.header ?? "Tuist"
           },
         ],
         style: {
-          fontFamily: 'Inter',
+          fontFamily: "Inter",
           display: "flex",
           height: "100%",
           width: "100%",
@@ -107,20 +105,15 @@ const header = params.header ?? "Tuist"
           style: "normal",
         },
         {
-            name: "Inter",
-            data: boldInter,
-            weight: 800,
-            style: "normal",
-          },
+          name: "Inter",
+          data: boldInter,
+          weight: 800,
+          style: "normal",
+        },
       ],
     }
   );
 
-  const png = await sharp(Buffer.from(svg)).png().toBuffer();
-
-  return new Response(png, {
-    headers: {
-      "Content-Type": "image/png",
-    },
-  });
-};
+  const jpg = await sharp(Buffer.from(svg)).jpeg().toBuffer();
+  return jpg;
+}
