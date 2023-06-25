@@ -3,7 +3,7 @@ import BaseLayout from "./BaseLayout.astro";
 const { frontmatter } = Astro.props;
 import { AstroSeo } from "@astrolib/seo";
 import { format } from 'timeago.js';
-import metadata from '../utils/metadata.js'
+import metadata from '../utils/metadata.json'
 import { getCollection } from "astro:content";
 
 const date = frontmatter.url.replace("/blog/", "").split("/").slice(0,3).join("-")
