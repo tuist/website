@@ -1,6 +1,7 @@
 ---
 const posts = await Astro.glob("../pages/blog/**/*.mdx");
-import authors from "../content/authors.js";
+import { getCollection } from "astro:content";
+const allAuthors = await getCollection('authors')
 import { format } from "timeago.js";
 ---
 
@@ -35,6 +36,7 @@ import { format } from "timeago.js";
               .split("/")
               .slice(0, 3)
               .join("-");
+            const author = allAuthors.find((author) => author.id === post.frontmatter.author)
             const timeAgoDate = format(date, "en_US");
             return (
               <div class="grid grid-cols-1 gap-4 pt-4 lg:grid-cols-3 lg:pt-12">
@@ -46,9 +48,9 @@ import { format } from "timeago.js";
                         Written by:{" "}
                         <a
                           class="hover:underline"
-                          href={authors[post.frontmatter.author]?.twitter}
+                          href={author?.data?.twitter_handle ? `https://twitter.com/${author?.data?.twitter_handle}` : null}
                         >
-                          {authors[post.frontmatter.author]?.name}
+                          {author?.data?.name}
                         </a>
                       </p>
                     )}

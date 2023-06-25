@@ -1,5 +1,5 @@
 import rss from "@astrojs/rss";
-import metadata from "../content/metadata.js";
+import metadata from "../utils/metadata.js";
 const posts = import.meta.glob('./blog/**/*.{md,mdx}');
 import sanitizeHtml from 'sanitize-html';
 import MarkdownIt from 'markdown-it';
