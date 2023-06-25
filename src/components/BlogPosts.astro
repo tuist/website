@@ -1,6 +1,7 @@
 ---
-const posts = await Astro.glob("../pages/blog/**/*.mdx");
-import authors from "../content/authors.js";
+import { getCollection } from "astro:content";
+const allAuthors = await getCollection('authors')
+const allPosts = await getCollection('posts')
 import { format } from "timeago.js";
 ---
 
@@ -27,14 +28,14 @@ import { format } from "timeago.js";
       </div>
       <div class="mt-12 space-y-12 divide--2 divide-white/5">
         {
-          posts.reverse().map((post) => {
-            const isInterview: boolean = post.frontmatter.type === "interview";
-            const type: string = post.frontmatter.type;
-            const date = post.url
-              .replace("/blog/", "")
+          allPosts.reverse().map((post) => {
+            const isInterview = post.data.type === "interview";
+            const type = post.data.type;
+            const date = post.slug
               .split("/")
               .slice(0, 3)
               .join("-");
+            const author = allAuthors.find((author) => author.id === post.data.author)
             const timeAgoDate = format(date, "en_US");
             return (
               <div class="grid grid-cols-1 gap-4 pt-4 lg:grid-cols-3 lg:pt-12">
@@ -46,9 +47,9 @@ import { format } from "timeago.js";
                         Written by:{" "}
                         <a
                           class="hover:underline"
-                          href={authors[post.frontmatter.author]?.twitter}
+                          href={author?.data?.twitter_handle ? `https://twitter.com/${author?.data?.twitter_handle}` : null}
                         >
-                          {authors[post.frontmatter.author]?.name}
+                          {author?.data?.name}
                         </a>
                       </p>
                     )}
@@ -57,9 +58,9 @@ import { format } from "timeago.js";
                         Interviewee:{" "}
                         <a
                           class="hover:underline"
-                          href={`https://twitter.com/${post.frontmatter.interviewee_twitter_handle}`}
+                          href={`https://twitter.com/${post.data.interviewee_twitter_handle}`}
                         >
-                          {post.frontmatter.interviewee_name}
+                          {post.data.type === 'interview' ? post.data.interviewee_name : null}
                         </a>
                       </p>
                     )}
@@ -74,15 +75,15 @@ import { format } from "timeago.js";
                 </div>
                 <div class="space-y-4 lg:col-span-2">
                   <span class="text-lg text-white">
-                    <a href={post.url}>{post.frontmatter.title}</a>
+                    <a href={`/blog/${post.slug}`}>{post.data.title}</a>
                   </span>
                   <p class="text-sm text-slate-400 mt-8">
-                    {post.frontmatter.excerpt}
+                    {post.data.excerpt}
                   </p>
 
                   <p class="mt-4">
                     <a
-                      href={post.url}
+                      href={`/blog/${post.slug}`}
                       class="text-sm leading-6 text-sky-600 hover:text-white"
                     >
                       Read more <span aria-hidden="true">&rarr;</span>

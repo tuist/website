@@ -1,28 +1,31 @@
 ---
 import BaseLayout from "./BaseLayout.astro";
-const { frontmatter } = Astro.props;
+const { entry } = Astro.props;
 import { AstroSeo } from "@astrolib/seo";
 import { format } from 'timeago.js';
-import authors from '../content/authors.js'
-import metadata from '../content/metadata.js'
+import metadata from '../utils/metadata.json'
+import { getCollection } from "astro:content";
 
-const date = frontmatter.url.replace("/blog/", "").split("/").slice(0,3).join("-")
+const date = entry.slug.split("/").slice(0,3).join("-")
 const timeAgoDate = format(date, 'en_US')
-const title = `${frontmatter.title} - Tuist`
-const author = authors[frontmatter.author];
+const title = `${entry.data.title} - Tuist`
+const allAuhors = await getCollection("authors")
+const author = allAuhors.find((author) => author.id === entry.data.author);
+const { Content } = await entry.render();
+
 ---
 
 <AstroSeo
   title={title}
-  description={frontmatter.excerpt}
+  description={entry.data.excerpt}
   canonical={metadata.url}
   openGraph={{
-    url: `${metadata.url}${frontmatter.url}`,
+    url: `${metadata.url}/blog${entry.slug}`,
     title: title,
-    description: frontmatter.excerpt,
+    description: entry.data.excerpt,
     images: [
       {
-        url: `${metadata.url}${frontmatter.url}/og-image.jpg`,
+        url: `${metadata.url}/blog${entry.slug}/og-image.jpg`,
         alt: "Tuist logo",
         type: "image/jpg",
         height: 630,
@@ -81,7 +84,7 @@ const author = authors[frontmatter.author];
       class="max-w-7xl px-8 md:px-12 relative lg:px-32 mx-auto py-32 lg:pt-56">
       <div class="max-w-3xl">
         {
-          (frontmatter.tags ?? []).map((tag) => (
+          (entry.data.categories ?? []).map((tag) => (
             <span class="text-transparent bg-clip-text font-medium tracking-widest bg-gradient-to-r from-cyan-400 via-cyan-500 to-indigo-500 text-xs uppercase">
               <a href={`/tags/${tag}`}>{tag}</a> -
             </span>
@@ -89,13 +92,13 @@ const author = authors[frontmatter.author];
         }
 
         <p class="text-3xl mt-8 font-normal text-white">
-          {frontmatter.title}
+          {entry.data.title}
         </p>
-        <p class="mt-2 text-base text-slate-400">{frontmatter.description}</p>
+        <p class="mt-2 text-base text-slate-400">{entry.data.excerpt}</p>
         <div class="items-center inline-flex flex-col md:flex-row gap-3 mt-10 w-full">
           <div class="items-center inline-flex space-x-1 w-full">
             <p class="font-medium text-white text-sm">
-              Written by: {author?.name}
+              Written by: {author?.data?.name}
             </p>
             <span aria-hidden="true">·</span><div
               class="flex text-slate-400 text-sm">
@@ -107,21 +110,21 @@ const author = authors[frontmatter.author];
           <div class="flex flex-col space-y-3 text-left mt-3 lg:mt-0 w-full">
             <span class="isolate inline-flex rounded-2xl lg:ml-auto">
               <a
-                href={author?.github}
+                href={author?.data?.github_handle ? `https://github.com/${author?.data?.github_handle}` : null}
                 type="button"
                 class="relative transition duration-500 ease-in-out transform inline-flex items-center rounded-l-lg border border-slate-700 px-4 py-2 text-xs font-light text-white hover:bg-white/5 focus:z-10 focus:border-cyan-300 focus:outline-none focus:ring-1 focus:ring-cyan-300"
                 >GitHub</a
               >
               {
-                author?.mastodon && <a
-                href={author?.mastodon}
+                author?.data?.mastodon_url && <a
+                href={author?.data?.mastodon_url}
                 type="button"
                 class="relative transition duration-500 ease-in-out transform inline-flex items-center border-t border-b border-slate-700 px-4 py-2 text-xs font-light text-white hover:bg-white/5 focus:z-10 focus:border-cyan-300 focus:outline-none focus:ring-1 focus:ring-cyan-300"
                 >Mastodon</a
               >
               }
-              {author?.twitter && <a
-                href={author?.twitter}
+              {author?.data?.twitter_handle && <a
+                href={`https://twitter.com/${author?.data?.twitter_handle}`}
                 type="button"
                 class="relative transition duration-500 ease-in-out transform -ml-px inline-flex items-center rounded-r-lg border border-slate-700 dark px-4 py-2 text-xs font-light text-white hover:bg-white/5 focus:z-10 focus:border-cyan-300 focus:outline-none focus:ring-1 focus:ring-cyan-300"
                 >Twitter</a
@@ -138,7 +141,7 @@ const author = authors[frontmatter.author];
         <div>
           <div
             class="prose prose-strong:text-slate-400 prose-blockquote:border-l-white prose-a:text-cyan-500 hover:prose-a:text-white prose-headings:font-normal prose-headings:text-white prose-li:marker:text-cyan-500 text-slate-400 prose-code:text-white prose-blockquote:text-white/70">
-            <slot />
+            <Content />
           </div>
         </div>
       </div>

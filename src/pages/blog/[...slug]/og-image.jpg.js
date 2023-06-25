@@ -1,6 +1,7 @@
 import ogImage from "../../../utils/og-image.js";
 const posts = import.meta.glob("../**/*.{md,mdx}");
-import authors from '../../../content/authors.js'
+import { getCollection } from "astro:content";
+const allAuthors = await getCollection("authors");
 
 export async function getStaticPaths() {
   return await Promise.all(
@@ -30,9 +31,10 @@ export const get = async function get({ params, request }) {
       footer += ` (@${postModule.frontmatter.interviewee_twitter_handle})`
     }
   } else {
-    footer = `Written by ${authors[postModule.frontmatter.author].name}`
-    if (authors[postModule.frontmatter.author].twitter_handle) {
-      footer += ` (@${authors[postModule.frontmatter.author].twitter_handle})`
+    const author = allAuthors.find((author) => author.id === postModule.frontmatter.author);
+    footer = `Written by ${author?.data?.name}`
+    if (author?.data?.twitter_handle) {
+      footer += ` (@${author?.data?.twitter_handle})`
     }
   }
   const png = await ogImage({

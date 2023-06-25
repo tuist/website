@@ -4,7 +4,6 @@ import image from "@astrojs/image";
 import compress from "astro-compress";
 import sitemap from "@astrojs/sitemap";
 import mdx from "@astrojs/mdx";
-import netlify from "@astrojs/netlify/functions";
 
 // https://astro.build/config
 export default defineConfig({
@@ -19,7 +18,7 @@ export default defineConfig({
     skipInline: false,
     drafts: true
   },
-  site: "https://lexingtonthemes.com",
+  site: "https://tuist.io",
   integrations: [tailwind(), image({
     serviceEntryPoint: "@astrojs/image/sharp"
   }), compress(), sitemap(), mdx()]
