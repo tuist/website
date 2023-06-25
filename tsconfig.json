@@ -12,6 +12,7 @@
     // Astro will directly run your TypeScript code, no transpilation needed.
     "noEmit": true,
     "strictNullChecks": true,
-    "allowJs": true
+    "allowJs": true,
+    "allowSyntheticDefaultImports": true
   }
 }
