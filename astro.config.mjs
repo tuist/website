@@ -18,7 +18,7 @@ export default defineConfig({
     skipInline: false,
     drafts: true
   },
-  site: "https://lexingtonthemes.com",
+  site: "https://tuist.io",
   integrations: [tailwind(), image({
     serviceEntryPoint: "@astrojs/image/sharp"
   }), compress(), sitemap(), mdx()]
