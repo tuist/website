@@ -1,0 +1,7 @@
+{
+  "name": "Anıl Taşkıran",
+  "role": "iOS Developer",
+  "company": "Trendyol",
+  "testimony": "Converting 200+ dynamic frameworks to static with minimal effort reduced the launch time from 4 seconds to 600ms. Of course, we could have done it without Tuist, but it could have taken us 6 months. I can’t list everything we were able to accomplish, but it made managing dependencies so much easier and helped us cut down the build time from 400 to 200. It has been our savior. Tuist has revolutionized our iOS development workflow.",
+  "avatar_href": "https://pbs.twimg.com/profile_images/1646852062133604354/EuI50GSg_400x400.jpg"
+}
