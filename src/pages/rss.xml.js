@@ -1,6 +1,9 @@
 import rss from "@astrojs/rss";
 import metadata from "../content/metadata.js";
 const posts = import.meta.glob('./blog/**/*.{md,mdx}');
+import sanitizeHtml from 'sanitize-html';
+import MarkdownIt from 'markdown-it';
+const parser = new MarkdownIt();
 
 export async function get() {
   return rss({
