@@ -1,24 +1,26 @@
 import rss from "@astrojs/rss";
 import metadata from "../utils/metadata.json";
-const posts = import.meta.glob('./blog/**/*.{md,mdx}');
+import { getCollection } from 'astro:content';
 import sanitizeHtml from 'sanitize-html';
 import MarkdownIt from 'markdown-it';
 const parser = new MarkdownIt();
 
 export async function get() {
+  const allPosts = await getCollection('posts');
+
   return rss({
     title: 'Tuist | Blog',
     description: metadata.description,
     site: metadata.url,
-    items: await Promise.all(Object.entries(posts).map(async ([path, post]) => {
-      const postContent = await post()
-      const dateString = postContent.url.split("/").slice(2, 5).join("/")
+    items: await Promise.all(allPosts.map(async (post) => {
+      const dateString = post.slug.split("/").slice(0, 3).join("/")
       const date = new Date(dateString)
       return {
-        title: postContent.frontmatter.title,
+        title: post.data.title,
         pubDate: date,
-        description: postContent.frontmatter.excerpt,
-        link: postContent.url,
+        description: post.data.excerpt,
+        link: `/blog/${post.slug}`,
+        content: sanitizeHtml(parser.render(post.body)),
       }
     })),
     customData: `<language>en-us</language>`,
