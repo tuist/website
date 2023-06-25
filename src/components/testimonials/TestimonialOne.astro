@@ -1,5 +1,8 @@
 ---
 import Verticalgrid from "../assets/VerticalGrid.astro";
+import { getCollection } from "astro:content";
+const allTestimonials = await getCollection('testimonials')
+const testimony = allTestimonials[Math.floor(Math.random() * allTestimonials.length)]
 ---
 
 <section
@@ -23,376 +26,95 @@ import Verticalgrid from "../assets/VerticalGrid.astro";
       </div>
     </div>
   </div>
-  <div class="2xl:max-7xl pb-24">
+  <div class="pb-24">
     <div class="mx-auto">
-      <div class="overflow-x-hidden relative">
-        <div class="animate-marqueefast md:animate-marquee whitespace-nowrap flex gap-6">
-          <div class="p-4 lg:p-10 text-center">
-            <img
-              class="inline-block h-10 w-10 rounded-full ring-2 ring-white ring-offset-4 ring-offset-vulcan-900"
-              src="https://en.gravatar.com/userimage/145454310/b0ca193e99180048e1a4f4892b1c3b9d?size=512"
-              alt=""
-            />
+      <div class="flex flex-row justify-center">
+        <div class="p-4 lg:p-10 text-center basis-2/3">
+          <img
+            class="inline-block h-10 w-10 rounded-full ring-2 ring-white ring-offset-4 ring-offset-vulcan-900"
+            src={testimony.data.avatar_href}
+            alt=""
+          />
 
-            <div>
-              <p class="text-slate-400 text-xs mt-8">
-                <strong class="text-white">Søren Gregersen</strong> ― Emplate (Mobile Development Manager)
-              </p>
-            </div>
-            <div class="mt-4 text-base text-slate-400">
-              Tuist is improving our development process and saves us at lot of time.
-              <span class="block">
-              It ensures consistency across our Xcode projects and saves us an
-              </span>
-              <span class="block">
-              endless number of clicks in Xcode.
-              </block>              
-            </div>
-            <div class="flex gap-1 mx-auto justify-center mt-6">
-              <svg
-                class="icon icon-tabler fill-cyan-400 h-4 icon-tabler-star text-cyan-400 w-4"
-                fill="currentColor"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                stroke-width="1.5"
-                xmlns="http://www.w3.org/2000/svg"
-                stroke-linecap="round"
-                stroke-linejoin="round">
-                <path d="M0 0h24v24H0z" fill="none" stroke="none"></path>
-                <path
-                  d="M12 17.75l-6.172 3.245l1.179 -6.873l-5 -4.867l6.9 -1l3.086 -6.253l3.086 6.253l6.9 1l-5 4.867l1.179 6.873z"
-                ></path>
-              </svg>
-              <svg
-                class="icon icon-tabler fill-cyan-400 h-4 icon-tabler-star text-cyan-400 w-4"
-                fill="currentColor"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                stroke-width="1.5"
-                xmlns="http://www.w3.org/2000/svg"
-                stroke-linecap="round"
-                stroke-linejoin="round">
-                <path d="M0 0h24v24H0z" fill="none" stroke="none"></path>
-                <path
-                  d="M12 17.75l-6.172 3.245l1.179 -6.873l-5 -4.867l6.9 -1l3.086 -6.253l3.086 6.253l6.9 1l-5 4.867l1.179 6.873z"
-                ></path>
-              </svg>
-              <svg
-                class="icon icon-tabler fill-cyan-400 h-4 icon-tabler-star text-cyan-400 w-4"
-                fill="currentColor"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                stroke-width="1.5"
-                xmlns="http://www.w3.org/2000/svg"
-                stroke-linecap="round"
-                stroke-linejoin="round">
-                <path d="M0 0h24v24H0z" fill="none" stroke="none"></path>
-                <path
-                  d="M12 17.75l-6.172 3.245l1.179 -6.873l-5 -4.867l6.9 -1l3.086 -6.253l3.086 6.253l6.9 1l-5 4.867l1.179 6.873z"
-                ></path>
-              </svg>
-              <svg
-                class="icon icon-tabler fill-cyan-400 h-4 icon-tabler-star text-cyan-400 w-4"
-                fill="currentColor"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                stroke-width="1.5"
-                xmlns="http://www.w3.org/2000/svg"
-                stroke-linecap="round"
-                stroke-linejoin="round">
-                <path d="M0 0h24v24H0z" fill="none" stroke="none"></path>
-                <path
-                  d="M12 17.75l-6.172 3.245l1.179 -6.873l-5 -4.867l6.9 -1l3.086 -6.253l3.086 6.253l6.9 1l-5 4.867l1.179 6.873z"
-                ></path>
-              </svg>
-              <svg
-                class="icon icon-tabler fill-cyan-400 h-4 icon-tabler-star text-cyan-400 w-4"
-                fill="currentColor"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                stroke-width="1.5"
-                xmlns="http://www.w3.org/2000/svg"
-                stroke-linecap="round"
-                stroke-linejoin="round">
-                <path d="M0 0h24v24H0z" fill="none" stroke="none"></path>
-                <path
-                  d="M12 17.75l-6.172 3.245l1.179 -6.873l-5 -4.867l6.9 -1l3.086 -6.253l3.086 6.253l6.9 1l-5 4.867l1.179 6.873z"
-                ></path>
-              </svg>
-            </div>
+          <div>
+            <p class="text-slate-400 text-xs mt-8">
+              <strong class="text-white">{testimony.data.name}</strong> ― {testimony.data.role} at {testimony.data.company}
+            </p>
           </div>
-          <div class="p-4 lg:p-10 text-center">
-            <img
-              class="inline-block h-10 w-10 rounded-full ring-2 ring-white ring-offset-4 ring-offset-vulcan-900"
-              src="https://avatars.githubusercontent.com/u/38225497?v=4"
-              alt=""
-            />
-
-            <div>
-              <p class="text-slate-400 text-xs mt-8">
-                <strong class="text-white">Steve Landey</strong> ― Mobile Engineer at Asana
-              </p>
-            </div>
-            <div class="mt-4 text-base text-slate-400">
-              Tuist lets us write our build graph in code and make        
-              <span class="block">big changes with little effort. It solves a lot of </span>
-              <span class="block">workflow problems for our team, and it’s fast!</span>
-            </div>
-            <div class="flex gap-1 mx-auto justify-center mt-6">
-              <svg
-                class="icon icon-tabler fill-cyan-400 h-4 icon-tabler-star text-cyan-400 w-4"
-                fill="currentColor"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                stroke-width="1.5"
-                xmlns="http://www.w3.org/2000/svg"
-                stroke-linecap="round"
-                stroke-linejoin="round">
-                <path d="M0 0h24v24H0z" fill="none" stroke="none"></path>
-                <path
-                  d="M12 17.75l-6.172 3.245l1.179 -6.873l-5 -4.867l6.9 -1l3.086 -6.253l3.086 6.253l6.9 1l-5 4.867l1.179 6.873z"
-                ></path>
-              </svg>
-              <svg
-                class="icon icon-tabler fill-cyan-400 h-4 icon-tabler-star text-cyan-400 w-4"
-                fill="currentColor"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                stroke-width="1.5"
-                xmlns="http://www.w3.org/2000/svg"
-                stroke-linecap="round"
-                stroke-linejoin="round">
-                <path d="M0 0h24v24H0z" fill="none" stroke="none"></path>
-                <path
-                  d="M12 17.75l-6.172 3.245l1.179 -6.873l-5 -4.867l6.9 -1l3.086 -6.253l3.086 6.253l6.9 1l-5 4.867l1.179 6.873z"
-                ></path>
-              </svg>
-              <svg
-                class="icon icon-tabler fill-cyan-400 h-4 icon-tabler-star text-cyan-400 w-4"
-                fill="currentColor"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                stroke-width="1.5"
-                xmlns="http://www.w3.org/2000/svg"
-                stroke-linecap="round"
-                stroke-linejoin="round">
-                <path d="M0 0h24v24H0z" fill="none" stroke="none"></path>
-                <path
-                  d="M12 17.75l-6.172 3.245l1.179 -6.873l-5 -4.867l6.9 -1l3.086 -6.253l3.086 6.253l6.9 1l-5 4.867l1.179 6.873z"
-                ></path>
-              </svg>
-              <svg
-                class="icon icon-tabler fill-cyan-400 h-4 icon-tabler-star text-cyan-400 w-4"
-                fill="currentColor"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                stroke-width="1.5"
-                xmlns="http://www.w3.org/2000/svg"
-                stroke-linecap="round"
-                stroke-linejoin="round">
-                <path d="M0 0h24v24H0z" fill="none" stroke="none"></path>
-                <path
-                  d="M12 17.75l-6.172 3.245l1.179 -6.873l-5 -4.867l6.9 -1l3.086 -6.253l3.086 6.253l6.9 1l-5 4.867l1.179 6.873z"
-                ></path>
-              </svg>
-              <svg
-                class="icon icon-tabler fill-cyan-400 h-4 icon-tabler-star text-cyan-400 w-4"
-                fill="currentColor"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                stroke-width="1.5"
-                xmlns="http://www.w3.org/2000/svg"
-                stroke-linecap="round"
-                stroke-linejoin="round">
-                <path d="M0 0h24v24H0z" fill="none" stroke="none"></path>
-                <path
-                  d="M12 17.75l-6.172 3.245l1.179 -6.873l-5 -4.867l6.9 -1l3.086 -6.253l3.086 6.253l6.9 1l-5 4.867l1.179 6.873z"
-                ></path>
-              </svg>
-            </div>
+          <div class="mt-4 text-base text-slate-400 line-clamp-10">
+            {testimony.data.testimony}
           </div>
-          <div class="p-4 lg:p-10 text-center">
-            <img
-              class="inline-block h-10 w-10 rounded-full ring-2 ring-white ring-offset-4 ring-offset-vulcan-900"
-              src="https://media.licdn.com/dms/image/C4D03AQHYGKlUJE6QpQ/profile-displayphoto-shrink_800_800/0/1549777725180?e=1692230400&v=beta&t=2EEiTmnljofydqd9n8dp4qci_on_x-yOWIkeq4DBHtk"
-              alt=""
-            />
-
-            <div>
-              <p class="text-slate-400 text-xs mt-8">
-                <strong class="text-white">Shahzad Majeed</strong> ― Senior Lead Software Engineer at DraftKings
-              </p>
-            </div>
-            <div class="mt-4 text-base text-slate-400 break-words">
-              Tuist has revolutionized our iOS development workflow at DraftKings. 
-              <span class="block">Its automation capabilities have streamlined project generation, build</span>
-              <span class="block">settings, and dependency management. With modularization, we maximize</span>
-              <span class="block">code sharing across apps, reducing duplication.</span>
-              </div>
-            <div class="flex gap-1 mx-auto justify-center mt-6">
-              <svg
-                class="icon icon-tabler fill-cyan-400 h-4 icon-tabler-star text-cyan-400 w-4"
-                fill="currentColor"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                stroke-width="1.5"
-                xmlns="http://www.w3.org/2000/svg"
-                stroke-linecap="round"
-                stroke-linejoin="round">
-                <path d="M0 0h24v24H0z" fill="none" stroke="none"></path>
-                <path
-                  d="M12 17.75l-6.172 3.245l1.179 -6.873l-5 -4.867l6.9 -1l3.086 -6.253l3.086 6.253l6.9 1l-5 4.867l1.179 6.873z"
-                ></path>
-              </svg>
-              <svg
-                class="icon icon-tabler fill-cyan-400 h-4 icon-tabler-star text-cyan-400 w-4"
-                fill="currentColor"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                stroke-width="1.5"
-                xmlns="http://www.w3.org/2000/svg"
-                stroke-linecap="round"
-                stroke-linejoin="round">
-                <path d="M0 0h24v24H0z" fill="none" stroke="none"></path>
-                <path
-                  d="M12 17.75l-6.172 3.245l1.179 -6.873l-5 -4.867l6.9 -1l3.086 -6.253l3.086 6.253l6.9 1l-5 4.867l1.179 6.873z"
-                ></path>
-              </svg>
-              <svg
-                class="icon icon-tabler fill-cyan-400 h-4 icon-tabler-star text-cyan-400 w-4"
-                fill="currentColor"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                stroke-width="1.5"
-                xmlns="http://www.w3.org/2000/svg"
-                stroke-linecap="round"
-                stroke-linejoin="round">
-                <path d="M0 0h24v24H0z" fill="none" stroke="none"></path>
-                <path
-                  d="M12 17.75l-6.172 3.245l1.179 -6.873l-5 -4.867l6.9 -1l3.086 -6.253l3.086 6.253l6.9 1l-5 4.867l1.179 6.873z"
-                ></path>
-              </svg>
-              <svg
-                class="icon icon-tabler fill-cyan-400 h-4 icon-tabler-star text-cyan-400 w-4"
-                fill="currentColor"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                stroke-width="1.5"
-                xmlns="http://www.w3.org/2000/svg"
-                stroke-linecap="round"
-                stroke-linejoin="round">
-                <path d="M0 0h24v24H0z" fill="none" stroke="none"></path>
-                <path
-                  d="M12 17.75l-6.172 3.245l1.179 -6.873l-5 -4.867l6.9 -1l3.086 -6.253l3.086 6.253l6.9 1l-5 4.867l1.179 6.873z"
-                ></path>
-              </svg>
-              <svg
-                class="icon icon-tabler fill-cyan-400 h-4 icon-tabler-star text-cyan-400 w-4"
-                fill="currentColor"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                stroke-width="1.5"
-                xmlns="http://www.w3.org/2000/svg"
-                stroke-linecap="round"
-                stroke-linejoin="round">
-                <path d="M0 0h24v24H0z" fill="none" stroke="none"></path>
-                <path
-                  d="M12 17.75l-6.172 3.245l1.179 -6.873l-5 -4.867l6.9 -1l3.086 -6.253l3.086 6.253l6.9 1l-5 4.867l1.179 6.873z"
-                ></path>
-              </svg>
-            </div>
-          </div>
-          <div class="p-4 lg:p-10 text-center">
-            <img
-              class="inline-block h-10 w-10 rounded-full ring-2 ring-white ring-offset-4 ring-offset-vulcan-900"
-              src="https://pbs.twimg.com/profile_images/1646852062133604354/EuI50GSg_400x400.jpg"
-              alt=""
-            />
-
-            <div>
-              <p class="text-slate-400 text-xs mt-8">
-                <strong class="text-white">Anıl Taşkıran</strong> ― iOS Developer at Trendyol
-              </p>
-            </div>
-            <div class="mt-4 text-base text-slate-400">
-              <span class="block">Converting 200+ dynamic frameworks to static with minimal effort reduced the launch time</span> 
-              <span class="block">from 4 seconds to 600ms. Of course, we could have done it without Tuist, but it could have taken us 6 months.</span>
-              <span class="block">I can’t list everything we were able to accomplish, but it made managing dependencies so much easier and helped us</span>
-              <span class="block">cut down the build time from 400 to 200. It has been our savior.</span>
-              <span class="block">Tuist has revolutionized our iOS development workflow.</span>
-            </div>
-            <div class="flex gap-1 mx-auto justify-center mt-6">
-              <svg
-                class="icon icon-tabler fill-cyan-400 h-4 icon-tabler-star text-cyan-400 w-4"
-                fill="currentColor"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                stroke-width="1.5"
-                xmlns="http://www.w3.org/2000/svg"
-                stroke-linecap="round"
-                stroke-linejoin="round">
-                <path d="M0 0h24v24H0z" fill="none" stroke="none"></path>
-                <path
-                  d="M12 17.75l-6.172 3.245l1.179 -6.873l-5 -4.867l6.9 -1l3.086 -6.253l3.086 6.253l6.9 1l-5 4.867l1.179 6.873z"
-                ></path>
-              </svg>
-              <svg
-                class="icon icon-tabler fill-cyan-400 h-4 icon-tabler-star text-cyan-400 w-4"
-                fill="currentColor"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                stroke-width="1.5"
-                xmlns="http://www.w3.org/2000/svg"
-                stroke-linecap="round"
-                stroke-linejoin="round">
-                <path d="M0 0h24v24H0z" fill="none" stroke="none"></path>
-                <path
-                  d="M12 17.75l-6.172 3.245l1.179 -6.873l-5 -4.867l6.9 -1l3.086 -6.253l3.086 6.253l6.9 1l-5 4.867l1.179 6.873z"
-                ></path>
-              </svg>
-              <svg
-                class="icon icon-tabler fill-cyan-400 h-4 icon-tabler-star text-cyan-400 w-4"
-                fill="currentColor"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                stroke-width="1.5"
-                xmlns="http://www.w3.org/2000/svg"
-                stroke-linecap="round"
-                stroke-linejoin="round">
-                <path d="M0 0h24v24H0z" fill="none" stroke="none"></path>
-                <path
-                  d="M12 17.75l-6.172 3.245l1.179 -6.873l-5 -4.867l6.9 -1l3.086 -6.253l3.086 6.253l6.9 1l-5 4.867l1.179 6.873z"
-                ></path>
-              </svg>
-              <svg
-                class="icon icon-tabler fill-cyan-400 h-4 icon-tabler-star text-cyan-400 w-4"
-                fill="currentColor"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                stroke-width="1.5"
-                xmlns="http://www.w3.org/2000/svg"
-                stroke-linecap="round"
-                stroke-linejoin="round">
-                <path d="M0 0h24v24H0z" fill="none" stroke="none"></path>
-                <path
-                  d="M12 17.75l-6.172 3.245l1.179 -6.873l-5 -4.867l6.9 -1l3.086 -6.253l3.086 6.253l6.9 1l-5 4.867l1.179 6.873z"
-                ></path>
-              </svg>
-              <svg
-                class="icon icon-tabler fill-cyan-400 h-4 icon-tabler-star text-cyan-400 w-4"
-                fill="currentColor"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                stroke-width="1.5"
-                xmlns="http://www.w3.org/2000/svg"
-                stroke-linecap="round"
-                stroke-linejoin="round">
-                <path d="M0 0h24v24H0z" fill="none" stroke="none"></path>
-                <path
-                  d="M12 17.75l-6.172 3.245l1.179 -6.873l-5 -4.867l6.9 -1l3.086 -6.253l3.086 6.253l6.9 1l-5 4.867l1.179 6.873z"
-                ></path>
-              </svg>
-            </div>
+          <div class="flex gap-1 mx-auto justify-center mt-6">
+            <svg
+              class="icon icon-tabler fill-cyan-400 h-4 icon-tabler-star text-cyan-400 w-4"
+              fill="currentColor"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              xmlns="http://www.w3.org/2000/svg"
+              stroke-linecap="round"
+              stroke-linejoin="round">
+              <path d="M0 0h24v24H0z" fill="none" stroke="none"></path>
+              <path
+                d="M12 17.75l-6.172 3.245l1.179 -6.873l-5 -4.867l6.9 -1l3.086 -6.253l3.086 6.253l6.9 1l-5 4.867l1.179 6.873z"
+              ></path>
+            </svg>
+            <svg
+              class="icon icon-tabler fill-cyan-400 h-4 icon-tabler-star text-cyan-400 w-4"
+              fill="currentColor"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              xmlns="http://www.w3.org/2000/svg"
+              stroke-linecap="round"
+              stroke-linejoin="round">
+              <path d="M0 0h24v24H0z" fill="none" stroke="none"></path>
+              <path
+                d="M12 17.75l-6.172 3.245l1.179 -6.873l-5 -4.867l6.9 -1l3.086 -6.253l3.086 6.253l6.9 1l-5 4.867l1.179 6.873z"
+              ></path>
+            </svg>
+            <svg
+              class="icon icon-tabler fill-cyan-400 h-4 icon-tabler-star text-cyan-400 w-4"
+              fill="currentColor"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              xmlns="http://www.w3.org/2000/svg"
+              stroke-linecap="round"
+              stroke-linejoin="round">
+              <path d="M0 0h24v24H0z" fill="none" stroke="none"></path>
+              <path
+                d="M12 17.75l-6.172 3.245l1.179 -6.873l-5 -4.867l6.9 -1l3.086 -6.253l3.086 6.253l6.9 1l-5 4.867l1.179 6.873z"
+              ></path>
+            </svg>
+            <svg
+              class="icon icon-tabler fill-cyan-400 h-4 icon-tabler-star text-cyan-400 w-4"
+              fill="currentColor"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              xmlns="http://www.w3.org/2000/svg"
+              stroke-linecap="round"
+              stroke-linejoin="round">
+              <path d="M0 0h24v24H0z" fill="none" stroke="none"></path>
+              <path
+                d="M12 17.75l-6.172 3.245l1.179 -6.873l-5 -4.867l6.9 -1l3.086 -6.253l3.086 6.253l6.9 1l-5 4.867l1.179 6.873z"
+              ></path>
+            </svg>
+            <svg
+              class="icon icon-tabler fill-cyan-400 h-4 icon-tabler-star text-cyan-400 w-4"
+              fill="currentColor"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              xmlns="http://www.w3.org/2000/svg"
+              stroke-linecap="round"
+              stroke-linejoin="round">
+              <path d="M0 0h24v24H0z" fill="none" stroke="none"></path>
+              <path
+                d="M12 17.75l-6.172 3.245l1.179 -6.873l-5 -4.867l6.9 -1l3.086 -6.253l3.086 6.253l6.9 1l-5 4.867l1.179 6.873z"
+              ></path>
+            </svg>
           </div>
         </div>
       </div>

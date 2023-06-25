@@ -10,6 +10,17 @@ const authorsCollection = defineCollection({
   }),
 });
 
+const testimonialsCollection = defineCollection({
+  type: "data",
+  schema: z.object({
+    name: z.string(),
+    role: z.string(),
+    company: z.string(),
+    testimony: z.string(),
+    avatar_href: z.string()
+  }),
+});
+
 const postsCollection = defineCollection({
   type: "content",
   schema: z.object({
@@ -31,5 +42,6 @@ const postsCollection = defineCollection({
 
 export const collections = {
   authors: authorsCollection,
-  posts: postsCollection
+  posts: postsCollection,
+  testimonials: testimonialsCollection
 };
