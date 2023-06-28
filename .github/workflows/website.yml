@@ -9,7 +9,11 @@ on:
 concurrency:
   group: website-${{ github.head_ref }}
   cancel-in-progress: true
-  
+
+env:
+  NODE_VERSION: "20.3.1"
+  PNPM_VERSION: "8.6.5"
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -21,13 +25,13 @@ jobs:
       - name: Install Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: 18
+          node-version: ${{ env.NODE_VERSION }}
 
       - uses: pnpm/action-setup@v2
         name: Install pnpm
         id: pnpm-install
         with:
-          version: 7
+          version: ${{ env.PNPM_VERSION }}
           run_install: false
 
       - name: Get pnpm store directory
