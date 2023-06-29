@@ -2,17 +2,16 @@
 import BaseLayout from "./BaseLayout.astro";
 const { entry } = Astro.props;
 import { AstroSeo } from "@astrolib/seo";
-import { format } from 'timeago.js';
-import metadata from '../utils/metadata.json'
+import { format } from "timeago.js";
+import metadata from "../utils/metadata.json";
 import { getCollection } from "astro:content";
 
-const date = entry.slug.split("/").slice(0,3).join("-")
-const timeAgoDate = format(date, 'en_US')
-const title = `${entry.data.title} - Tuist`
-const allAuhors = await getCollection("authors")
+const date = entry.slug.split("/").slice(0, 3).join("-");
+const timeAgoDate = format(date, "en_US");
+const title = `${entry.data.title} - Tuist`;
+const allAuhors = await getCollection("authors");
 const author = allAuhors.find((author) => author.id === entry.data.author);
 const { Content } = await entry.render();
-
 ---
 
 <AstroSeo
@@ -29,8 +28,8 @@ const { Content } = await entry.render();
         alt: "Tuist logo",
         type: "image/jpg",
         height: 630,
-        width: 1200
-      }
+        width: 1200,
+      },
     ],
     site_name: "Tuist",
   }}
@@ -48,7 +47,8 @@ const { Content } = await entry.render();
       height="100%"
       viewBox="0 0 400 400"
       fill="none"
-      xmlns="http://www.w3.org/2000/svg">
+      xmlns="http://www.w3.org/2000/svg"
+    >
       <g clip-path="url(#clip0_17_60)">
         <g filter="url(#filter0_f_17_60)">
           <path d="M128.6 0H0V322.2L332.5 211.5L128.6 0Z" fill="#4D07E3"></path>
@@ -67,7 +67,8 @@ const { Content } = await entry.render();
           width="719.867"
           height="719.867"
           filterUnits="userSpaceOnUse"
-          color-interpolation-filters="sRGB">
+          color-interpolation-filters="sRGB"
+        >
           <feFlood flood-opacity="0" result="BackgroundImageFix"></feFlood>
           <feBlend
             mode="normal"
@@ -81,7 +82,8 @@ const { Content } = await entry.render();
       </defs>
     </svg>
     <div
-      class="max-w-7xl px-8 md:px-12 relative lg:px-32 mx-auto py-32 lg:pt-56">
+      class="max-w-7xl px-8 md:px-12 relative lg:px-32 mx-auto py-32 lg:pt-56"
+    >
       <div class="max-w-3xl">
         {
           (entry.data.categories ?? []).map((tag) => (
@@ -95,40 +97,51 @@ const { Content } = await entry.render();
           {entry.data.title}
         </p>
         <p class="mt-2 text-base text-slate-400">{entry.data.excerpt}</p>
-        <div class="items-center inline-flex flex-col md:flex-row gap-3 mt-10 w-full">
+        <div
+          class="items-center inline-flex flex-col md:flex-row gap-3 mt-10 w-full"
+        >
           <div class="items-center inline-flex space-x-1 w-full">
             <p class="font-medium text-white text-sm">
               Written by: {author?.data?.name}
             </p>
             <span aria-hidden="true">·</span><div
-              class="flex text-slate-400 text-sm">
-              <time datetime={date}
-                >{timeAgoDate}</time
-              >
+              class="flex text-slate-400 text-sm"
+            >
+              <time datetime={date}>{timeAgoDate}</time>
             </div>
           </div>
           <div class="flex flex-col space-y-3 text-left mt-3 lg:mt-0 w-full">
             <span class="isolate inline-flex rounded-2xl lg:ml-auto">
               <a
-                href={author?.data?.github_handle ? `https://github.com/${author?.data?.github_handle}` : null}
+                href={author?.data?.github_handle
+                  ? `https://github.com/${author?.data?.github_handle}`
+                  : null}
                 type="button"
                 class="relative transition duration-500 ease-in-out transform inline-flex items-center rounded-l-lg border border-slate-700 px-4 py-2 text-xs font-light text-white hover:bg-white/5 focus:z-10 focus:border-cyan-300 focus:outline-none focus:ring-1 focus:ring-cyan-300"
                 >GitHub</a
               >
               {
-                author?.data?.mastodon_url && <a
-                href={author?.data?.mastodon_url}
-                type="button"
-                class="relative transition duration-500 ease-in-out transform inline-flex items-center border-t border-b border-slate-700 px-4 py-2 text-xs font-light text-white hover:bg-white/5 focus:z-10 focus:border-cyan-300 focus:outline-none focus:ring-1 focus:ring-cyan-300"
-                >Mastodon</a
-              >
+                author?.data?.mastodon_url && (
+                  <a
+                    href={author?.data?.mastodon_url}
+                    type="button"
+                    class="relative transition duration-500 ease-in-out transform inline-flex items-center border-t border-b border-slate-700 px-4 py-2 text-xs font-light text-white hover:bg-white/5 focus:z-10 focus:border-cyan-300 focus:outline-none focus:ring-1 focus:ring-cyan-300"
+                  >
+                    Mastodon
+                  </a>
+                )
               }
-              {author?.data?.twitter_handle && <a
-                href={`https://twitter.com/${author?.data?.twitter_handle}`}
-                type="button"
-                class="relative transition duration-500 ease-in-out transform -ml-px inline-flex items-center rounded-r-lg border border-slate-700 dark px-4 py-2 text-xs font-light text-white hover:bg-white/5 focus:z-10 focus:border-cyan-300 focus:outline-none focus:ring-1 focus:ring-cyan-300"
-                >Twitter</a
-              >}
+              {
+                author?.data?.twitter_handle && (
+                  <a
+                    href={`https://twitter.com/${author?.data?.twitter_handle}`}
+                    type="button"
+                    class="relative transition duration-500 ease-in-out transform -ml-px inline-flex items-center rounded-r-lg border border-slate-700 dark px-4 py-2 text-xs font-light text-white hover:bg-white/5 focus:z-10 focus:border-cyan-300 focus:outline-none focus:ring-1 focus:ring-cyan-300"
+                  >
+                    Twitter
+                  </a>
+                )
+              }
             </span>
           </div>
         </div>
@@ -136,12 +149,43 @@ const { Content } = await entry.render();
     </div>
   </section>
   <section class="relative">
-    <div class="max-w-7xl px-8 md:px-12 lg:px-32 mx-auto pb-12 md:py-12 relative">
+    <div
+      class="max-w-7xl px-8 md:px-12 lg:px-32 mx-auto pb-12 md:py-12 relative"
+    >
       <div class="grid grid-cols-1 gap-10 xl:gap-24">
         <div>
           <div
-            class="prose prose-strong:text-slate-400 prose-blockquote:border-l-white prose-a:text-cyan-500 hover:prose-a:text-white prose-headings:font-normal prose-headings:text-white prose-li:marker:text-cyan-500 text-slate-400 prose-code:text-white prose-blockquote:text-white/70">
+            class="prose prose-strong:text-slate-400 prose-blockquote:border-l-white prose-a:text-cyan-500 hover:prose-a:text-white prose-headings:font-normal prose-headings:text-white prose-li:marker:text-cyan-500 text-slate-400 prose-code:text-white prose-blockquote:text-white/70"
+          >
             <Content />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="relative">
+    <div
+      class="max-w-7xl px-8 md:px-12 lg:px-32 mx-auto pb-12 md:py-12 relative"
+    >
+      <div class="grid grid-cols-1 gap-10 xl:gap-24">
+        <div class="prose">
+          <div
+            class="flex flex-col p-[0.060rem] shadow-2xl rounded-3xl bg-gradient-to-b from-indigo-500 via-indigo-500/5"
+          >
+            <div class="bg-vulcan-900 px-6 sm:px-8 lg:py-8 rounded-3xl h-full">
+              <h3 class="mt-5 text-xl text-white">
+                <span class="text-2xl">Support Tuist</span>
+              </h3>
+              <p class="flex flex-col order-last my-4 text-base text-slate-400 gap-y-3">
+                {metadata["sponsor"]["paragraph"]}
+              </p>
+              <a
+                class="inline-flex items-center justify-center w-full px-6 py-3 text-center text-white hover:to-indigo-400 duration-200 bg-gradient-to-r from-sky-400 to-indigo-500 font-medium rounded-xl hover:text-white focus:outline-none focus-visible:outline-black focus-visible:ring-black mt-8 no-underline"
+                aria-label="Sponsor Tuist"
+                href={metadata["sponsor"]["url"]}>Sponsor Tuist</a
+              >
+            </div>
           </div>
         </div>
       </div>
