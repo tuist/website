@@ -1,5 +1,9 @@
 {
     "title": "Tuist",
     "description": "Supercharge your Xcode development workflows",
-    "url": "https://tuist.io"
+    "url": "https://tuist.io",
+    "sponsor": {
+        "link": "https://github.com/sponsors/tuist",
+        "paragraph": "Tuist has become a vital part of organizations' development workflows, resulting in a rise in support and feature requests. Our current model of relying on volunteers' free time is unsustainable, and we are seeking funding to enable dedicated full-time contributions. Your sponsorship would be highly appreciated, as it will help us enhance Tuist and ensure its continued awesomeness."
+    }
 }
