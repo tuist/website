@@ -6,8 +6,20 @@ import Footer from "../components/global/Footer.astro";
 
 <html
   lang="en"
-  class="scroll-smooth selection:bg-cyan-500 selection:text-white">
+  class="scroll-smooth selection:bg-cyan-500 selection:text-white"
+>
   <head> <BaseHead /></head>
+  <script
+    type="text/partytown"
+    src="https://www.googletagmanager.com/gtag/js?id=G-GQYY6BF9SS"></script>
+  <script type="text/partytown">
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      window.dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
+    gtag("config", "G-GQYY6BF9SS");
+  </script>
   <body class="bg-vulcan-900">
     <Navigation />
     <!-- <ContactWidget /> -->

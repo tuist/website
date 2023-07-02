@@ -4,22 +4,35 @@ import image from "@astrojs/image";
 import compress from "astro-compress";
 import sitemap from "@astrojs/sitemap";
 import mdx from "@astrojs/mdx";
+import partytown from "@astrojs/partytown";
 
 // https://astro.build/config
 export default defineConfig({
   markdown: {
     drafts: true,
     shikiConfig: {
-      theme: "css-variables"
-    }
+      theme: "css-variables",
+    },
   },
   shikiConfig: {
     wrap: true,
     skipInline: false,
-    drafts: true
+    drafts: true,
   },
   site: "https://tuist.io",
-  integrations: [tailwind(), image({
-    serviceEntryPoint: "@astrojs/image/sharp"
-  }), compress(), sitemap(), mdx()]
+  integrations: [
+    tailwind(),
+    image({
+      serviceEntryPoint: "@astrojs/image/sharp",
+    }),
+    compress(),
+    sitemap(),
+    mdx(),
+    partytown({
+      // Adds dataLayer.push as a forwarding-event.
+      config: {
+        forward: ["dataLayer.push"],
+      },
+    }),
+  ],
 });
