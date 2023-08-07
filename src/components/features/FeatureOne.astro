@@ -1,5 +1,6 @@
 ---
 import Verticalgrid from "../assets/VerticalGrid.astro";
+import Calculator from "../Calculator";
 ---
 
 <section
@@ -101,20 +102,12 @@ import Verticalgrid from "../assets/VerticalGrid.astro";
             <div
               class="flex items-center justify-center w-12 h-12 text-white shadow-indigo-500/20 bg-gradient-to-tr shadow-2xl from-vulcan-900 to-vulcan-700 rounded-xl"
             >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke-width="1.5"
-                stroke="currentColor"
-                class="w-6 h-6"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0l3.181 3.183a8.25 8.25 0 0013.803-3.7M4.031 9.865a8.25 8.25 0 0113.803-3.7l3.181 3.182m0-4.991v4.99"
-                ></path>
+
+
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M5.25 14.25h13.5m-13.5 0a3 3 0 01-3-3m3 3a3 3 0 100 6h13.5a3 3 0 100-6m-16.5-3a3 3 0 013-3h13.5a3 3 0 013 3m-19.5 0a4.5 4.5 0 01.9-2.7L5.737 5.1a3.375 3.375 0 012.7-1.35h7.126c1.062 0 2.062.5 2.7 1.35l2.587 3.45a4.5 4.5 0 01.9 2.7m0 0a3 3 0 01-3 3m0 3h.008v.008h-.008v-.008zm0-6h.008v.008h-.008v-.008zm-3 6h.008v.008h-.008v-.008zm0-6h.008v.008h-.008v-.008z" />
               </svg>
+              
             </div>
             <p class="mt-5 text-lg font-medium text-white lg:text-xl">
               Remote caching
@@ -130,28 +123,17 @@ import Verticalgrid from "../assets/VerticalGrid.astro";
             <div
               class="flex items-center justify-center w-12 h-12 text-white shadow-indigo-500/20 bg-gradient-to-tr shadow-2xl from-vulcan-900 to-vulcan-700 rounded-xl"
             >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke-width="1.5"
-                stroke="currentColor"
-                class="w-6 h-6"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-              </svg>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M7.217 10.907a2.25 2.25 0 100 2.186m0-2.186c.18.324.283.696.283 1.093s-.103.77-.283 1.093m0-2.186l9.566-5.314m-9.566 7.5l9.566 5.314m0 0a2.25 2.25 0 103.935 2.186 2.25 2.25 0 00-3.935-2.186zm0-12.814a2.25 2.25 0 103.933-2.185 2.25 2.25 0 00-3.933 2.185z" />
+            </svg>
+            
             </div>
             <p class="mt-5 text-lg font-medium text-white lg:text-xl">
               Build sharing
             </p>
           </div>
           <div class="mt-2 text-base text-slate-400">
-            Distribute and share builds with your team members, enabling them to
-            actively engage and share their valuable feedback with you,
-            fostering a collaborative and iterative development process.
+            Share builds with your team for active engagement and feedback, promoting a collaborative development cycle.
           </div>
         </li>
         <li>
@@ -159,38 +141,26 @@ import Verticalgrid from "../assets/VerticalGrid.astro";
             <div
               class="flex items-center justify-center w-12 h-12 text-white shadow-indigo-500/20 bg-gradient-to-tr shadow-2xl from-vulcan-900 to-vulcan-700 rounded-xl"
             >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke-width="1.5"
-                stroke="currentColor"
-                class="w-6 h-6"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  d="M3 8.25V18a2.25 2.25 0 002.25 2.25h13.5A2.25 2.25 0 0021 18V8.25m-18 0V6a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 6v2.25m-18 0h18M5.25 6h.008v.008H5.25V6zM7.5 6h.008v.008H7.5V6zm2.25 0h.008v.008H9.75V6z"
-                ></path>
-              </svg>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M7.5 14.25v2.25m3-4.5v4.5m3-6.75v6.75m3-9v9M6 20.25h12A2.25 2.25 0 0020.25 18V6A2.25 2.25 0 0018 3.75H6A2.25 2.25 0 003.75 6v12A2.25 2.25 0 006 20.25z" />
+            </svg>
+            
             </div>
             <p class="mt-5 text-lg font-medium text-white lg:text-xl">
               Build & project insights
             </p>
           </div>
           <div class="mt-2 text-base text-slate-400">
-            We provide teams with the data they need to make informed decisions
-            and the tools to detect regressions, ensuring that projects develop
-            healthily.
+            We provide teams the data and tools to make informed decisions, detect regressions, and maintain project health.
           </div>
         </li>
       </ul>
     </div>
     <div
-      class="grid grid-cols-1 mt-12 lg:grid-cols-2 lg:mt-24 items-start gap-12 lg:gap-32"
+      class="grid grid-cols-1 mt-12 lg:grid-cols-8 lg:mt-24 items-start gap-12 lg:gap-32"
     >
-      <div>
-        <h2 class="mt-6 text-3xl font-normal text-white">Cost savings</h2>
+      <div class="col-span-3">
+        <h2 class="mt-6 text-3xl font-normal text-white">Return of Investment</h2>
         <p class="mt-5 text-lg text-slate-400">
           Organizations face expenses due to developer inefficiencies. Tuist
           Cloud optimizes workflows and infrastructure, mitigating frequent
@@ -225,13 +195,14 @@ import Verticalgrid from "../assets/VerticalGrid.astro";
           </li>
         </ul>
       </div>
-      <div class="mt-12 lg:mt-0 w-full border-mercury-400 lg:ml-auto">
-        <img
-          alt="Lexington thumbnail"
-          class="object-cover w-full"
-          src="/assets/card3.svg"
-        />
-      </div>
+      <section
+        class="flex flex-col p-[0.060rem] shadow-2xl rounded-3xl bg-gradient-to-b from-indigo-500 to-cyan-500 col-span-5">
+        <div class="bg-vulcan-900 px-6 sm:px-8 pt-8 pb-10 rounded-3xl h-full">
+          <Calculator client:visible/>
+        </div>
+      </section>
+      <!-- <div class="mt-12 lg:mt-0 w-full lg:ml-auto bg-indigo-500 rounded-md p-4">
+      </div> -->
     </div>
   </div>
 </section>

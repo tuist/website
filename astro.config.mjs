@@ -5,6 +5,7 @@ import compress from "astro-compress";
 import sitemap from "@astrojs/sitemap";
 import mdx from "@astrojs/mdx";
 import partytown from "@astrojs/partytown";
+import preact from '@astrojs/preact';
 
 // https://astro.build/config
 export default defineConfig({
@@ -21,6 +22,7 @@ export default defineConfig({
   },
   site: "https://tuist.io",
   integrations: [
+    preact(),
     tailwind(),
     image({
       serviceEntryPoint: "@astrojs/image/sharp",
