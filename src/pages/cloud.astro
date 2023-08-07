@@ -1,0 +1,35 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import metadata from '../utils/metadata.json'
+import BlogPosts from "../components/BlogPosts.astro";
+import { AstroSeo } from "@astrolib/seo";
+---
+
+<AstroSeo
+  title="Tuist Cloud"
+  description=`Discover Tuist Cloud: a premium extension for Tuist users. Boost productivity, enhance collaboration, make informed decisions, and ensure your project's health. Exclusive features tailored for those who demand excellence.`
+  canonical={metadata.url}
+  openGraph={{
+    url: metadata.url,
+    title: "Tuist Cloud",
+    description: `Discover Tuist Cloud: a premium extension for Tuist users. Boost productivity, enhance collaboration, make informed decisions, and ensure your project's health. Exclusive features tailored for those who demand excellence.`,
+    images: [
+      {
+        url: `${metadata.url}/cloud/og-image.jpg`,
+        alt: "Tuist Cloud",
+        type: "image/jpg",
+        height: 630,
+        width: 1200
+      },
+    ],
+    site_name: "Tuist",
+  }}
+  twitter={{
+    handle: "@tuistio",
+    site: "@tuistio",
+    cardType: "summary_large_image",
+  }}
+/>
+<BaseLayout>
+  <BlogPosts />
+</BaseLayout>
