@@ -1,4 +1,5 @@
 import { useState } from "preact/hooks";
+import approx from "approximate-number";
 
 export default function Calculator() {
   const [developersCount, setDevelopersCount] = useState(20);
@@ -91,7 +92,7 @@ export default function Calculator() {
             Annual Developer Hours Saved
             </div>
             <div class="text-white text-2xl font-bold">
-            {addDots(timeSaved)} hours/year
+            {approx(timeSaved)} hours/year
             </div>
         </div>
 
@@ -100,7 +101,7 @@ export default function Calculator() {
             Annual R&D Cost Recapture
             </div>
             <div class="text-white text-2xl font-bold">
-            ${addDots(moneySaved)}
+            ${approx(moneySaved)}
             </div>
         </div>
       </div>
