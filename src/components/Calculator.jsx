@@ -1,10 +1,10 @@
 import { useState } from "preact/hooks";
 
 export default function Calculator() {
-  const [developersCount, setDevelopersCount] = useState(5);
-  const [buildTimeSaved, setBuildTimeSaved] = useState(50);
+  const [developersCount, setDevelopersCount] = useState(20);
+  const [buildTimeSaved, setBuildTimeSaved] = useState(70);
   const [averageBuildTime, setAverageBuildTime] = useState(10);
-  const [averageMonthlySalary, setAverageMonthlySalary] = useState(4000);
+  const [averageMonthlySalary, setAverageMonthlySalary] = useState(7000);
   const [ciBuildCost, setCIBuildCost] = useState(8);
   const [localBuilds, setLocalBuilds] = useState(20);
   const [ciBuilds, setCIBuilds] = useState(20);
