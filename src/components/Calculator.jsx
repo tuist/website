@@ -87,12 +87,12 @@ export default function Calculator() {
         />
       </div>
       <div class="grid grid-cols-2 mt-10">
-        <div class="flex flex-col gap-y-3">
+        <div class="flex flex-col gap-y-3 ">
             <div class="uppercase text-slate-500 text-xs">
             Annual Developer Hours Saved
             </div>
-            <div class="text-white text-2xl font-bold">
-            {approx(timeSaved)} hours/year
+            <div class="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-br from-indigo-300 to-cyan-500">
+            {approx(timeSaved)} h/year
             </div>
         </div>
 
@@ -100,7 +100,7 @@ export default function Calculator() {
             <div class="uppercase text-slate-500 text-xs">
             Annual R&D Cost Recapture
             </div>
-            <div class="text-white text-2xl font-bold">
+            <div class="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-br from-indigo-300 to-cyan-500">
             ${approx(moneySaved)}
             </div>
         </div>
@@ -128,7 +128,7 @@ function Slider({
   };
   return (
     <div class={`flex flex-col ${className}`}>
-      <label for={id} class="block text-lg text-cyan-400 font-semibold">
+      <label for={id} class="block text-lg text-white font-semibold">
         {name(value)}
       </label>
       <p class="text-slate-400 text-sm flex-1 mb-2">{description}</p>
