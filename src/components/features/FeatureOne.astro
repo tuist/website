@@ -1,6 +1,7 @@
 ---
 import Verticalgrid from "../assets/VerticalGrid.astro";
 import Calculator from "../Calculator";
+import FeatureBase from "../FeatureBase";
 ---
 
 <section
@@ -27,9 +28,9 @@ import Calculator from "../Calculator";
           for your platform team, ensuring projects support the business while
           promoting a productive work environment.
         </p>
-        <button data-featurebase-feedback-portal>
-          Open Widget
-        </button>
+       <div class="py-10">
+        <FeatureBase client:visible/>
+       </div>
       </div>
       <svg
       class="mt-24 flex-0 w-28 md:w-60 md:mt-6"
