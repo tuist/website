@@ -54,7 +54,7 @@ dependencies:
     specifier: ^1.1.2
     version: 1.1.2
   preact:
-    specifier: ^10.16.0
+    specifier: ^10.6.5
     version: 10.16.0
   sanitize-html:
     specifier: ^2.11.0
@@ -1201,7 +1201,7 @@ packages:
   /@types/sax@1.2.4:
     resolution: {integrity: sha512-pSAff4IAxJjfAXUG6tFkO7dsSbTmf8CtUpfhhZ5VhkRpC4628tJhh3+V6H1E+/Gs9piSzYKT5yzHO5M4GG9jkw==}
     dependencies:
-      '@types/node': 20.4.5
+      '@types/node': 20.3.1
     dev: false
 
   /@types/sharp@0.31.1:

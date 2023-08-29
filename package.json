@@ -35,7 +35,7 @@
     "install": "^0.13.0",
     "markdown-it": "^13.0.1",
     "mdx-embed": "^1.1.2",
-    "preact": "^10.16.0",
+    "preact": "^10.6.5",
     "sanitize-html": "^2.11.0",
     "satori": "^0.10.1",
     "sharp": "^0.32.1",
