@@ -138,7 +138,7 @@ function Slider({
         min={min}
         max={max}
         value={value}
-        onChange={handleChange}
+        onInput={handleChange}
         class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer dark:bg-gray-700"
       ></input>
     </div>

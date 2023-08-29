@@ -8,7 +8,9 @@ import Footer from "../components/global/Footer.astro";
   lang="en"
   class="scroll-smooth selection:bg-cyan-500 selection:text-white"
 >
-  <head> <BaseHead /></head>
+  <head> 
+    <BaseHead />
+  </head>
   <script>
     !(function (t, e) {
       var o, n, p, r;
@@ -66,4 +68,13 @@ import Footer from "../components/global/Footer.astro";
     <slot />
     <Footer />
   </body>
+  <script>!(function(e,t){const a="featurebase-sdk";function n(){if(!t.getElementById(a)){var e=t.createElement("script");(e.id=a),(e.src="https://do.featurebase.app/js/sdk.js"),t.getElementsByTagName("script")[0].parentNode.insertBefore(e,t.getElementsByTagName("script")[0])}}"function"!=typeof e.Featurebase&&(e.Featurebase=function(){(e.Featurebase.q=e.Featurebase.q||[]).push(arguments)}),"complete"===t.readyState||"interactive"===t.readyState?n():t.addEventListener("DOMContentLoaded",n)})(window,document);</script>
+  <script>
+    Featurebase("initialize_portal_widget", {
+        organization: 'tuistcloud', // required
+        placement: 'right', // optional
+        fullScreen: false, // optional
+        initialPage: 'MainView', // optional (MainView, RoadmapView, CreatePost, PostsView, ChangelogView)
+    });
+    </script>
 </html>
