@@ -20,7 +20,7 @@
   },
   "dependencies": {
     "@astrojs/mdx": "^0.19.6",
-    "@astrojs/netlify": "^2.3.0",
+    "@astrojs/netlify": "^3.0.0",
     "@astrojs/partytown": "^1.2.3",
     "@astrojs/preact": "^2.2.1",
     "@astrojs/rss": "^2.3.1",
