@@ -54,7 +54,7 @@ dependencies:
     specifier: ^1.1.2
     version: 1.1.2
   preact:
-    specifier: ^10.6.5
+    specifier: ^10.16.0
     version: 10.16.0
   sanitize-html:
     specifier: ^2.11.0
