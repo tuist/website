@@ -4,12 +4,13 @@ import MarkdownPostLayout from "../../layouts/MarkdownPostLayout.astro";
 
 export async function getStaticPaths() {
     const allPosts = await getCollection("posts");
-    return allPosts.map((entry) => {
+    const paths = allPosts.map((entry) => {
         return {
             params: { slug: entry.slug },
             props: { entry },
         };
     });
+    return paths;
 }
 const { entry } = Astro.props;
 ---

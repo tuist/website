@@ -1,13 +1,13 @@
 import ogImage from "../../../utils/og-image.js";
-const posts = import.meta.glob("../**/*.{md,mdx}");
+const posts = import.meta.glob("../../../content/posts/**/*.{md,mdx}");
 import { getCollection } from "astro:content";
 const allAuthors = await getCollection("authors");
 
 export async function getStaticPaths() {
-  return await Promise.all(
+  const paths = await Promise.all(
     Object.entries(posts).map(async ([_, getPost]) => {
       const post = await getPost();
-      const slug = `${post.url}`.replace("/blog/", "");
+      const slug = `${post.url}`.replace("src/content/", "").replace("posts/", "").replace(".mdx", "");
       return {
         params: {
           slug: slug,
@@ -15,12 +15,15 @@ export async function getStaticPaths() {
       };
     })
   );
+  return paths;
 }
 
 export const get = async function get({ params, request }) {
   const moduleId = new URL(request.url).pathname
-    .replace("/blog", "..")
-    .replace("/og-image.jpg", ".mdx");
+    .replace("/og-images", "../../../content")
+    .replace("/blog/", "/posts/")
+    .replace(".jpg", ".mdx");
+
   const postModule = await posts[moduleId]();
   let footer = ""
   if (postModule.frontmatter.type === 'release') {
