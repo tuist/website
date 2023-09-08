@@ -12,6 +12,10 @@ const title = `${entry.data.title} - Tuist`;
 const allAuhors = await getCollection("authors");
 const author = allAuhors.find((author) => author.id === entry.data.author);
 const { Content } = await entry.render();
+const isInterview = entry.data.type === "interview";
+const intervieweeName = entry.data.interviewee_name;
+const intervieweeURL = entry.data.interviewee_url;
+const intervieweeAvatar = entry.data.interviewee_avatar;
 ---
 
 <AstroSeo
@@ -93,57 +97,91 @@ const { Content } = await entry.render();
           ))
         }
 
-        <p class="text-3xl mt-8 font-normal text-white">
-          {entry.data.title}
-        </p>
-        <p class="mt-2 text-base text-slate-400">{entry.data.excerpt}</p>
-        <div
-          class="items-center inline-flex flex-col md:flex-row gap-3 mt-10 w-full"
-        >
-          <div class="items-center inline-flex space-x-1 w-full">
-            <p class="font-medium text-white text-sm">
-              Written by: {author?.data?.name}
+        <div class="flex flex-col-reverse md:flex-row gap-x-20">
+          <div>
+            <p class="text-3xl mt-8 font-normal text-white">
+              {entry.data.title}
             </p>
-            <span aria-hidden="true">·</span><div
-              class="flex text-slate-400 text-sm"
+            <p class="mt-2 text-base text-slate-400">{entry.data.excerpt}</p>
+            <div
+              class="items-center inline-flex flex-col md:flex-row gap-3 mt-10 w-full"
             >
-              <time datetime={date}>{timeAgoDate}</time>
+              <div class="items-center inline-flex space-x-1 w-full">
+                <p class="font-medium text-white text-sm">
+                  {
+                    isInterview && !intervieweeURL && (
+                      <>Interviewee: {intervieweeName}</>
+                    )
+                  }
+                  {
+                    isInterview && intervieweeURL && (
+                      <>
+                        Interviewee:{" "}
+                        <a class="underline" href={intervieweeURL} target="_blank">
+                          {intervieweeName}
+                        </a>
+                      </>
+                    )
+                  }
+    
+                  {!isInterview && <>Written by: {author?.data?.name}</>}
+                </p>
+                <span aria-hidden="true">·</span><div
+                  class="flex text-slate-400 text-sm"
+                >
+                  <time datetime={date}>{timeAgoDate}</time>
+                </div>
+              </div>
+              <div class="flex flex-col space-y-3 text-left mt-3 lg:mt-0 w-full">
+                <span class="isolate inline-flex rounded-2xl lg:ml-auto">
+                  {
+                    author?.data?.github_handle && (
+                      <a
+                        href={
+                          author?.data?.github_handle
+                            ? `https://github.com/${author?.data?.github_handle}`
+                            : null
+                        }
+                        type="button"
+                        class="relative transition duration-500 ease-in-out transform inline-flex items-center rounded-l-lg border border-slate-700 px-4 py-2 text-xs font-light text-white hover:bg-white/5 focus:z-10 focus:border-cyan-300 focus:outline-none focus:ring-1 focus:ring-cyan-300"
+                      >
+                        GitHub
+                      </a>
+                    )
+                  }
+                  {
+                    author?.data?.mastodon_url && (
+                      <a
+                        href={author?.data?.mastodon_url}
+                        type="button"
+                        class="relative transition duration-500 ease-in-out transform inline-flex items-center border-t border-b border-slate-700 px-4 py-2 text-xs font-light text-white hover:bg-white/5 focus:z-10 focus:border-cyan-300 focus:outline-none focus:ring-1 focus:ring-cyan-300"
+                      >
+                        Mastodon
+                      </a>
+                    )
+                  }
+                  {
+                    author?.data?.twitter_handle && (
+                      <a
+                        href={`https://twitter.com/${author?.data?.twitter_handle}`}
+                        type="button"
+                        class="relative transition duration-500 ease-in-out transform -ml-px inline-flex items-center rounded-r-lg border border-slate-700 dark px-4 py-2 text-xs font-light text-white hover:bg-white/5 focus:z-10 focus:border-cyan-300 focus:outline-none focus:ring-1 focus:ring-cyan-300"
+                      >
+                        Twitter
+                      </a>
+                    )
+                  }
+                </span>
+              </div>
             </div>
           </div>
-          <div class="flex flex-col space-y-3 text-left mt-3 lg:mt-0 w-full">
-            <span class="isolate inline-flex rounded-2xl lg:ml-auto">
-              <a
-                href={author?.data?.github_handle
-                  ? `https://github.com/${author?.data?.github_handle}`
-                  : null}
-                type="button"
-                class="relative transition duration-500 ease-in-out transform inline-flex items-center rounded-l-lg border border-slate-700 px-4 py-2 text-xs font-light text-white hover:bg-white/5 focus:z-10 focus:border-cyan-300 focus:outline-none focus:ring-1 focus:ring-cyan-300"
-                >GitHub</a
-              >
-              {
-                author?.data?.mastodon_url && (
-                  <a
-                    href={author?.data?.mastodon_url}
-                    type="button"
-                    class="relative transition duration-500 ease-in-out transform inline-flex items-center border-t border-b border-slate-700 px-4 py-2 text-xs font-light text-white hover:bg-white/5 focus:z-10 focus:border-cyan-300 focus:outline-none focus:ring-1 focus:ring-cyan-300"
-                  >
-                    Mastodon
-                  </a>
-                )
-              }
-              {
-                author?.data?.twitter_handle && (
-                  <a
-                    href={`https://twitter.com/${author?.data?.twitter_handle}`}
-                    type="button"
-                    class="relative transition duration-500 ease-in-out transform -ml-px inline-flex items-center rounded-r-lg border border-slate-700 dark px-4 py-2 text-xs font-light text-white hover:bg-white/5 focus:z-10 focus:border-cyan-300 focus:outline-none focus:ring-1 focus:ring-cyan-300"
-                  >
-                    Twitter
-                  </a>
-                )
-              }
-            </span>
-          </div>
+          {
+            intervieweeAvatar && (
+              <div class="my-10">
+                <img src={intervieweeAvatar} class="rounded-full w-36 md:w-80" />
+              </div>
+            )
+          }
         </div>
       </div>
     </div>
@@ -177,7 +215,9 @@ const { Content } = await entry.render();
               <h3 class="mt-5 text-xl text-white">
                 <span class="text-2xl">Support Tuist</span>
               </h3>
-              <p class="flex flex-col order-last my-4 text-base text-slate-400 gap-y-3">
+              <p
+                class="flex flex-col order-last my-4 text-base text-slate-400 gap-y-3"
+              >
                 {metadata["sponsor"]["paragraph"]}
               </p>
               <a
