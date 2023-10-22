@@ -1,7 +1,7 @@
 import { defineConfig } from "astro/config";
 import tailwind from "@astrojs/tailwind";
 import image from "@astrojs/image";
-import compress from "astro-compress";
+import compressor from "astro-compressor";
 import sitemap from "@astrojs/sitemap";
 import mdx from "@astrojs/mdx";
 import partytown from "@astrojs/partytown";
@@ -27,7 +27,7 @@ export default defineConfig({
     image({
       serviceEntryPoint: "@astrojs/image/sharp",
     }),
-    compress(),
+    compressor(),
     sitemap(),
     mdx(),
     partytown({
