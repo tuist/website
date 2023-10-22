@@ -1,0 +1,35 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Cookies from "../components/Infopages/Cookies.astro";
+import { AstroSeo } from "@astrolib/seo";
+import metadata from '../utils/metadata.json';
+---
+
+<AstroSeo
+title="Cookie Policy - Tuist Cloud"
+description=`Read about Tuist Cloud's cookie policy.`
+canonical={metadata.url}
+openGraph={{
+  url: metadata.url,
+  title: "Blog",
+  description: `Read about Tuist Cloud's cookie policy.`,
+  images: [
+    {
+      url: `${metadata.url}/og-images/cookies.jpg`,
+      alt: "Tuist Cloud's cookie policy",
+      type: "image/jpg",
+      height: 630,
+      width: 1200
+    },
+  ],
+  site_name: "Tuist",
+}}
+twitter={{
+  handle: "@tuistio",
+  site: "@tuistio",
+  cardType: "summary_large_image",
+}}
+/>
+<BaseLayout>
+  <Cookies />
+</BaseLayout>
