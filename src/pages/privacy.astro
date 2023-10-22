@@ -1,0 +1,35 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Privacy from "../components/Infopages/Privacy.astro";
+import { AstroSeo } from "@astrolib/seo";
+import metadata from '../utils/metadata.json';
+---
+
+<AstroSeo
+title="Privacy Policy - Tuist Cloud"
+description=`Read about Tuist Cloud's privacy policy.`
+canonical={metadata.url}
+openGraph={{
+  url: metadata.url,
+  title: "Blog",
+  description: `Read about Tuist Cloud's privacy policy.`,
+  images: [
+    {
+      url: `${metadata.url}/og-images/privacy.jpg`,
+      alt: "Tuist Cloud's privacy policy",
+      type: "image/jpg",
+      height: 630,
+      width: 1200
+    },
+  ],
+  site_name: "Tuist",
+}}
+twitter={{
+  handle: "@tuistio",
+  site: "@tuistio",
+  cardType: "summary_large_image",
+}}
+/>
+<BaseLayout>
+  <Privacy />
+</BaseLayout>

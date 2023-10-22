@@ -1,0 +1,35 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Terms from "../components/Infopages/Terms.astro";
+import { AstroSeo } from "@astrolib/seo";
+import metadata from '../utils/metadata.json';
+---
+
+<AstroSeo
+title="Terms of Service - Tuist Cloud"
+description=`Read about Tuist Cloud's terms of service.`
+canonical={metadata.url}
+openGraph={{
+  url: metadata.url,
+  title: "Blog",
+  description: `Read about Tuist Cloud's terms of service.`,
+  images: [
+    {
+      url: `${metadata.url}/og-images/terms.jpg`,
+      alt: "Tuist Cloud's terms of service",
+      type: "image/jpg",
+      height: 630,
+      width: 1200
+    },
+  ],
+  site_name: "Tuist",
+}}
+twitter={{
+  handle: "@tuistio",
+  site: "@tuistio",
+  cardType: "summary_large_image",
+}}
+/>
+<BaseLayout>
+  <Terms />
+</BaseLayout>
