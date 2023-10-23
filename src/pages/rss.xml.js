@@ -22,13 +22,14 @@ ${metadata["cloud"]["paragraph"]}
       const body = `${parser.render(post.body)}\n${tuistCloudHTML}`
       const dateString = post.slug.split("/").slice(0, 3).join("/")
       const date = new Date(dateString)
-      return {
+      const payload = {
         title: post.data.title,
         pubDate: date,
         description: post.data.excerpt,
         link: `/blog/${post.slug}`,
         content: sanitizeHtml(body),
       }
+      return payload;
     })),
     customData: `<language>en-us</language>`,
   });
