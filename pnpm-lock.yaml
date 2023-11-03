@@ -21,8 +21,8 @@ dependencies:
     specifier: ^2.3.1
     version: 2.3.1
   '@astrojs/sitemap':
-    specifier: ^2.0.0
-    version: 2.0.0
+    specifier: ^3.0.0
+    version: 3.0.3
   '@astrolib/seo':
     specifier: ^0.6.0
     version: 0.6.0(astro@2.7.0)
@@ -42,8 +42,8 @@ dependencies:
     specifier: ^0.4.1
     version: 0.4.1
   astro-embed:
-    specifier: ^0.6.0
-    version: 0.6.0(astro@2.7.0)
+    specifier: ^0.5.0
+    version: 0.5.0(astro@2.7.0)
   install:
     specifier: ^0.13.0
     version: 0.13.0
@@ -105,24 +105,24 @@ packages:
       '@jridgewell/gen-mapping': 0.3.3
       '@jridgewell/trace-mapping': 0.3.18
 
-  /@astro-community/astro-embed-integration@0.6.0(astro@2.7.0):
-    resolution: {integrity: sha512-PQGtMLfZ1t0znrY/ElPu3gAT/up9rJVyEDaoqvhoUcEmhp7e99EiuTZNKNKIkeH+biWyKJoKTSClu300i91Kzw==}
+  /@astro-community/astro-embed-integration@0.5.0(astro@2.7.0):
+    resolution: {integrity: sha512-FRRTXoWd0dg5+dWWtven6UYftjc7kGPTFlYcjMDt1qy0ffMrjB1G6/cGTtdUvzyDz3U2w0T6MpT0TFq4ofHN+Q==}
     peerDependencies:
-      astro: ^2.0.0 || ^3.0.0-beta
+      astro: ^2.0.0
     dependencies:
-      '@astro-community/astro-embed-twitter': 0.5.2(astro@2.7.0)
-      '@astro-community/astro-embed-vimeo': 0.3.1(astro@2.7.0)
-      '@astro-community/astro-embed-youtube': 0.4.1(astro@2.7.0)
+      '@astro-community/astro-embed-twitter': 0.5.0(astro@2.7.0)
+      '@astro-community/astro-embed-vimeo': 0.3.0(astro@2.7.0)
+      '@astro-community/astro-embed-youtube': 0.4.0(astro@2.7.0)
       '@types/unist': 2.0.7
       astro: 2.7.0(sharp@0.32.1)
       astro-auto-import: 0.3.0(astro@2.7.0)
       unist-util-select: 4.0.3
     dev: false
 
-  /@astro-community/astro-embed-twitter@0.5.2(astro@2.7.0):
-    resolution: {integrity: sha512-Lte7NQDuxs1htW2i/NRb6MW7j+DhvcVzyW6BIs4I9KjwaXFqZd/21iPNv9mOQ3+iaD/DG2oQPxlPSE6EMvT8Xg==}
+  /@astro-community/astro-embed-twitter@0.5.0(astro@2.7.0):
+    resolution: {integrity: sha512-ElVnbbBTDFcY3xbBeeCG+GHnSORtFApdGVzNKViX/Lq5832vfG6vhBgP0kBmIJ6e8Wr58NrP1fi3VnUAWXAifQ==}
     peerDependencies:
-      astro: ^2.0.0 || ^3.0.0-beta
+      astro: ^2.0.0
     dependencies:
       '@astro-community/astro-embed-utils': 0.1.0
       astro: 2.7.0(sharp@0.32.1)
@@ -132,18 +132,18 @@ packages:
     resolution: {integrity: sha512-whbRs9JpUApKwdzfkakBPVQT73LFxgj/RrfUu0IXTDf5SqxniZaXG4WcdG5MKj0nQyc82O21f1RnY3ddOo/yng==}
     dev: false
 
-  /@astro-community/astro-embed-vimeo@0.3.1(astro@2.7.0):
-    resolution: {integrity: sha512-gubZBvCmD7HVUhjsxcm6XoEhypmqN0B98/+51TbgYNdK8KMAkl+L7VCYU7sKfw3Gz9cmCQZzgJWzcifDYGzSTw==}
+  /@astro-community/astro-embed-vimeo@0.3.0(astro@2.7.0):
+    resolution: {integrity: sha512-kt9qIaGr+Q1f1qDJUvxyPxWhHiGF3bRROjvuIE5KdRspJE7PURg76VKZSIXTzivYTOiXRGXSJf/ZxQaNGWnPHg==}
     peerDependencies:
-      astro: ^2.0.0 || ^3.0.0-beta
+      astro: ^2.0.0
     dependencies:
       astro: 2.7.0(sharp@0.32.1)
     dev: false
 
-  /@astro-community/astro-embed-youtube@0.4.1(astro@2.7.0):
-    resolution: {integrity: sha512-sS3zp3JpCkQl0yl5iCZSuCcankz0Ownjg0Ju5KdON4BJVZUh2gHySCCvqKpsNWwto2VESKi9v7KHi1/R386FZg==}
+  /@astro-community/astro-embed-youtube@0.4.0(astro@2.7.0):
+    resolution: {integrity: sha512-rUEuZD5FTLaRaZFfmQO1JkywDNqZ8AqniG8qnSxNIj9qMS0wqSG/zcDkWpYlyOW3EL07aOBnDfaZSr3wwCy4wA==}
     peerDependencies:
-      astro: ^2.0.0 || ^3.0.0-beta
+      astro: ^2.0.0
     dependencies:
       astro: 2.7.0(sharp@0.32.1)
       lite-youtube-embed: 0.2.0
@@ -289,11 +289,11 @@ packages:
       kleur: 4.1.5
     dev: false
 
-  /@astrojs/sitemap@2.0.0:
-    resolution: {integrity: sha512-hcemuFigv05sdXNiw0U23VO+6Duj9nq9xhINw4ZPWAQEhS/F4EiNvd9IUXb4XJ7pG93MWAnQKF9lP8EtwP6paA==}
+  /@astrojs/sitemap@3.0.3:
+    resolution: {integrity: sha512-+GRKp1yho9dpHBcMcU6JpbL41k0yYZghOkNsMRb8QIRflbGHvd787tdv9oIZ5NJj0SqAuOlqp2UpqLkJXuAe2A==}
     dependencies:
       sitemap: 7.1.1
-      zod: 3.21.4
+      zod: 3.22.4
     dev: false
 
   /@astrojs/tailwind@4.0.0(astro@2.7.0)(tailwindcss@3.2.7):
@@ -1312,15 +1312,15 @@ packages:
     resolution: {integrity: sha512-IAgYAlxYRMolaptsFB9quH7RxX4eUeC4UfULCPhT+ILcg7m1kbaxuyUKqGg9Hh+KZ+FNPPDAz7DqUfl+HDWhQg==}
     dev: false
 
-  /astro-embed@0.6.0(astro@2.7.0):
-    resolution: {integrity: sha512-KE1cBjQvCdqNv1C/oXG5sMfH+bbovu7F88pK1J/iZRaoaRqH2sNe5ZT1G25PDlzvcPYzK6KNB2aUm8jBRNQJfg==}
+  /astro-embed@0.5.0(astro@2.7.0):
+    resolution: {integrity: sha512-yWN5LQqIqjzSmJGvB+/kyp1Hw7vgpKaGysshFV0yA5CVejewPH2W60nwn7YTIOUzHSzefUilKClIfK+hCOH4yQ==}
     peerDependencies:
-      astro: ^2.0.0 || ^3.0.0-beta
+      astro: ^2.0.0
     dependencies:
-      '@astro-community/astro-embed-integration': 0.6.0(astro@2.7.0)
-      '@astro-community/astro-embed-twitter': 0.5.2(astro@2.7.0)
-      '@astro-community/astro-embed-vimeo': 0.3.1(astro@2.7.0)
-      '@astro-community/astro-embed-youtube': 0.4.1(astro@2.7.0)
+      '@astro-community/astro-embed-integration': 0.5.0(astro@2.7.0)
+      '@astro-community/astro-embed-twitter': 0.5.0(astro@2.7.0)
+      '@astro-community/astro-embed-vimeo': 0.3.0(astro@2.7.0)
+      '@astro-community/astro-embed-youtube': 0.4.0(astro@2.7.0)
       astro: 2.7.0(sharp@0.32.1)
     dev: false
 
@@ -4744,6 +4744,10 @@ packages:
 
   /zod@3.21.4:
     resolution: {integrity: sha512-m46AKbrzKVzOzs/DZgVnG5H55N1sv1M8qZU3A8RIKbs3mrACDNeIOeilDymVb2HdmP8uwshOCF4uJ8uM9rCqJw==}
+
+  /zod@3.22.4:
+    resolution: {integrity: sha512-iC+8Io04lddc+mVqQ9AZ7OQ2MrUKGN+oIQyq1vemgt46jwCwLfhq7/pwnBnNXXXZb8VTVLKwp9EDkx+ryxIWmg==}
+    dev: false
 
   /zwitch@2.0.4:
     resolution: {integrity: sha512-bXE4cR/kVZhKZX/RjPEflHaKVhUVl85noU3v6b8apfQEc1x4A+zBxjZ4lN8LqGd6WZ3dl98pY4o717VFmoPp+A==}
