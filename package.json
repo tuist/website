@@ -10,7 +10,7 @@
     "astro": "astro"
   },
   "devDependencies": {
-    "@astrojs/image": "^0.18.0",
+    "@astrojs/image": "^0.17.0",
     "@astrojs/tailwind": "^4.0.0",
     "@tailwindcss/typography": "^0.5.9",
     "@types/alpinejs": "^3.7.1",
@@ -31,7 +31,7 @@
     "@tuist/website": "link:",
     "approximate-number": "^2.1.1",
     "astro-compressor": "^0.4.1",
-    "astro-embed": "^0.5.0",
+    "astro-embed": "^0.6.0",
     "install": "^0.13.0",
     "markdown-it": "^13.0.1",
     "mdx-embed": "^1.1.2",
