@@ -24,8 +24,8 @@ dependencies:
     specifier: ^2.0.0
     version: 2.0.0
   '@astrolib/seo':
-    specifier: ^0.6.0
-    version: 0.6.0(astro@2.7.0)
+    specifier: ^0.4.0
+    version: 0.4.0(astro@2.7.0)
   '@tailwindcss/forms':
     specifier: ^0.5.3
     version: 0.5.3(tailwindcss@3.2.7)
@@ -335,10 +335,10 @@ packages:
     dependencies:
       undici: 5.22.1
 
-  /@astrolib/seo@0.6.0(astro@2.7.0):
-    resolution: {integrity: sha512-mJzvW2ApVVpoB3mVNB+I3wrloorkcypoA7kXQWl1F9vu6X9LRTP2sLdCrn8qkPnKdwgGfmqe/S4vqiW/eemaDg==}
+  /@astrolib/seo@0.4.0(astro@2.7.0):
+    resolution: {integrity: sha512-pLErJ8X0+MbC36D5ZPX39rOrSk8Dx8wV4ssaNceNgavVEn70C2udupn5Jsw4bSOrEaxU8ovdciEvb9wMKV+BEQ==}
     peerDependencies:
-      astro: ^1.2.1 || ^2.0.0 || ^3.0.0-beta.0 || ^3.0.0
+      astro: ^1.2.1 || ^2.0.0
     dependencies:
       astro: 2.7.0(sharp@0.32.1)
     dev: false
