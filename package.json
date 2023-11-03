@@ -25,7 +25,7 @@
     "@astrojs/preact": "^2.2.1",
     "@astrojs/rss": "^2.3.1",
     "@astrojs/sitemap": "^2.0.0",
-    "@astrolib/seo": "^0.4.0",
+    "@astrolib/seo": "^0.6.0",
     "@tailwindcss/forms": "^0.5.3",
     "@tailwindcss/line-clamp": "^0.4.2",
     "@tuist/website": "link:",
