@@ -104,9 +104,9 @@ const intervieweeAvatar = entry.data.interviewee_avatar;
             </p>
             <p class="mt-2 text-base text-slate-400">{entry.data.excerpt}</p>
             <div
-              class="items-center inline-flex flex-col md:flex-row gap-3 mt-10 w-full"
+              class="items-center flex flex-col md:flex-row gap-3 mt-10"
             >
-              <div class="items-center inline-flex space-x-1 w-full">
+              <div class="items-center flex flex-1 space-x-1 w-full">
                 <p class="font-medium text-white text-sm">
                   {
                     isInterview && !intervieweeURL && (
@@ -132,7 +132,7 @@ const intervieweeAvatar = entry.data.interviewee_avatar;
                   <time datetime={date}>{timeAgoDate}</time>
                 </div>
               </div>
-              <div class="flex flex-col space-y-3 text-left mt-3 lg:mt-0 w-full">
+              <div class="flex flex-col space-y-3 text-left mt-3 lg:mt-0 bg-green-400">
                 <span class="isolate inline-flex rounded-2xl lg:ml-auto">
                   {
                     author?.data?.github_handle && (
