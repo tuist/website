@@ -22,7 +22,7 @@
     "@astrojs/mdx": "^0.19.6",
     "@astrojs/netlify": "^2.3.0",
     "@astrojs/partytown": "^1.2.3",
-    "@astrojs/preact": "^2.2.1",
+    "@astrojs/preact": "^3.0.0",
     "@astrojs/rss": "^3.0.0",
     "@astrojs/sitemap": "^3.0.0",
     "@astrolib/seo": "^0.6.0",
