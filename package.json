@@ -21,7 +21,7 @@
   "dependencies": {
     "@astrojs/mdx": "^0.19.6",
     "@astrojs/netlify": "^2.3.0",
-    "@astrojs/partytown": "^1.2.3",
+    "@astrojs/partytown": "^2.0.0",
     "@astrojs/preact": "^3.0.0",
     "@astrojs/rss": "^3.0.0",
     "@astrojs/sitemap": "^3.0.0",
