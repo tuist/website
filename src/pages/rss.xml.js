@@ -7,19 +7,19 @@ const parser = new MarkdownIt();
 
 export async function get() {
   const allPosts = await getCollection('posts');
-  const sponsorTuistHTML = `<h2>Support Tuist</h2>
+  const tuistCloudHTML = `<h2>Tuist Cloud  ☁️</h2>
 <p>
-${metadata["sponsor"]["paragraph"]}
+${metadata["cloud"]["paragraph"]}
 </p>
 <p>
-<a ref="${metadata["sponsor"]["link"]}">Sponsor Tuist</a>
+<a ref="${metadata["cloud"]["link"]}">Sponsor Tuist</a>
 </p>`
   return rss({
     title: 'Tuist | Blog',
     description: metadata.description,
     site: metadata.url,
     items: await Promise.all(allPosts.map(async (post) => {
-      const body = `${parser.render(post.body)}\n${sponsorTuistHTML}`
+      const body = `${parser.render(post.body)}\n${tuistCloudHTML}`
       const dateString = post.slug.split("/").slice(0, 3).join("/")
       const date = new Date(dateString)
       return {

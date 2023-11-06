@@ -2,8 +2,8 @@
     "title": "Tuist",
     "description": "Supercharge your Xcode development workflows",
     "url": "https://tuist.io",
-    "sponsor": {
-        "link": "https://github.com/sponsors/tuist",
-        "paragraph": "Tuist has become a vital part of organizations' development workflows, resulting in a rise in support and feature requests. Our current model of relying on volunteers' free time is unsustainable, and we are seeking funding to enable dedicated full-time contributions. Your sponsorship would be highly appreciated, as it will help us enhance Tuist and ensure its continued awesomeness."
+    "cloud": {
+        "link": "https://uo4iq9ni6fw.typeform.com/to/rO44izlj",
+        "paragraph": "Get ready to supercharge your Xcode projects with Tuist Cloud, the wizardly extension that's set to zap your build times into oblivion with binary caching, whisk you through the wonderland of selective building and testing, and serve up a smorgasbord of insights so actionable, they practically do the work for you. Wave goodbye to the drudgery and let Tuist Cloud sprinkle a little productivity pixie dust on your workflows. It’s not just smart; it’s a no-brainer for the savvy developer! 🚀✨"
     }
 }

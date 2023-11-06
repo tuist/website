@@ -1,6 +1,5 @@
 import { defineConfig } from "astro/config";
 import tailwind from "@astrojs/tailwind";
-import image from "@astrojs/image";
 import compressor from "astro-compressor";
 import sitemap from "@astrojs/sitemap";
 import mdx from "@astrojs/mdx";
@@ -24,9 +23,6 @@ export default defineConfig({
   integrations: [
     preact(),
     tailwind(),
-    image({
-      serviceEntryPoint: "@astrojs/image/sharp",
-    }),
     compressor(),
     sitemap(),
     mdx(),
