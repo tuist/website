@@ -12,8 +12,8 @@ dependencies:
     specifier: ^2.3.0
     version: 2.3.0(astro@2.7.0)
   '@astrojs/partytown':
-    specifier: ^1.2.3
-    version: 1.2.3
+    specifier: ^2.0.0
+    version: 2.0.2
   '@astrojs/preact':
     specifier: ^3.0.0
     version: 3.0.1(preact@10.16.0)
@@ -254,10 +254,10 @@ packages:
       esbuild: 0.15.18
     dev: false
 
-  /@astrojs/partytown@1.2.3:
-    resolution: {integrity: sha512-EYdeFfSEe5RTQsz+6Mxb9JLJWztZEOw0yjAxoDbntCdTkxDCnIwqRAhUwftx+zWsh+JIw1hOkLRNN8QOmwBiqA==}
+  /@astrojs/partytown@2.0.2:
+    resolution: {integrity: sha512-7AnY0W8mXiog5S1gEGefCNcvJSjxn/mfhr+ou1QH7QwqxtnIsS7mQ+ci5wDRDDbM5ipnEdQGHIxz2DAP2DXnXQ==}
     dependencies:
-      '@builder.io/partytown': 0.7.6
+      '@builder.io/partytown': 0.8.1
       mrmime: 1.0.1
     dev: false
 
@@ -594,8 +594,9 @@ packages:
       to-fast-properties: 2.0.0
     dev: false
 
-  /@builder.io/partytown@0.7.6:
-    resolution: {integrity: sha512-snXIGNiZpqjno3XYQN2lbBB+05hsQR/LSttbtIW1c0gmZ7Kh/DIo0YrxlDxCDulAMFPFM8J+4voLwvYepSj3sw==}
+  /@builder.io/partytown@0.8.1:
+    resolution: {integrity: sha512-p4xhEtQCPe8YFJ8e7KT9RptnT+f4lvtbmXymbp1t0bLp+USkNMTxrRMNc3Dlr2w2fpxyX7uA0CyAeU3ju84O4A==}
+    engines: {node: '>=18.0.0'}
     hasBin: true
     dev: false
 
