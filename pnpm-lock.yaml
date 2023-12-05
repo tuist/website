@@ -18,8 +18,8 @@ dependencies:
     specifier: ^3.0.0
     version: 3.0.1(preact@10.16.0)
   '@astrojs/rss':
-    specifier: ^3.0.0
-    version: 3.0.0
+    specifier: ^4.0.0
+    version: 4.0.0
   '@astrojs/sitemap':
     specifier: ^3.0.0
     version: 3.0.3
@@ -240,8 +240,8 @@ packages:
     dependencies:
       prismjs: 1.29.0
 
-  /@astrojs/rss@3.0.0:
-    resolution: {integrity: sha512-PMX8iqByk9gtOrusikten/oF5uHjOCZigL6RuXFBUu+xtdKQxXzfIohJ99V2haA4FJjVDyibDTGzXR81POBMxQ==}
+  /@astrojs/rss@4.0.0:
+    resolution: {integrity: sha512-Lu7xBVg2qe/+Ja3vJY9qprWDl5K2MjztQXekes4jCz/VcDrqRWLUiRQGLXOVqu/k9aORuj6yiU5hTcsiJb9zuA==}
     dependencies:
       fast-xml-parser: 4.3.2
       kleur: 4.1.5

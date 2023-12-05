@@ -22,7 +22,7 @@
     "@astrojs/netlify": "^3.0.0",
     "@astrojs/partytown": "^2.0.2",
     "@astrojs/preact": "^3.0.0",
-    "@astrojs/rss": "^3.0.0",
+    "@astrojs/rss": "^4.0.0",
     "@astrojs/sitemap": "^3.0.0",
     "@astrolib/seo": "^0.6.0",
     "@tailwindcss/forms": "^0.5.3",
