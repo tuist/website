@@ -32,7 +32,7 @@
     "astro-compressor": "^0.4.1",
     "astro-embed": "^0.6.0",
     "install": "^0.13.0",
-    "markdown-it": "^13.0.1",
+    "markdown-it": "^14.0.0",
     "mdx-embed": "^1.1.2",
     "preact": "^10.16.0",
     "sanitize-html": "^2.11.0",
