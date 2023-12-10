@@ -38,17 +38,17 @@ Create a `Tuist/Dependencies.swift` file like this:
 import ProjectDescription
 
 let dependencies = Dependencies(swiftPackageManager: .init([
-    Package.remote(url: "https://github.com/vapor/vapor.git", requirement: .upToNextMinor(from: "4.83.1"))
+    .remote(url: "https://github.com/vapor/vapor.git", requirement: .upToNextMinor(from: "4.83.1"))
 ], productTypes: [
     "Atomics": .framework
-]))
+]), platforms: Set(arrayLiteral: .macOS))
 ```
 
 > We are deprecating `Tuist/Dependencies.swift` in favor of `Tuist/Package.swift` for better compatibility with dependency updating tools. While we already support it, we recommend using the current interface until both provide a comparable developer experience.
 
 Changing the product type of `Atomics` to a dynamic framework is crucial; otherwise, the application will fail at runtime.
 
-Once you have the `Project.swift` and `Tuist/Dependencies.swift` files, run tuist generate to create and open an Xcode project from where you can run your app.
+Once you have the `Project.swift` and `Tuist/Dependencies.swift` files, run `tusit fetch` to fetch the dependencies, and `tuist generate` to create and open an Xcode project from where you can run your app.
 
 ## Binary Caching
 
