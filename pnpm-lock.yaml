@@ -9,8 +9,8 @@ dependencies:
     specifier: ^1.1.3
     version: 1.1.3(astro@3.4.3)
   '@astrojs/netlify':
-    specifier: ^3.0.0
-    version: 3.0.4(astro@3.4.3)
+    specifier: ^4.0.0
+    version: 4.0.0(astro@3.4.3)
   '@astrojs/partytown':
     specifier: ^2.0.2
     version: 2.0.2
@@ -197,10 +197,10 @@ packages:
       - supports-color
     dev: false
 
-  /@astrojs/netlify@3.0.4(astro@3.4.3):
-    resolution: {integrity: sha512-zVDr53WEAyrsAIvKNgi1DfER5Vq83/z8rT71r2Id/4ygw5dH04fPGjBroovJYMDXSip/rZQIvNa52A0iMFs7Ng==}
+  /@astrojs/netlify@4.0.0(astro@3.4.3):
+    resolution: {integrity: sha512-YnEIQKWyHDO7qyckYEQm2e0i167h2ZEzHeheCheAeZV7bEx1FpeaLNwBolzX8aib9i7ZBQmPcExfoTJANKqIjA==}
     peerDependencies:
-      astro: ^3.3.0
+      astro: ^3.0.0 || ^4.0.0
     dependencies:
       '@astrojs/underscore-redirects': 0.3.3
       '@netlify/functions': 2.3.0
