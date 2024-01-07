@@ -14,7 +14,7 @@ I'm happy to announce the release of Tuist 0.16.0; I'm going to talk through the
 
 Liking against system libraries and frameworks explicitly is sometimes necessary. This is a common use-case when using 3rd-Party frameworks such as Firebase.
 
-We've [added support](https://docs.tuist.io/usage-3-dependencies#system-libraries-and-frameworks-dependencies) for a new dependency type `sdk`.
+We've [added support](https://docs.old.tuist.io/usage-3-dependencies#system-libraries-and-frameworks-dependencies) for a new dependency type `sdk`.
 
 ```swift
 Target(
@@ -34,7 +34,7 @@ Target(
 
 ## Add input & output paths for target action 🎯
 
-If you use tools which need the ability to configure a pre-build or post-build script with input and output files, we now [have added support for both](https://docs.tuist.io/usage-2-manifest#target-action).
+If you use tools which need the ability to configure a pre-build or post-build script with input and output files, we now [have added support for both](https://docs.old.tuist.io/usage-2-manifest#target-action).
 
 ```swift
 .pre(
@@ -47,7 +47,7 @@ If you use tools which need the ability to configure a pre-build or post-build s
 
 ## Generate Tuist projects with _no_ build settings 🧬
 
-If you have a custom setup and don't want Tuist to provide any default build settings then [you are now able to specify](https://docs.tuist.io/usage-2-manifest#settings) `.none` for `settings` on `Project` or `Target`.
+If you have a custom setup and don't want Tuist to provide any default build settings then [you are now able to specify](https://docs.old.tuist.io/usage-2-manifest#settings) `.none` for `settings` on `Project` or `Target`.
 
 ```swift
 import ProjectDescription
