@@ -20,6 +20,9 @@ export default defineConfig({
     drafts: true,
   },
   site: "https://tuist.io",
+  vite: {
+    optimizeDeps: { exclude: ["sharp"] }
+  },
   integrations: [
     preact(),
     tailwind(),
