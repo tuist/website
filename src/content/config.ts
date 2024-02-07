@@ -28,13 +28,14 @@ const postsCollection = defineCollection({
     categories: z.array(z.string()),
     excerpt: z.string(),
     author: z.string(),
-    type: z.literal('release').optional()
+    type: z.literal('release').optional(),
+    og_image: z.string().optional()
   }).or(z.object({
     title: z.string(),
     categories: z.array(z.string()),
     excerpt: z.string(),
     interviewee_name: z.string(),
-    ogimage: z.string().optional(),
+    og_image: z.string().optional(),
     interviewee_url: z.string().optional(),
     interviewee_twitter_handle: z.string().optional(),
     interviewee_avatar: z.string(),
