@@ -142,7 +142,7 @@ export default function Calculator(
         aria-label="Sign up for testing"
         href="https://docs.tuist.io/documentation/tuist/tuist-cloud"
       >
-        Save costs
+        Save ${approx(moneySaved)}
       </a>
     </div>
   );
