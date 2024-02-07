@@ -3,7 +3,7 @@
     "description": "Supercharge your Xcode development workflows",
     "url": "https://tuist.io",
     "cloud": {
-        "link": "https://docs.next.tuist.io/documentation/tuist/get-started-as-contributor/",
+        "link": "https://docs.tuist.io/documentation/tuist/tuist-cloud",
         "paragraph": "Speed up your workflows (and save money) with binary caching and selective testing, and get actionable insights to ensure your projects grow healthily."
     }
 }
