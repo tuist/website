@@ -1,188 +1,166 @@
 /** @type {import('tailwindcss').Config} */
-const defaultTheme = require('tailwindcss/defaultTheme')
-const colors = require('tailwindcss/colors')
+const defaultTheme = require("tailwindcss/defaultTheme");
+const colors = require("tailwindcss/colors");
 module.exports = {
-  content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}', './public/logos/**/*.svg'],
+  content: [
+    "./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}",
+    "./public/logos/**/*.svg",
+  ],
   theme: {
-     animation: {
-        marquee: 'marquee 60s linear infinite',
-        marqueefast: 'marquee 10s linear infinite',
-        marquee2: 'marquee2 60s linear infinite',
-        'fade-in': 'fade-in 0.5s linear forwards',
+    animation: {
+      "infinite-scroll": "infinite-scroll 25s linear infinite",
+    },
+    keyframes: {
+      "infinite-scroll": {
+        from: { transform: "translateX(0)" },
+        to: { transform: "translateX(-100%)" },
       },
-      keyframes: {
-
-        marquee: {
-          '0%': { transform: 'translateX(0%)' },
-          '100%': { transform: 'translateX(-100%)' },
-        },
-        marquee2: {
-          '0%': { transform: 'translateX(100%)' },
-          '100%': { transform: 'translateX(0%)' },
-        },
-
-        'fade-in': {
-          from: {
-            opacity: 0,
-          },
-          to: {
-            opacity: 1,
-          },
-        },
-        scroller3: {
-          '100%': {
-            transform: 'translateY(-50%)',
-          },
-        },
-        
-      },
+    },
     fontSize: {
       xs: [
-        '0.75rem',
+        "0.75rem",
         {
-          lineHeight: '1rem',
+          lineHeight: "1rem",
         },
       ],
       sm: [
-        '0.875rem',
+        "0.875rem",
         {
-          lineHeight: '1.5rem',
+          lineHeight: "1.5rem",
         },
       ],
       base: [
-        '1rem',
+        "1rem",
         {
-          lineHeight: '1.75rem',
+          lineHeight: "1.75rem",
         },
       ],
       lg: [
-        '1.125rem',
+        "1.125rem",
         {
-          lineHeight: '2rem',
+          lineHeight: "2rem",
         },
       ],
       xl: [
-        '1.25rem',
+        "1.25rem",
         {
-          lineHeight: '2rem',
+          lineHeight: "2rem",
         },
       ],
-      '2xl': [
-        '1.5rem',
+      "2xl": [
+        "1.5rem",
         {
-          lineHeight: '2rem',
+          lineHeight: "2rem",
         },
       ],
-      '3xl': [
-        '2rem',
+      "3xl": [
+        "2rem",
         {
-          lineHeight: '2.5rem',
+          lineHeight: "2.5rem",
         },
       ],
-      '4xl': [
-        '2.5rem',
+      "4xl": [
+        "2.5rem",
         {
-          lineHeight: '3.5rem',
+          lineHeight: "3.5rem",
         },
       ],
-      '5xl': [
-        '3rem',
+      "5xl": [
+        "3rem",
         {
-          lineHeight: '3.5rem',
+          lineHeight: "3.5rem",
         },
       ],
-      '6xl': [
-        '3.75rem',
+      "6xl": [
+        "3.75rem",
         {
-          lineHeight: '1',
+          lineHeight: "1",
         },
       ],
-      '7xl': [
-        '4.5rem',
+      "7xl": [
+        "4.5rem",
         {
-          lineHeight: '1.1',
+          lineHeight: "1.1",
         },
       ],
-      '8xl': [
-        '6rem',
+      "8xl": [
+        "6rem",
         {
-          lineHeight: '1',
+          lineHeight: "1",
         },
       ],
-      '9xl': [
-        '8rem',
+      "9xl": [
+        "8rem",
         {
-          lineHeight: '1',
+          lineHeight: "1",
         },
       ],
     },
     extend: {
       backgroundImage: {
-        'gradient-conic': 'conic-gradient(var(--tw-gradient-stops))',
+        "gradient-conic": "conic-gradient(var(--tw-gradient-stops))",
       },
       keyframes: {
         disco: {
-          '0%': { transform: 'translateY(-50%) rotate(0deg)' },
-          '100%': { transform: 'translateY(-50%) rotate(360deg)' },
+          "0%": { transform: "translateY(-50%) rotate(0deg)" },
+          "100%": { transform: "translateY(-50%) rotate(360deg)" },
         },
       },
       animation: {
-        disco: 'disco 1.5s linear infinite',
+        disco: "disco 1.5s linear infinite",
       },
-
-
 
       colors: {
         blue: {
-         50: "#E8E5FF",
-      100: "#D1CCFF",
-      200: "#A399FF",
-      300: "#7566FF",
-      400: "#4733FF",
-      500: "#1A00FF",
-      600: "#1400CC",
-      700: "#0F0099",
-      800: "#0A0066",
-      900: "#050033"
+          50: "#E8E5FF",
+          100: "#D1CCFF",
+          200: "#A399FF",
+          300: "#7566FF",
+          400: "#4733FF",
+          500: "#1A00FF",
+          600: "#1400CC",
+          700: "#0F0099",
+          800: "#0A0066",
+          900: "#050033",
         },
         sky: {
-          50: '#391D9E',
-          100: '#4121B1',
-          200: '#4926C5',
-          300: '#512BD8',
-          400: '#5930EC',
-          500: '#6236FF',
-          600: '#674DFF',
-          700: '#7064FF',
-          800: '#7B7BFF',
-          900: '#9299FF',
+          50: "#391D9E",
+          100: "#4121B1",
+          200: "#4926C5",
+          300: "#512BD8",
+          400: "#5930EC",
+          500: "#6236FF",
+          600: "#674DFF",
+          700: "#7064FF",
+          800: "#7B7BFF",
+          900: "#9299FF",
         },
         vulcan: {
-          '50': '#BACDD5',
-          '100': '#AEC2CE',
-          '200': '#94ACBE',
-          '300': '#7B95AF',
-          '400': '#617CA0',
-          '500': '#526587',
-          '600': '#424F6D',
-          '700': '#333A54',
-          '800': '#23273A',
-          '900': '#141521',
+          50: "#BACDD5",
+          100: "#AEC2CE",
+          200: "#94ACBE",
+          300: "#7B95AF",
+          400: "#617CA0",
+          500: "#526587",
+          600: "#424F6D",
+          700: "#333A54",
+          800: "#23273A",
+          900: "#141521",
         },
       },
       borderRadius: {
-        '4xl': '2rem',
-        '5xl': '3rem',
-        '6xl': '5rem',
+        "4xl": "2rem",
+        "5xl": "3rem",
+        "6xl": "5rem",
       },
       fontFamily: {
-        sans: ['Inter', ...defaultTheme.fontFamily.sans],
+        sans: ["Inter", ...defaultTheme.fontFamily.sans],
       },
     },
   },
   plugins: [
-    require('@tailwindcss/typography'),
-    require('@tailwindcss/line-clamp'),
-    require('@tailwindcss/forms'),
+    require("@tailwindcss/typography"),
+    require("@tailwindcss/line-clamp"),
+    require("@tailwindcss/forms"),
   ],
-}
+};
