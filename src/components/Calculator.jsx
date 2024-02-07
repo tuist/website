@@ -1,7 +1,9 @@
 import { useState } from "preact/hooks";
 import approx from "approximate-number";
 
-export default function Calculator({showTitle, showDescription} = {showTitle: true, showDescription: true}) {
+export default function Calculator(
+  { showTitle, showDescription } = { showTitle: true, showDescription: true }
+) {
   const [developersCount, setDevelopersCount] = useState(20);
   const [buildTimeSaved, setBuildTimeSaved] = useState(70);
   const [averageBuildTime, setAverageBuildTime] = useState(10);
@@ -10,17 +12,47 @@ export default function Calculator({showTitle, showDescription} = {showTitle: tr
   const [localBuilds, setLocalBuilds] = useState(20);
   const [ciBuilds, setCIBuilds] = useState(20);
 
-  const ciMoneySaved = ciBuildCost * ciBuilds * averageBuildTime * developersCount * 22 * 12 * buildTimeSaved / 100;
-  const localMoneySaved = (averageMonthlySalary / 22 / 8 / 60 /* Developer price per minute */) * localBuilds * averageBuildTime * developersCount * 22 * 12 * buildTimeSaved / 100;
+  const ciMoneySaved =
+    (ciBuildCost *
+      ciBuilds *
+      averageBuildTime *
+      developersCount *
+      22 *
+      12 *
+      buildTimeSaved) /
+    100;
+  const localMoneySaved =
+    ((averageMonthlySalary / 22 / 8 / 60) /* Developer price per minute */ *
+      localBuilds *
+      averageBuildTime *
+      developersCount *
+      22 *
+      12 *
+      buildTimeSaved) /
+    100;
   const moneySaved = ciMoneySaved + localMoneySaved;
-  const timeSaved = (ciBuilds + localBuilds) * developersCount * averageBuildTime * 22 * 12 * buildTimeSaved / 100 / 60;
+  const timeSaved =
+    ((ciBuilds + localBuilds) *
+      developersCount *
+      averageBuildTime *
+      22 *
+      12 *
+      buildTimeSaved) /
+    100 /
+    60;
 
   return (
     <div>
-      { showTitle && <h3 class="text-2xl text-white mb-5 font-bold">ROI Calculator</h3>}
-      {showDescription && <p class="text-slate-400 text-sm flex-1 mb-5">
-      The calculator presumes developers can't multitask during a build, whether locally or in CI. This may not always hold true, so use the saved time as a guideline and adjust accordingly.
-      </p>}
+      {showTitle && (
+        <h3 class="text-2xl text-white mb-5 font-bold">ROI Calculator</h3>
+      )}
+      {showDescription && (
+        <p class="text-slate-400 text-sm flex-1 mb-5">
+          The calculator presumes developers can't multitask during a build,
+          whether locally or in CI. This may not always hold true, so use the
+          saved time as a guideline and adjust accordingly.
+        </p>
+      )}
       <div class="grid grid-rows-3 grid-cols-2 grid-flow-row gap-8">
         <Slider
           min="1"
@@ -88,29 +120,36 @@ export default function Calculator({showTitle, showDescription} = {showTitle: tr
       </div>
       <div class="grid grid-cols-2 mt-10">
         <div class="flex flex-col gap-y-3 ">
-            <div class="uppercase text-slate-500 text-xs">
+          <div class="uppercase text-slate-500 text-xs">
             Annual Developer Hours Saved
-            </div>
-            <div class="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-br from-indigo-300 to-cyan-500">
+          </div>
+          <div class="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-br from-indigo-300 to-cyan-500">
             {approx(timeSaved)} h/year
-            </div>
+          </div>
         </div>
 
         <div class="flex flex-col gap-y-3">
-            <div class="uppercase text-slate-500 text-xs">
+          <div class="uppercase text-slate-500 text-xs">
             Annual R&D Cost Recapture
-            </div>
-            <div class="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-br from-indigo-300 to-cyan-500">
+          </div>
+          <div class="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-br from-indigo-300 to-cyan-500">
             ${approx(moneySaved)}
-            </div>
+          </div>
         </div>
       </div>
+      <a
+        className="inline-flex text-white visited:text-white items-center justify-center w-full px-6 py-3 text-center text-white hover:to-indigo-400 duration-200 bg-gradient-to-r from-sky-400 to-indigo-500 font-medium rounded-xl hover:text-white focus:outline-none focus-visible:outline-black focus-visible:ring-black mt-8 no-underline"
+        aria-label="Sign up for testing"
+        href="https://docs.tuist.io/documentation/tuist/tuist-cloud"
+      >
+        Save costs
+      </a>
     </div>
   );
 }
 
 function addDots(number) {
-    return number.toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1.")
+  return number.toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1.");
 }
 
 function Slider({
