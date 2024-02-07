@@ -1,7 +1,7 @@
 import { useState } from "preact/hooks";
 import approx from "approximate-number";
 
-export default function Calculator() {
+export default function Calculator({showTitle, showDescription} = {showTitle: true, showDescription: true}) {
   const [developersCount, setDevelopersCount] = useState(20);
   const [buildTimeSaved, setBuildTimeSaved] = useState(70);
   const [averageBuildTime, setAverageBuildTime] = useState(10);
@@ -17,10 +17,10 @@ export default function Calculator() {
 
   return (
     <div>
-      <h3 class="text-2xl text-white mb-5 font-bold">ROI Calculator</h3>
-      <p class="text-slate-400 text-sm flex-1 mb-5">
+      { showTitle && <h3 class="text-2xl text-white mb-5 font-bold">ROI Calculator</h3>}
+      {showDescription && <p class="text-slate-400 text-sm flex-1 mb-5">
       The calculator presumes developers can't multitask during a build, whether locally or in CI. This may not always hold true, so use the saved time as a guideline and adjust accordingly.
-      </p>
+      </p>}
       <div class="grid grid-rows-3 grid-cols-2 grid-flow-row gap-8">
         <Slider
           min="1"
