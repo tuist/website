@@ -9,6 +9,7 @@ import { getCollection } from "astro:content";
 const date = entry.slug.split("/").slice(0, 3).join("-");
 const timeAgoDate = format(date, "en_US");
 const title = `${entry.data.title} - Tuist`;
+const ogImage = entry.data.ogimage;
 const allAuhors = await getCollection("authors");
 const author = allAuhors.find((author) => author.id === entry.data.author);
 const { Content } = await entry.render();
@@ -28,7 +29,7 @@ const intervieweeAvatar = entry.data.interviewee_avatar;
     description: entry.data.excerpt,
     images: [
       {
-        url: `${metadata.url}/og-images/blog/${entry.slug}.jpg`,
+        url: ogImage ?`${metadata.url}${ogImage}` : `${metadata.url}/og-images/blog/${entry.slug}.jpg`,
         alt: "Tuist logo",
         type: "image/jpg",
         height: 630,

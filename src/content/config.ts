@@ -34,6 +34,7 @@ const postsCollection = defineCollection({
     categories: z.array(z.string()),
     excerpt: z.string(),
     interviewee_name: z.string(),
+    ogimage: z.string().optional(),
     interviewee_url: z.string().optional(),
     interviewee_twitter_handle: z.string().optional(),
     interviewee_avatar: z.string(),
