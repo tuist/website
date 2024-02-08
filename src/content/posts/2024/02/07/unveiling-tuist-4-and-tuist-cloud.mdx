@@ -72,6 +72,12 @@ We have more ideas to tackle challenges, but our initial focus is on getting org
 
 If you're eager to begin using Tuist Cloud, we recommend [reviewing our documentation](https://docs.tuist.io/documentation/tuist/tuist-cloud) and ensuring that `tuist cache` runs successfully with your Xcode project. You may need to make some adjustments to eliminate implicit configurations that could potentially hinder reliable caching.
 
+> At Lapse speed is our top priority, Tuist Cloud has accelerated our development feedback loop massively. We mostly try to ship to the App Store every single day, so ensuring fast iteration speeds for feature development is of utmost importance.
+Our average build time for an internal QA build or for our PR workflows used to be around 30 minutes on the CI, and when we added macros to the project this increased to 53 minutes.
+Since we started using Tuist Cloud with our modularised codebase (220 modules including dependencies) we’ve seen builds as quick as 8 minutes, with the average build time now being 13 minutes with macros!
+This has also dramatically impacted local development, we now no longer need to rebuild all those modules we’re not working on, which has resulted in much faster iteration speeds for the whole iOS team. Head of iOS at Lapse - Alex Little
+ 
+
 ## Tuist 4
 
 In addition to Tuist Cloud, we are introducing a major new release of Tuist, Tuist 4. With this release, we are placing a strong emphasis on sustainability.
