@@ -18,7 +18,7 @@ export async function getStaticPaths() {
   return paths;
 }
 
-export const get = async function get({ params, request }) {
+export const GET = async function get({ params, request }) {
   const moduleId = new URL(request.url).pathname
     .replace("/og-images", "../../../content")
     .replace("/blog/", "/posts/")

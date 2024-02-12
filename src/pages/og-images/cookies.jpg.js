@@ -1,8 +1,8 @@
 import ogImage from "../../utils/og-image.js";
 
-export const get = async function get() {
+export const GET = async function get() {
   const png = await ogImage({
-    title: "Cookie Policy",
+    title: "Tuist Cloud Cookie Policy",
     header: "Tuist Cloud",
     footer: "tuist.io · @tuistio",
   });

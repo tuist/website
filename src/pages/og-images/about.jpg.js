@@ -2,9 +2,9 @@ import ogImage from "../../utils/og-image.js";
 
 export const GET = async function get() {
   const png = await ogImage({
-    title: "Discover engaging stories and expert insights on our blog",
-    header: "Tuist Blog",
-    footer: "tuist.io/blog · @tuistio",
+    title: "About Tuist GmbH",
+    header: "Tuist Cloud",
+    footer: "tuist.io · @tuistio",
   });
   return new Response(png, {
     headers: {
