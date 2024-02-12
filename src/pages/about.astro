@@ -1,0 +1,36 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import About from "../components/Infopages/About.astro";
+import { AstroSeo } from "@astrolib/seo";
+import metadata from '../utils/metadata.json';
+---
+
+<AstroSeo
+title="About Tuist GmbH"
+description=`Tuist GmbH helps organizations scale the development of apps with Apple's tooling by providing a unified and accessible toolchain.`,
+canonical={metadata.url}
+openGraph={{
+  url: metadata.url,
+  title: "About Tuist GmbH",
+  description: `Tuist GmbH helps organizations scale the development of apps with Apple's tooling by providing a unified and accessible toolchain.`,
+  images: [
+    {
+      url: `${metadata.url}/og-images/terms.jpg`,
+      alt: "About Tuist GmbH",
+      type: "image/jpg",
+      height: 630,
+      width: 1200
+    },
+  ],
+  site_name: "Tuist",
+}}
+twitter={{
+  handle: "@tuistio",
+  site: "@tuistio",
+  cardType: "summary_large_image",
+}}
+/>
+
+<BaseLayout>
+  <About />
+</BaseLayout>
