@@ -1,0 +1,36 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Longevity from "../components/Infopages/Longevity.astro";
+import { AstroSeo } from "@astrolib/seo";
+import metadata from '../utils/metadata.json';
+---
+
+<AstroSeo
+title="Longevity Manifesto"
+description=`Tuist is designed for the long-term and we want to make sure that it stays that way. This document is a manifesto that outlines how we plan to achieve that.`,
+canonical={metadata.url}
+openGraph={{
+  url: metadata.url,
+  title: "Longevity Manifesto",
+  description: `Tuist is designed for the long-term and we want to make sure that it stays that way. This document is a manifesto that outlines how we plan to achieve that.`,
+  images: [
+    {
+      url: `${metadata.url}/og-images/about.jpg`,
+      alt: "Longevity Manifesto",
+      type: "image/jpg",
+      height: 630,
+      width: 1200
+    },
+  ],
+  site_name: "Tuist",
+}}
+twitter={{
+  handle: "@tuistio",
+  site: "@tuistio",
+  cardType: "summary_large_image",
+}}
+/>
+
+<BaseLayout>
+  <Longevity />
+</BaseLayout>
