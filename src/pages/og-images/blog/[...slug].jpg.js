@@ -4,26 +4,18 @@ import { getCollection } from "astro:content";
 const allAuthors = await getCollection("authors");
 
 export async function getStaticPaths() {
-  const paths = await Promise.all(
-    Object.entries(posts).map(async ([_, getPost]) => {
-      const post = await getPost();
-      const slug = `${post.url}`.replace("src/content/", "").replace("posts/", "").replace(".mdx", "");
-      return {
-        params: {
-          slug: slug,
-        },
-      };
-    })
-  );
-  return paths;
+  return (await getCollection("posts")).map((post) => {
+    return {
+      params: {
+        slug: post.slug,
+      },
+      props: { id: post.id }
+    }
+  })
 }
 
-export const GET = async function get({ params, request }) {
-  const moduleId = new URL(request.url).pathname
-    .replace("/og-images", "../../../content")
-    .replace("/blog/", "/posts/")
-    .replace(".jpg", ".mdx");
-
+export const GET = async function get({ params, request, props }) {
+  const moduleId = `../../../content/posts/${props.id}`
   const postModule = await posts[moduleId]();
   let footer = ""
   if (postModule.frontmatter.type === 'release') {
