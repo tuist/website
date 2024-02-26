@@ -1,0 +1,106 @@
+---
+title: "Sustainability report - February 2024"
+categories: ["tuist", "release", "cloud"]
+excerpt: "hts of this release."
+author: pepicrft
+---
+
+
+Earlier this month, we [unveiled Tuist 4 and Tuist Cloud](/blog/2024/02/07/unveiling-tuist-4-and-tuist-cloud), along with our plans to focus on the long-term sustainability of the project. When organizations choose Tuist, they are trusting us to provide stable and reliable tooling that, very importantly, lasts. We acknowledge that responsibility and want to ensure that you can trust us to deliver on that promise. To be accountable, we decided to start publishing monthly sustainability reports where we share our progress and the challenges we face. This is the first of those reports, and we hope you find it useful. We'll iterate on it based on your feedback, which you can share with us on [GitHub](https://github.com/tuist/tuist/discussions/categories/general).
+
+## Contributors distribution
+
+A reliable measure of a project's sustainability is its ["bus factor."](https://en.wikipedia.org/wiki/Bus_factor) Many open-source projects struggle with a low bus factor, indicating a heavy reliance on one or a few individuals. Should anything happen to them or should they need to step away from the project due to personal reasons, organizations may find themselves in a precarious position. As depicted in the table below, which illustrates the contributions from the last month, the contributions are heavily concentrated among a few individuals, which is less than ideal. It's worth noting that [@pepicrft](https://github.com/pepicrft) is dedicated to working full-time on the project, which accounts for the contribution percentage exceeding 50%.
+
+| Person | Percentage of Contributions | Number of Contributions |
+|----------|----------------------------|-------------------------|
+| [pepicrft](https://github.com/pepicrft) | 57.26% | 67 |
+| [fortmarek](https://github.com/fortmarek) | 23.08% | 27 |
+| [danyf90](https://github.com/danyf90) | 9.4% | 11 |
+| [waltflanagan](https://github.com/waltflanagan) | 2.56% | 3 |
+| [anlaital-oura](https://github.com/anlaital-oura) | 1.71% | 2 |
+| [cpisciotta](https://github.com/cpisciotta) | 1.71% | 2 |
+| [dxmvsh](https://github.com/dxmvsh) | 0.85% | 1 |
+| [svenmuennich](https://github.com/svenmuennich) | 0.85% | 1 |
+| [apps4everyone](https://github.com/apps4everyone) | 0.85% | 1 |
+
+
+To enhance the bus factor, **we will begin dedicating a few hours each week to mentoring and pairing with new contributors**, anticipating improvements in March. Additionally, we will have a second person working full-time on Tuist Cloud and Tuist, which should further enhance the situation. If your organization utilizes Tuist and is interested in allocating some time to contribute, please [reach out to us](mailto:contact@tuist.io). We will collaborate with you to facilitate your involvement. In exchange, we can provide you with a platform to showcase your work and the chance to shape the direction of the project.
+
+## Contribution activity
+
+Organizations seek to rely on projects that are actively maintained, where issues are promptly addressed, and new requirements are met. And let us share something with you... Tuist is currently more active than ever and will become even more so with additional people working on it full-time. We've merged a total of 25 pull requests and closed 30 issues. **That's nearly a pull request per day!**
+
+#### New features and improvements
+- [#5983](https://github.com/tuist/tuist/pull/5983): Add support for the new `package` access modifier
+- [#5963](https://github.com/tuist/tuist/pull/5963): Support visionOS from the default asset templates to synthesize resources
+- [#5956](https://github.com/tuist/tuist/pull/5956): Improve Tuist project declaration
+- [#5954](https://github.com/tuist/tuist/pull/5954): Add missing `region` parameter in static helper `RunActionOptions`.`options`
+- [#5922](https://github.com/tuist/tuist/pull/5922): Improve performance by replacing globing with FileManager when finding resource files
+- [#5947](https://github.com/tuist/tuist/pull/5947): Make Tuist/Package.swift a valid location for the SPM manifest
+
+#### Fixes
+- [#5813](https://github.com/tuist/tuist/pull/5813): avoid infinite loop caused by symbolic links 
+- [#5979](https://github.com/tuist/tuist/pull/5979): Prune targets with no destinations after platform narrowing
+- [#5967](https://github.com/tuist/tuist/pull/5967): Add support for `.pch` headers
+- [#5929](https://github.com/tuist/tuist/pull/5929): Fix runtime crash when using Obj-C dependencies
+- [#5932](https://github.com/tuist/tuist/pull/5932): Fix integration of Objective C dependencies with resources
+- [#5931](https://github.com/tuist/tuist/pull/5931): Fix external platform narrowing when there is a dependency platform condition
+- [#5957](https://github.com/tuist/tuist/pull/5957): Fix integration of local packages with Objective C targets
+- [#5946](https://github.com/tuist/tuist/pull/5946): Fix DEFINES_MODULE warning
+- [#5945](https://github.com/tuist/tuist/pull/5945): Fix integration of SPM dependencies with resources
+- [#5943](https://github.com/tuist/tuist/pull/5943): Fix `main` unit tests failing due to missing fixtures
+- [#5859](https://github.com/tuist/tuist/pull/5859): Add `Mockable` macro
+- [#5948](https://github.com/tuist/tuist/pull/5948): Fix failing tuist install when a package is removed
+- [#5935](https://github.com/tuist/tuist/pull/5935): Fix integration of AppCenter
+
+#### Housekeeping
+- [#5913](https://github.com/tuist/tuist/pull/5913): Migrate CI pipelines to Codemagic
+
+#### Dependency updates
+- [#5996](https://github.com/tuist/tuist/pull/5996): Upgrade to xcbeautify 1.6.0
+- [#5993](https://github.com/tuist/tuist/pull/5993): Upgrade to xcbeautify 1.5.0
+
+#### Removals
+- [#5995](https://github.com/tuist/tuist/pull/5995): Remove version command
+- [#5953](https://github.com/tuist/tuist/pull/5953): Remove PackageSettings platforms property
+- [#5938](https://github.com/tuist/tuist/pull/5938): Remove mentions of tuist-cloud
+
+## Tuist Cloud
+
+[Tuist Cloud](/cloud) is a complementary service for Tuist users who require large-scale optimizations. Its primary aim is to establish a source of revenue that can be reinvested into Tuist by funding full-time contributors. The response has been exceedingly positive. One organization has already become a customer, and we are in discussions with five other large enterprises for onboarding. We anticipate that by the end of the year, we'll have a team of two to three people working full-time on Tuist, which will significantly benefit the project.
+
+In addition to binary caching, selective testing, and analytics, we've been contemplating ways to reduce the strong dependency between Tuist Cloud and Tuist projects by extending the service capabilities to ecosystems like [Swift Packages](https://swiftpackageindex.com/), [React Native](https://reactnative.dev/), and [Flutter](https://flutter.dev/). The technology we've developed is adaptable to any ecosystem that employs Xcode projects at its core, not just those defined by Tuist. Who knows? Perhaps in the future, we'll need to devise a more generic name for Tuist Cloud.
+
+In future reports, we may enhance the level of transparency surrounding Tuist Cloud, but for now, we're maintaining a high-level overview. If you have any questions, please don't hesitate to reach out to us.
+
+## Sponsorships
+
+Tuist receives donations via [OpenCollective](https://opencollective.com/tuistapp) and [GitHub Sponsors](https://github.com/sponsors/tuist), which we utilize to sponsor other developers playing a crucial role in the industry, compensate developers through our bounty program, and cover some Tuist service costs. In February, our sponsors contributed up to $2474 USD. [Monday.com](https://monday.com/), [American Express](https://github.com/americanexpress), [lapsedan](https://github.com/lapsedan), [GetStream](https://github.com/GetStream), [Emerge Tools](https://github.com/EmergeTools), [Martin Jeret](https://github.com/martinjeret), [MacPaw](https://github.com/MacPaw), [GetToSet](https://github.com/GetToSet), [Matt Massicotte](https://github.com/mattmassicotte), [freak4pc](https://github.com/freak4pc), [muuki](https://github.com/muukii), [MFB Technologies Inc.](https://github.com/MFB-Technologies-Inc), [MatyasKriz](https://github.com/MatyasKriz), [SD10](https://github.com/SD10), and [csjones](https://github.com/csjones). You are all amazing! Thank you for your support.
+
+We are using sponsorships money to donate to the following open-source projects and contributors:
+- [SwiftFormat](https://opencollective.com/swiftformat): 100 USD/Month
+- [Marcin Krzyzanowski](https://github.com/krzyzanowskim): 10 USD/Month
+- [Krzysztof Zabłocki](https://github.com/krzysztofzablocki): 10 USD/Month
+- [BrightDigit](https://github.com/brightdigit): 16 USD/Month
+- [Gwendal Roué](https://github.com/groue): 20 USD/Month
+- [Thomas Ricouard](https://github.com/Dimillian): 10 USD/Month
+- [Gwynne Raskind](https://github.com/gwynne): 10 USD/Month
+
+This month, we plan to double those amounts and seek out more open-source developers who are making a positive impact on the community. If you have any names in mind, please send them our way.
+
+A portion of the sponsorship funds also goes toward funding our bounty program. However, the program is not as active as we'd like it to be. Our assumption is that we haven't marketed it enough, and therefore, developers are unaware of its existence. We've been experimenting with [Polar](https://polar.sh) as a platform to help us establish, manage, and promote the bounties. We are still in the early stages of the program, but we hope to have more news to share in the next report.
+
+## External contributions
+
+In addition to addressing our sustainability challenges, we are committed to assisting other open-source projects and developers. Supporting the community is ingrained in our DNA because the community is the driving force behind Tuist's existence. While our time has been limited, we have initiated efforts to enhance Mise, the tool we recommend as the default installer for Tuist, by adding support for a Swift backend. What does this mean for Mise users? They will soon be able to install Swift Packages that represent command-line interfaces (CLIs). If you're familiar with [Mint](https://github.com/yonaskolb/Mint), think of it as bringing Mint's capabilities to Mise. We anticipate having more news to share in the next report.
+
+## Mood
+
+Let's not forget that behind software, there are people and emotions that drive the project, and therefore, their state is crucial for its success. February began with some uncertainty surrounding the release of Tuist and Tuist Cloud. However, upon witnessing the positive feedback from the community, we became greatly energized and motivated to continue advancing the project. Having someone dedicated full-time to the project, with another soon to follow, means a significant amount of mental energy available to propel the project into new domains and challenges. This has resulted in a very positive mood within the team, with many ideas brewing for what we can accomplish.
+
+In March, [Codemagic](https://codemagic.io) will sponsor a tour in Asia to attend three major conferences in Korea, Japan, and China. We are tremendously excited to be present and meet the community in person. Not long ago, we realized that we have a sizable user community in Asia, and we are eager to meet them and gain a better understanding of their needs.
+
+## Closing thoughts
+
+Having the opportunity to work towards turning Tuist into a financially sustainable project is a dream come true. We are grateful for the support we've received from the community, and we are committed to delivering on the trust you've placed in us. We are aware that we have a long way to go, but we are confident that we are on the right path. We are excited to share our progress with you in the next report. If you have any questions or feedback, please don't hesitate to [reach out to us](mailto:contact@tuist.io). We are here to listen and learn from you.
