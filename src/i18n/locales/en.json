@@ -1,4 +1,25 @@
 {
-    "foo": "bar",
-    "hello": "world"
+    "nav.blog": "Blog",
+    "nav.docs": "Docs",
+    "nav.slack": "Slack",
+    "nav.github": "GitHub",
+    "nav.telegram": "Telegram",
+    "nav.cloud": "Tuist Cloud",
+    "home.hero.tuist": "Tuist",
+    "home.hero.slogan": "Effortless Xcode Project Management",
+    "home.hero.description": "Effortlessly build, test, and deploy your Xcode projects with Tuist's revolutionary automation and project management features.",
+    "home.hero.proudly_sponsored": "Proudly sponsored by",
+    "home.hero.get_started": "Install Tuist",
+    "home.companies": "Tuist powers impactful organizations building game-changing apps",
+    "home.tuist_features.subtitle": "Xcode project management",
+    "home.tuist_features.slogan": "Experience clean, optimized, and conflict-free Xcode projects for effortless maintenance and streamlined development",
+    "home.tuist_features.zero_conflicts.title": "Zero Git conflicts",
+    "home.tuist_features.zero_conflicts.description": "By generating projects on demand, you can avoid the need to include them in the Git repository, eliminating the risk of merge conflicts.",
+    "home.tuist_features.focused_projects.title": "Focused projects",
+    "home.tuist_features.focused_projects.description": "Simply specify your focused targets, and we'll perform a thorough tree-shaking of the project graph. The result? A fast Xcode experience.",
+    "home.tuist_features.linting.title": "Linting",
+    "home.tuist_features.linting.description": "Frustrating errors that would otherwise be caught at build time are now caught at generation time.",
+    "home.tuist_features.swift_dsl.title": "Swift-based DSL",
+    "home.tuist_features.swift_dsl.description": "Leverage Swift and Xcode to describe projects, create custom abstractions, and easily share code components."
+
 }

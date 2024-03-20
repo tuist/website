@@ -2,6 +2,10 @@
 import { Code } from "astro/components";
 import Verticalgrid from "../assets/VerticalGrid.astro";
 import { Companies } from "../Companies";
+import {useTranslations, getLangFromUrl} from "../../i18n/utils"
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
 <section aria-labelledby="Featuretwo" id="Featuretwo " class="relative">
@@ -15,15 +19,14 @@ import { Companies } from "../Companies";
       <div>
         <span
           class="text-transparent bg-clip-text font-medium tracking-widest bg-gradient-to-r from-cyan-400 via-teal-500 to-indigo-500 text-xs uppercase"
-          >Tuist
+          >{t('home.hero.tuist')}
         </span><p class="text-3xl mt-8 font-normal text-white">
-          Supercharge your Xcode development workflows
+          {t('home.hero.slogan')}
         </p>
         <p class="max-w-2xl mt-4 text-lg text-slate-400">
-          Effortlessly build, test, and deploy your Xcode projects with Tuist's
-          revolutionary automation and project management features.
+          {t('home.hero.description')}
         </p>
-        <p class="max-w-2xl mt-4 text-lg text-white">Proudly sponsored by</p>
+        <p class="max-w-2xl mt-6 text-sm text-slate-200 font-semibold uppercase">{t('home.hero.proudly_sponsored')}</p>
         <Companies client:visible />
 
         <div
@@ -33,7 +36,7 @@ import { Companies } from "../Companies";
             <a
               class="flex-0 inline-flex items-center justify-center px-6 py-1 text-center text-white hover:to-indigo-400 duration-200 bg-gradient-to-r from-sky-400 to-indigo-500 font-medium hover:bg-white/5 rounded-xl hover:text-white focus:outline-none focus-visible:outline-black focus-visible:ring-black"
               href="https://docs.tuist.io/guide/introduction/installation"
-              >Install Tuist
+              >{t('home.hero.get_started')}
             </a>
             <a
               class="flex-0"
@@ -55,79 +58,6 @@ import { Companies } from "../Companies";
               >Users &nbsp; &nbsp; &rarr;
             </a>
           </div> -->
-        </div>
-        <div class="mt-12 gap-3">
-          <ul class="list-none" role="list">
-            <li>
-              <div class="relative py-2 flex items-start">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke-width="1.5"
-                  stroke="currentColor"
-                  class="w-5 h-5 text-cyan-400"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-                  ></path>
-                </svg>
-                <p class="ml-2 text-sm leading-6 text-slate-400">
-                  <strong class="font-semibold text-slate-100"
-                    >Zero Git conficts</strong
-                  > — in .pbxproj files.
-                </p>
-              </div>
-            </li>
-            <li>
-              <div class="relative py-2 flex items-start">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke-width="1.5"
-                  stroke="currentColor"
-                  class="w-5 h-5 text-cyan-400"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-                  ></path>
-                </svg>
-                <p class="ml-2 text-sm leading-6 text-slate-400">
-                  <strong class="font-semibold text-slate-100"
-                    >Faster Xcode
-                  </strong> — with focused projects.
-                </p>
-              </div>
-            </li>
-            <li>
-              <div class="relative py-2 flex items-start">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke-width="1.5"
-                  stroke="currentColor"
-                  class="w-5 h-5 text-cyan-400"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-                  ></path>
-                </svg>
-                <p class="ml-2 text-sm leading-6 text-slate-400">
-                  <strong class="font-semibold text-slate-100"
-                    >Faster builds</strong
-                  > — through local and remote caches.
-                </p>
-              </div>
-            </li>
-          </ul>
         </div>
       </div>
       <div class="lg:mt-0 mt-12 h-full">

@@ -1,10 +1,10 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 
-import LogocCloudOne from "../components/testimonials/LogoCloudOne.astro";
+import Companies from "../components/testimonials/Companies.astro";
 import FeatureFour from "../components/features/FeatureFour.astro";
-import FeatureTwo from "../components/features/FeatureTwo.astro";
-import FeatureThree from "../components/features/FeatureThree.astro";
+import Hero from "../components/features/Hero.astro";
+import TuistFeatures from "../components/features/TuistFeatures.astro";
 import TestimonialOne from "../components/testimonials/TestimonialOne.astro";
 import Faq from "../components/Infopages/Faq.astro";
 import CtaThree from "../components/ctas/CtaThree.astro";
@@ -38,18 +38,12 @@ import { AstroSeo } from "@astrolib/seo";
   }}
 />
 <BaseLayout>
-  <!-- <HeroTwo /> -->
-  <FeatureTwo />
-  <LogocCloudOne />
+  <Hero />
+  <Companies />
+  <TuistFeatures />
+
   <FeatureFour />
   <TestimonialOne />
-
-
-  <!-- <FeatureOne /> -->
-  <FeatureThree />
-  <!-- <Pricing /> -->
   <Faq />
   <CtaThree />
-
-  <!-- <Cta /> -->
 </BaseLayout>

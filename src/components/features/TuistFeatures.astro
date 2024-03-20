@@ -1,6 +1,9 @@
 ---
-
 import Verticalgrid from "../assets/VerticalGrid.astro";
+import {useTranslations, getLangFromUrl} from "../../i18n/utils"
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
 <section aria-labelledby="Featurethree" id="Featurethree " class="relative">
@@ -10,9 +13,9 @@ import Verticalgrid from "../assets/VerticalGrid.astro";
       <div>
         <span
           class="text-transparent bg-clip-text font-medium tracking-widest bg-gradient-to-r from-cyan-400 via-teal-500 to-indigo-500 text-xs uppercase"
-          >Project Generation</span
+          >{t('home.tuist_features.subtitle')}</span
         ><p class="text-3xl mt-8 font-normal text-white">
-            Experience clean, optimized, and conflict-free Xcode projects for effortless maintenance and streamlined development.
+            {t('home.tuist_features.slogan')}
         </p>
       </div>
     </div>
@@ -22,39 +25,39 @@ import Verticalgrid from "../assets/VerticalGrid.astro";
       <li>
         <div>
           <p class="text-lg font-medium text-white lg:text-xl">
-            Zero Git conflicts
+            {t('home.tuist_features.zero_conflicts.title')}
           </p>
         </div>
         <div class="mt-2 text-base text-slate-400">
-          By generating projects on demand, you can avoid the need to include them in the Git repository, eliminating the risk of merge conflicts.
+          {t('home.tuist_features.zero_conflicts.description')}
         </div>
       </li>
       <li>
         <div>
-          <p class="text-lg font-medium text-white lg:text-xl">Focused projects</p>
+          <p class="text-lg font-medium text-white lg:text-xl">{t('home.tuist_features.focused_projects.title')}</p>
         </div>
         <div class="mt-2 text-base text-slate-400">
-          Simply specify your focused targets, and we'll perform a thorough tree-shaking of the project graph. The result? A fast Xcode experience.
-        </div>
-      </li>
-      <li>
-        <div>
-          <p class="text-lg font-medium text-white lg:text-xl">
-            Linting
-          </p>
-        </div>
-        <div class="mt-2 text-base text-slate-400">
-          Frustrating errors that would otherwise be caught at build time are now caught at generation time.
+          {t('home.tuist_features.focused_projects.description')}
         </div>
       </li>
       <li>
         <div>
           <p class="text-lg font-medium text-white lg:text-xl">
-            Swift-based DSL
+            {t('home.tuist_features.linting.title')}
           </p>
         </div>
         <div class="mt-2 text-base text-slate-400">
-          Leverage Swift and Xcode to describe projects, create custom abstractions, and easily share code components.          
+          {t('home.tuist_features.linting.description')}
+        </div>
+      </li>
+      <li>
+        <div>
+          <p class="text-lg font-medium text-white lg:text-xl">
+            {t('home.tuist_features.swift_dsl.title')}
+          </p>
+        </div>
+        <div class="mt-2 text-base text-slate-400">
+          {t('home.tuist_features.swift_dsl.description')}          
         </div>
       </li>
     </ul>
