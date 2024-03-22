@@ -1,5 +1,9 @@
 ---
 import RoundedGrid from "../assets/RoundedGrid.astro";
+import {useTranslations, getLangFromUrl} from "../../i18n/utils"
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
 <section
@@ -19,15 +23,15 @@ import RoundedGrid from "../assets/RoundedGrid.astro";
             </p>
           </div>
           <p class="text-4xl mt-12 font-normal tracking-tight text-white">
-            Need help migrating?
-            <span class="block">Let us help you with that</span>
+            {t('home.migration_help.question')}
+            <span class="block">{t('home.migration_help.answer')}</span>
           </p>
         </div>
         <div class="flex flex-col sm:flex-row mt-12 lg:ml-auto lg:mt-0">
           <a
             href="mailto:contact@tuist.io?subject=Migrating%20to%20Tuist&body=Let us know about your project and we'll get back to you with a plan."
             class="inline-flex items-center justify-center px-6 py-3 text-center text-white hover:to-indigo-400 duration-200 bg-gradient-to-r from-sky-400 to-indigo-500 font-medium hover:bg-white/5 rounded-xl hover:text-white focus:outline-none focus-visible:outline-black focus-visible:ring-black">
-            Contact us &nbsp;&nbsp; &rarr;
+            {t('home.migration_help.cta')} &nbsp;&nbsp; &rarr;
           </a>
         </div>l
       </div>

@@ -5,6 +5,20 @@
     "nav.github": "GitHub",
     "nav.telegram": "Telegram",
     "nav.cloud": "Tuist Cloud",
+    "footer.rights_reserved": "All rights reserved",
+    "footer.learn": "Learn",
+    "footer.learn.documentation": "Documentation",
+    "footer.learn.reference": "Reference",
+    "footer.open_source": "Open Source",
+    "footer.community": "Community",
+    "footer.community.discussions": "Discussions",
+    "footer.company": "Company",
+    "footer.company.about": "About",
+    "footer.company.longevity_manifesto": "Longevity Manifesto",
+    "footer.company.tuist_cloud_status": "Tuist Cloud Status",
+    "footer.company.tuist_cloud_terms": "Tuist Cloud Terms",
+    "footer.company.tuist_cloud_privacy": "Tuist Cloud Privacy Policy",
+    "footer.company.tuist_cloud_cookie": "Tuist Cloud Cookie Policy",
     "home.hero.tuist": "Tuist",
     "home.hero.slogan": "Effortless Xcode Project Management",
     "home.hero.description": "Effortlessly build, test, and deploy your Xcode projects with Tuist's revolutionary automation and project management features.",
@@ -20,6 +34,8 @@
     "home.tuist_features.linting.title": "Linting",
     "home.tuist_features.linting.description": "Frustrating errors that would otherwise be caught at build time are now caught at generation time.",
     "home.tuist_features.swift_dsl.title": "Swift-based DSL",
-    "home.tuist_features.swift_dsl.description": "Leverage Swift and Xcode to describe projects, create custom abstractions, and easily share code components."
-
+    "home.tuist_features.swift_dsl.description": "Leverage Swift and Xcode to describe projects, create custom abstractions, and easily share code components.",
+    "home.migration_help.question": "Need help migrating?",
+    "home.migration_help.answer": "Let us help you with that",
+    "home.migration_help.cta": "Contact us"
 }
