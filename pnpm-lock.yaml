@@ -7,10 +7,10 @@ settings:
 dependencies:
   '@astrojs/mdx':
     specifier: ^2.0.0
-    version: 2.2.1(astro@4.5.8)
+    version: 2.2.1(astro@4.5.9)
   '@astrojs/netlify':
     specifier: ^5.0.0
-    version: 5.2.0(astro@4.5.8)
+    version: 5.2.0(astro@4.5.9)
   '@astrojs/partytown':
     specifier: ^2.0.2
     version: 2.0.4
@@ -25,7 +25,7 @@ dependencies:
     version: 3.1.1
   '@astrolib/seo':
     specifier: ^0.6.0
-    version: 0.6.0(astro@4.5.8)
+    version: 0.6.0(astro@4.5.9)
   '@tailwindcss/forms':
     specifier: ^0.5.3
     version: 0.5.7(tailwindcss@3.2.7)
@@ -43,7 +43,7 @@ dependencies:
     version: 0.4.1
   astro-embed:
     specifier: ^0.6.0
-    version: 0.6.1(astro@4.5.8)
+    version: 0.6.1(astro@4.5.9)
   install:
     specifier: ^0.13.0
     version: 0.13.0
@@ -69,7 +69,7 @@ dependencies:
 devDependencies:
   '@astrojs/tailwind':
     specifier: ^5.0.0
-    version: 5.1.0(astro@4.5.8)(tailwindcss@3.2.7)
+    version: 5.1.0(astro@4.5.9)(tailwindcss@3.2.7)
   '@tailwindcss/typography':
     specifier: ^0.5.9
     version: 0.5.10(tailwindcss@3.2.7)
@@ -78,7 +78,7 @@ devDependencies:
     version: 3.13.9
   astro:
     specifier: ^4.0.0
-    version: 4.5.8
+    version: 4.5.9
   fast-glob:
     specifier: ^3.2.12
     version: 3.3.2
@@ -95,47 +95,47 @@ packages:
       '@jridgewell/gen-mapping': 0.3.5
       '@jridgewell/trace-mapping': 0.3.25
 
-  /@astro-community/astro-embed-integration@0.6.1(astro@4.5.8):
+  /@astro-community/astro-embed-integration@0.6.1(astro@4.5.9):
     resolution: {integrity: sha512-+dujQeYa6fAdF2Obiep0HZrmkGNd2JcKmZAv9C9gZHqnPr3pGnxm0YZPC30jyCZsmpIMMyMsfgTOuP4Cwpj4QQ==}
     peerDependencies:
       astro: ^2.0.0 || ^3.0.0-beta || ^4.0.0-beta
     dependencies:
-      '@astro-community/astro-embed-twitter': 0.5.3(astro@4.5.8)
-      '@astro-community/astro-embed-vimeo': 0.3.2(astro@4.5.8)
-      '@astro-community/astro-embed-youtube': 0.4.4(astro@4.5.8)
+      '@astro-community/astro-embed-twitter': 0.5.3(astro@4.5.9)
+      '@astro-community/astro-embed-vimeo': 0.3.2(astro@4.5.9)
+      '@astro-community/astro-embed-youtube': 0.4.4(astro@4.5.9)
       '@types/unist': 2.0.10
-      astro: 4.5.8
-      astro-auto-import: 0.3.2(astro@4.5.8)
+      astro: 4.5.9
+      astro-auto-import: 0.3.2(astro@4.5.9)
       unist-util-select: 4.0.3
     dev: false
 
-  /@astro-community/astro-embed-twitter@0.5.3(astro@4.5.8):
+  /@astro-community/astro-embed-twitter@0.5.3(astro@4.5.9):
     resolution: {integrity: sha512-oxu+KOmNXu3k2RjVVoEJxi5ZaLeEIKS0+clMnNUVFD8PI8Yzsil8faO4/mmRyLHKKZNG38XFyBbAgZsoyOa6wg==}
     peerDependencies:
       astro: ^2.0.0 || ^3.0.0-beta || ^4.0.0-beta
     dependencies:
       '@astro-community/astro-embed-utils': 0.1.0
-      astro: 4.5.8
+      astro: 4.5.9
     dev: false
 
   /@astro-community/astro-embed-utils@0.1.0:
     resolution: {integrity: sha512-whbRs9JpUApKwdzfkakBPVQT73LFxgj/RrfUu0IXTDf5SqxniZaXG4WcdG5MKj0nQyc82O21f1RnY3ddOo/yng==}
     dev: false
 
-  /@astro-community/astro-embed-vimeo@0.3.2(astro@4.5.8):
+  /@astro-community/astro-embed-vimeo@0.3.2(astro@4.5.9):
     resolution: {integrity: sha512-6Uitc8CBQaJqhI56RPNcIAegNeKGTPKqPQEjyCIAvKX+qhS+DdGh9DTvrBybrlkSSH74tprURwO3VHp8zjjiwA==}
     peerDependencies:
       astro: ^2.0.0 || ^3.0.0-beta || ^4.0.0-beta
     dependencies:
-      astro: 4.5.8
+      astro: 4.5.9
     dev: false
 
-  /@astro-community/astro-embed-youtube@0.4.4(astro@4.5.8):
+  /@astro-community/astro-embed-youtube@0.4.4(astro@4.5.9):
     resolution: {integrity: sha512-fYlycLrJFNnibZ9VHPSJO766kO2IgqYQU4mBd4iaDMaicL0gGX9cVZ80QdnpzGrI6w0XOJOY7prx86eWEVBy8w==}
     peerDependencies:
       astro: ^2.0.0 || ^3.0.0-beta || ^4.0.0-beta
     dependencies:
-      astro: 4.5.8
+      astro: 4.5.9
       lite-youtube-embed: 0.2.0
     dev: false
 
@@ -169,7 +169,7 @@ packages:
     transitivePeerDependencies:
       - supports-color
 
-  /@astrojs/mdx@2.2.1(astro@4.5.8):
+  /@astrojs/mdx@2.2.1(astro@4.5.9):
     resolution: {integrity: sha512-bSr/AkvGieD9Pc5ZzMnAk7IHnw0vyt/aOujuYUmYT+NHiWahAUy/+ywNNMhTMmea0irdMYnBVC1AEKMQ/oXxow==}
     engines: {node: '>=18.14.1'}
     peerDependencies:
@@ -178,7 +178,7 @@ packages:
       '@astrojs/markdown-remark': 4.3.1
       '@mdx-js/mdx': 3.0.1
       acorn: 8.11.3
-      astro: 4.5.8
+      astro: 4.5.9
       es-module-lexer: 1.4.2
       estree-util-visit: 2.0.0
       github-slugger: 2.0.0
@@ -195,14 +195,14 @@ packages:
       - supports-color
     dev: false
 
-  /@astrojs/netlify@5.2.0(astro@4.5.8):
+  /@astrojs/netlify@5.2.0(astro@4.5.9):
     resolution: {integrity: sha512-NFg3AdUToV7kbY5w2yHZY5UskqfsmIo9i0zIzQ2GgUcTwjyZCekZ89DLtKCJ1jFVle+QXJGsJAS61EYyptBDBQ==}
     peerDependencies:
       astro: ^4.2.0
     dependencies:
       '@astrojs/underscore-redirects': 0.3.3
       '@netlify/functions': 2.6.0
-      astro: 4.5.8
+      astro: 4.5.9
       esbuild: 0.19.12
     dev: false
 
@@ -253,13 +253,13 @@ packages:
       zod: 3.22.4
     dev: false
 
-  /@astrojs/tailwind@5.1.0(astro@4.5.8)(tailwindcss@3.2.7):
+  /@astrojs/tailwind@5.1.0(astro@4.5.9)(tailwindcss@3.2.7):
     resolution: {integrity: sha512-BJoCDKuWhU9FT2qYg+fr6Nfb3qP4ShtyjXGHKA/4mHN94z7BGcmauQK23iy+YH5qWvTnhqkd6mQPQ1yTZTe9Ig==}
     peerDependencies:
       astro: ^3.0.0 || ^4.0.0
       tailwindcss: ^3.0.24
     dependencies:
-      astro: 4.5.8
+      astro: 4.5.9
       autoprefixer: 10.4.18(postcss@8.4.36)
       postcss: 8.4.36
       postcss-load-config: 4.0.2(postcss@8.4.36)
@@ -286,12 +286,12 @@ packages:
     resolution: {integrity: sha512-qDAKhFO4M1KzP7mxoJfiehf8oyf3EB158MxAa6z10NeD2pR3o4K3LlOQI8CfJgXE+BDBQcnaLvVCg/Mz/Gkg4Q==}
     dev: false
 
-  /@astrolib/seo@0.6.0(astro@4.5.8):
+  /@astrolib/seo@0.6.0(astro@4.5.9):
     resolution: {integrity: sha512-mJzvW2ApVVpoB3mVNB+I3wrloorkcypoA7kXQWl1F9vu6X9LRTP2sLdCrn8qkPnKdwgGfmqe/S4vqiW/eemaDg==}
     peerDependencies:
       astro: ^1.2.1 || ^2.0.0 || ^3.0.0-beta.0 || ^3.0.0
     dependencies:
-      astro: 4.5.8
+      astro: 4.5.9
     dev: false
 
   /@babel/code-frame@7.24.2:
@@ -340,7 +340,7 @@ packages:
     resolution: {integrity: sha512-LvBTxu8bQSQkcyKOU+a1btnNFQ1dMAd0R6PyW3arXes06F6QLWLIrd681bxRPIXlrMGR3XYnW9JyML7dP3qgxg==}
     engines: {node: '>=6.9.0'}
     dependencies:
-      '@babel/types': 7.23.0
+      '@babel/types': 7.24.0
 
   /@babel/helper-compilation-targets@7.23.6:
     resolution: {integrity: sha512-9JB548GZoQVmzrFgp8o7KxdgkTGm6xs9DW0o/Pim72UDjzr5ObUQ6ZzYPqA+g9OTS2bBQoctLJrky0RDCAWRgQ==}
@@ -403,10 +403,6 @@ packages:
     engines: {node: '>=6.9.0'}
     dependencies:
       '@babel/types': 7.24.0
-
-  /@babel/helper-string-parser@7.22.5:
-    resolution: {integrity: sha512-mM4COjgZox8U+JcXQwPijIZLElkgEpO5rsERVDJTc2qfCDfERyob6k5WegS14SX18IIjv+XD+GrqNumY5JRCDw==}
-    engines: {node: '>=6.9.0'}
 
   /@babel/helper-string-parser@7.24.1:
     resolution: {integrity: sha512-2ofRCjnnA9y+wk8b9IAREroeUP02KHp431N2mhKniy2yKIDKpbrHv9eXwm8cBeWQYcJmzv5qKCu65P47eCF7CQ==}
@@ -501,14 +497,6 @@ packages:
       globals: 11.12.0
     transitivePeerDependencies:
       - supports-color
-
-  /@babel/types@7.23.0:
-    resolution: {integrity: sha512-0oIyUfKoI3mSqMvsxBdclDwxXKXAUA8v/apZbc+iSyARYou1o8ZGDxbUYyLFoW2arqS2jDGqJuZvv1d/io1axg==}
-    engines: {node: '>=6.9.0'}
-    dependencies:
-      '@babel/helper-string-parser': 7.22.5
-      '@babel/helper-validator-identifier': 7.22.20
-      to-fast-properties: 2.0.0
 
   /@babel/types@7.24.0:
     resolution: {integrity: sha512-+j7a5c253RfKh8iABBhywc8NSfP5LURe7Uh4qpsh6jc+aLJguvmIUBdjSdEMQv2bENrCR5MfRdjGo7vzS/ob7w==}
@@ -1376,7 +1364,7 @@ packages:
     hasBin: true
     dev: false
 
-  /astro-auto-import@0.3.2(astro@4.5.8):
+  /astro-auto-import@0.3.2(astro@4.5.9):
     resolution: {integrity: sha512-xnr56geVyqJTu5qicJzvxqSnkhktq7SulWIzme1Vs5mrrcMkH/N1s7TEYkgJCN2b5qSeltqqZ7UUSD3xXrXamA==}
     engines: {node: '>=16.0.0'}
     peerDependencies:
@@ -1384,27 +1372,27 @@ packages:
     dependencies:
       '@types/node': 18.19.24
       acorn: 8.11.3
-      astro: 4.5.8
+      astro: 4.5.9
     dev: false
 
   /astro-compressor@0.4.1:
     resolution: {integrity: sha512-IAgYAlxYRMolaptsFB9quH7RxX4eUeC4UfULCPhT+ILcg7m1kbaxuyUKqGg9Hh+KZ+FNPPDAz7DqUfl+HDWhQg==}
     dev: false
 
-  /astro-embed@0.6.1(astro@4.5.8):
+  /astro-embed@0.6.1(astro@4.5.9):
     resolution: {integrity: sha512-lHO8ZJJ3AjXpdBD3irGQdD+jnFBE6nPNzT6Edfr6/8dj6Z8lWoB1lmAgd6Yp4YSu0RSU5bZIJ9U2kJqE622BDA==}
     peerDependencies:
       astro: ^2.0.0 || ^3.0.0-beta || ^4.0.0-beta
     dependencies:
-      '@astro-community/astro-embed-integration': 0.6.1(astro@4.5.8)
-      '@astro-community/astro-embed-twitter': 0.5.3(astro@4.5.8)
-      '@astro-community/astro-embed-vimeo': 0.3.2(astro@4.5.8)
-      '@astro-community/astro-embed-youtube': 0.4.4(astro@4.5.8)
-      astro: 4.5.8
+      '@astro-community/astro-embed-integration': 0.6.1(astro@4.5.9)
+      '@astro-community/astro-embed-twitter': 0.5.3(astro@4.5.9)
+      '@astro-community/astro-embed-vimeo': 0.3.2(astro@4.5.9)
+      '@astro-community/astro-embed-youtube': 0.4.4(astro@4.5.9)
+      astro: 4.5.9
     dev: false
 
-  /astro@4.5.8:
-    resolution: {integrity: sha512-bhKsoZQWT6LW8aYMvTGglZTPa3rYRbcdc2buiJyFPCvSWOOyZmxqpp6vtQ+x6fXxD8P1NecM/c4g5GaPi+MokQ==}
+  /astro@4.5.9:
+    resolution: {integrity: sha512-GheU72Goz7dYQNKaqTxB2H49cNvHfahGSbNkTvMXk+gyHf/g633qadqlO2ZQbTUacoUWmDzvS5fhMZt2/w4naQ==}
     engines: {node: '>=18.14.1', npm: '>=6.14.0'}
     hasBin: true
     dependencies:
@@ -1469,7 +1457,7 @@ packages:
       which-pm: 2.1.1
       yargs-parser: 21.1.1
       zod: 3.22.4
-      zod-to-json-schema: 3.22.4(zod@3.22.4)
+      zod-to-json-schema: 3.22.5(zod@3.22.4)
     optionalDependencies:
       sharp: 0.32.6
     transitivePeerDependencies:
@@ -2274,8 +2262,8 @@ packages:
     dependencies:
       function-bind: 1.1.1
 
-  /hasown@2.0.0:
-    resolution: {integrity: sha512-vUptKVTpIJhcczKBbgnS+RtcuYMB8+oNzPK2/Hp3hanz8JmpATdmmgLgSaadVREkDm+e2giHwY3ZRkyjSIDDFA==}
+  /hasown@2.0.2:
+    resolution: {integrity: sha512-0hJU9SCPvmMzIBdZFqNPXWa6dqh7WdH0cII9y+CyS8rG3nL48Bclra9HmKhVVUHyPWNH5Y7xDwAB7bfgSjkUMQ==}
     engines: {node: '>= 0.4'}
     dependencies:
       function-bind: 1.1.2
@@ -2516,7 +2504,7 @@ packages:
   /is-core-module@2.13.1:
     resolution: {integrity: sha512-hHrIjvZsftOsvKSn2TRYl63zvxsgE0K+0mYMoH6gD4omR5IWB2KynivBQczo3+wF1cCkjzvptnI9Q0sPU66ilw==}
     dependencies:
-      hasown: 2.0.0
+      hasown: 2.0.2
 
   /is-decimal@2.0.1:
     resolution: {integrity: sha512-AAB9hiomQs5DXWcRB1rqsxGUstbRroFOPPVAomNk/3XHR5JyEZChOyTWe2oayKnsSsr/kcGqF+z6yuH6HHpN0A==}
@@ -4649,8 +4637,8 @@ packages:
     resolution: {integrity: sha512-N+d4UJSJbt/R3wqY7Coqs5pcV0aUj2j9IaQ3rNj9bVCLld8tTGKRa2USARjnvZJWVx1NDmQev8EknoczaOQDOA==}
     dev: false
 
-  /zod-to-json-schema@3.22.4(zod@3.22.4):
-    resolution: {integrity: sha512-2Ed5dJ+n/O3cU383xSY28cuVi0BCQhF8nYqWU5paEpl7fVdqdAmiLdqLyfblbNdfOFwFfi/mqU4O1pwc60iBhQ==}
+  /zod-to-json-schema@3.22.5(zod@3.22.4):
+    resolution: {integrity: sha512-+akaPo6a0zpVCCseDed504KBJUQpEW5QZw7RMneNmKw+fGaML1Z9tUNLnHHAC8x6dzVRO1eB2oEMyZRnuBZg7Q==}
     peerDependencies:
       zod: ^3.22.4
     dependencies:
