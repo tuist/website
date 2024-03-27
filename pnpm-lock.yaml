@@ -75,7 +75,7 @@ devDependencies:
     version: 0.5.10(tailwindcss@3.2.7)
   '@types/alpinejs':
     specifier: ^3.7.1
-    version: 3.13.9
+    version: 3.13.10
   astro:
     specifier: ^4.0.0
     version: 4.5.9
@@ -1187,8 +1187,8 @@ packages:
       '@types/estree': 1.0.5
     dev: false
 
-  /@types/alpinejs@3.13.9:
-    resolution: {integrity: sha512-R6Xy2K+S7811EuXz4CekBaQKtrAJsLm+Hw8kke0R9IwfoMxJsrEqG2TAkMqQa8gAKZb2hClOcNdPql5vH+ku3g==}
+  /@types/alpinejs@3.13.10:
+    resolution: {integrity: sha512-ah53tF6mWuuwerpDE7EHwbZErNDJQlsLISPqJhYj2RZ9nuTYbRknSkqebUd3igkhLIZKkPa7IiXjSn9qsU9O2w==}
     dev: true
 
   /@types/babel__core@7.20.5:
