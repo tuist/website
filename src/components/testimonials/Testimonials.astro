@@ -3,6 +3,11 @@ import Verticalgrid from "../assets/VerticalGrid.astro";
 import { getCollection } from "astro:content";
 import RandomTestimonial from "./RandomTestimonial.jsx";
 const allTestimonials = await getCollection('testimonials')
+
+import {useTranslations, getLangFromUrl} from "../../i18n/utils"
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
 <section
@@ -15,13 +20,13 @@ const allTestimonials = await getCollection('testimonials')
       <div>
         <span
           class="text-transparent bg-clip-text font-medium tracking-widest bg-gradient-to-r from-cyan-400 via-cyan-500 to-indigo-500 text-xs uppercase"
-          >OUR USERS</span
+          >{t('home.testimonials.subtitle')}</span
         >
         <p class="text-3xl mt-8 font-normal text-white">
-          So much ❤️ from our users
+          {t('home.testimonials.title')}
         </p>
         <p class="max-w-2xl mt-4 text-lg text-slate-400">
-          This is what our users have to say about the tool:
+          {t('home.testimonials.description')}
         </p>
       </div>
     </div>
