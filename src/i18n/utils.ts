@@ -7,8 +7,14 @@ export function getLangFromUrl(url: URL) {
 }
 
 export function useTranslations(lang: keyof typeof ui) {
-  return function t(key: keyof (typeof ui)[typeof defaultLang]) {
-    return ui[lang][key] || ui[defaultLang][key];
+  return function t(key: keyof (typeof ui)[typeof defaultLang], values: Record<string, string> = {}) {
+    const value = ui[lang][key] || ui[defaultLang][key];
+    return value.replace(/\{\{(\w+)\}\}/g, (match, key) => {
+      if(values.hasOwnProperty(key)) {
+          return values[key];
+      }
+      return match;
+    });
   };
 }
 
