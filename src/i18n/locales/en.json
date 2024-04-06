@@ -125,5 +125,10 @@
     "cloud.faq.answer-4": "We're all ears for your challenges! Because, let's be honest, Apple often leaves us on 'read' with these issues. Many are stuck in a loop of reinventing or, worse, adopting a web of complexity. Join us in saying, 'Not today, complexity!' and let's bring simplicity to the masses!",
     "cloud.cta.subtitle": "Get on the cloud",
     "cloud.cta.title": "Boost your development with Tuist Cloud",
-    "cloud.cta.button": "Get Started"
+    "cloud.cta.button": "Get Started",
+    "blog.subtitle": "Blog",
+    "blog.title": "Stay updated",
+    "blog.description": "Discover engaging stories and expert insights on our blog.",
+    "blog.written-by": "Written by",
+    "blog.read-more": "Read more"
 }

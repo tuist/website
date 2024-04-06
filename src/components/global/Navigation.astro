@@ -1,8 +1,9 @@
 ---
-import {useTranslations, getLangFromUrl} from "../../i18n/utils"
+import {useTranslations, getLangFromUrl, useTranslatedPath} from "../../i18n/utils"
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
+const translatedPath = useTranslatedPath(lang);
 ---
 <section
   aria-labelledby="navigation"
@@ -14,7 +15,7 @@ const t = useTranslations(lang);
       class="relative flex flex-col w-full py-5 px-8 mx-auto md:items-center md:justify-between md:flex-row md:px-12 lg:px-32">
       <div
         class="flex flex-row items-center justify-between text-white lg:justify-start">
-        <a href="/" class="lg:pr-8">
+        <a href={translatedPath("/")} class="lg:pr-8">
           <div class="inline-flex items-center gap-3">
             <img src="/logos/logo.png" class="w-12"></img>
             <p class="text-2xl font-bold">Tuist</p>
@@ -73,7 +74,7 @@ const t = useTranslations(lang);
         >
 
         <a
-          href="/cloud"
+          href={translatedPath("/cloud")}
           class="inline-flex items-center justify-center px-6 py-2 text-sm text-center text-white hover:to-indigo-400 duration-200 bg-gradient-to-r from-sky-400 to-indigo-500 font-medium hover:bg-white/5 rounded-xl hover:text-white focus:outline-none focus-visible:outline-black focus-visible:ring-black lg:ml-auto">
           {t("nav.cloud")}
         </a>
