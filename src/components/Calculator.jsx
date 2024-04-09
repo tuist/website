@@ -140,7 +140,7 @@ export default function Calculator(
       <a
         className="inline-flex text-white visited:text-white items-center justify-center w-full px-6 py-3 text-center text-white hover:to-indigo-400 duration-200 bg-gradient-to-r from-sky-400 to-indigo-500 font-medium rounded-xl hover:text-white focus:outline-none focus-visible:outline-black focus-visible:ring-black mt-8 no-underline"
         aria-label="Sign up for testing"
-        href="https://docs.tuist.io/documentation/tuist/tuist-cloud-get-started"
+        href="https://docs.tuist.io/cloud/what-is-cloud"
       >
         Save ${approx(moneySaved)}
       </a>
