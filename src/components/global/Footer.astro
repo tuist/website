@@ -1,9 +1,9 @@
 ---
 import Blurgradientleft from "../assets/Blurgradientleft.astro";
-import {useTranslations, getLangFromUrl} from "../../i18n/utils"
-
+import {useTranslations, getLangFromUrl, useTranslatedPath} from "../../i18n/utils"
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
+const translatedPath = useTranslatedPath(lang);
 ---
 
 <footer
@@ -137,7 +137,7 @@ const t = useTranslations(lang);
             <ul role="list" class="mt-4 space-y-2">
               <li>
                 <a
-                  href="/about"
+                  href={translatedPath("/about")}
                   class="text-sm text-slate-400"
                 >
                   {t('footer.company.about')}
@@ -145,7 +145,7 @@ const t = useTranslations(lang);
               </li>
               <li>
                 <a
-                  href="/longevity"
+                  href={translatedPath("/longevity")}
                   class="text-sm text-slate-400"
                 >
                   {t('footer.company.longevity_manifesto')}
@@ -161,7 +161,7 @@ const t = useTranslations(lang);
               </li>
               <li>
                 <a
-                  href="/terms"
+                  href={translatedPath("/terms")}
                   class="text-sm text-slate-400"
                 >
                   {t("footer.company.tuist_cloud_terms")}
@@ -169,7 +169,7 @@ const t = useTranslations(lang);
               </li>
               <li>
                 <a
-                  href="/privacy"
+                  href={translatedPath("/privacy")}
                   class="text-sm text-slate-400"
                 >
                   {t('footer.company.tuist_cloud_privacy')}
@@ -177,7 +177,7 @@ const t = useTranslations(lang);
               </li>
               <li>
                 <a
-                  href="/cookies"
+                  href={translatedPath("/cookies")}
                   class="text-sm text-slate-400"
                 >
                   {t('footer.company.tuist_cloud_cookie')}
