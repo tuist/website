@@ -3,7 +3,6 @@
     "nav.docs": "Docs",
     "nav.slack": "Slack",
     "nav.github": "GitHub",
-    "nav.telegram": "Telegram",
     "nav.cloud": "Tuist Cloud",
     "footer.rights_reserved": "All rights reserved",
     "footer.learn": "Learn",
@@ -18,6 +17,9 @@
     "footer.company.tuist_cloud_terms": "Terms",
     "footer.company.tuist_cloud_privacy": "Privacy Policy",
     "footer.company.tuist_cloud_cookie": "Cookie Policy",
+    "home.og.image.title": "Supercharge your Xcode development workflows",
+    "home.og.image.header": "Tuist",
+    "home.og.image.footer": "tuist.io · @tuistio",
     "home.hero.tuist": "Tuist",
     "home.hero.slogan": "More productive and happier teams using Xcode",
     "home.hero.description": "Effortlessly build, test, and deploy your apps with Tuist's revolutionary automation and project management features.",
@@ -130,5 +132,7 @@
     "blog.title": "Stay updated",
     "blog.description": "Discover engaging stories and expert insights on our blog.",
     "blog.written-by": "Written by",
-    "blog.read-more": "Read more"
+    "blog.read-more": "Read more",
+    "cookies.og.title": "Tuist Cloud Cookie Policy",
+    "cookies.og.description": "Read about Tuist Cloud's cookie policy."
 }

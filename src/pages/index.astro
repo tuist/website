@@ -10,6 +10,9 @@ import Faq from "../components/Infopages/Faq.astro";
 import MigrationHelp from "../components/ctas/MigrationHelp.astro";
 import metadata from '../utils/metadata.json';
 import { AstroSeo } from "@astrolib/seo";
+import { useTranslatedPath, getLangFromUrl } from "../i18n/utils";
+const lang = getLangFromUrl(Astro.url);
+const translatedPath = useTranslatedPath(lang);
 ---
 
 <AstroSeo
@@ -22,7 +25,7 @@ import { AstroSeo } from "@astrolib/seo";
     description: metadata.description,
     images: [
       {
-        url: `${metadata.url}/og-image.jpg`,
+        url: `${metadata.url}${translatedPath("/og-image.jpg")}`,
         alt: "Tuist logo",
         type: "image/jpg",
         height: 630,
