@@ -22,14 +22,14 @@ export const GET = async function get({ params, request, props }) {
     footer = "New release"
   } else if (postModule.frontmatter.type === "interview") {
     footer = `Interviewee: ${postModule.frontmatter.interviewee_name}`
-    if (postModule.frontmatter.interviewee_twitter_handle) {
-      footer += ` (@${postModule.frontmatter.interviewee_twitter_handle})`
+    if (postModule.frontmatter.interviewee_x_handle) {
+      footer += ` (@${postModule.frontmatter.interviewee_x_handle})`
     }
   } else {
     const author = allAuthors.find((author) => author.id === postModule.frontmatter.author);
     footer = `Written by ${author?.data?.name}`
-    if (author?.data?.twitter_handle) {
-      footer += ` (@${author?.data?.twitter_handle})`
+    if (author?.data?.x_handle) {
+      footer += ` (@${author?.data?.x_handle})`
     }
   }
   const png = await ogImage({

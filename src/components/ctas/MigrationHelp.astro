@@ -1,0 +1,40 @@
+---
+import RoundedGrid from "../assets/RoundedGrid.astro";
+import {useTranslations, getLangFromUrl} from "../../i18n/utils"
+const { lang } = Astro.props;
+
+const t = useTranslations(lang);
+---
+
+<section
+  aria-labelledby="cta"
+  id="cta "
+  class="relative border-t border-white/5 overflow-hidden">
+  <RoundedGrid />
+
+  <div class="max-w-7xl px-8 md:px-12 lg:px-32 mx-auto py-12 lg:py-24 relative">
+    <div class="relative items-center">
+      <div class="lg:inline-flex lg:items-end justify-between w-full">
+        <div class="max-w-xl">
+          <div class="lg:inline-flex items-center gap-3">
+            <p
+              class="bg-gradient-to-r from-cyan-400 via-cyan-500 to-indigo-500 text-transparent bg-clip-text lg:pl-4 lg:border-l border-white mt-3 lg:mt-0 uppercase">
+              Tuist
+            </p>
+          </div>
+          <p class="text-xl md:text-4xl mt-12 font-normal tracking-tight text-white">
+            {t('home.migration_help.question')}
+            <span class="block">{t('home.migration_help.answer')}</span>
+          </p>
+        </div>
+        <div class="flex flex-col sm:flex-row mt-12 lg:ml-auto lg:mt-0">
+          <a
+            href="mailto:contact@tuist.io?subject=Migrating%20to%20Tuist&body=Let us know about your project and we'll get back to you with a plan."
+            class="inline-flex items-center justify-center px-6 py-3 text-center text-white hover:to-indigo-400 duration-200 bg-gradient-to-r from-sky-400 to-indigo-500 font-medium hover:bg-white/5 rounded-xl hover:text-white focus:outline-none focus-visible:outline-black focus-visible:ring-black">
+            {t('home.migration_help.cta')} &nbsp;&nbsp; &rarr;
+          </a>
+        </div>l
+      </div>
+    </div>
+  </div>
+</section>

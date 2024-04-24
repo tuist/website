@@ -1,5 +1,9 @@
 ---
 import Blurgradientleft from "../assets/Blurgradientleft.astro";
+import {useTranslations, getLangFromUrl, useTranslatedPath} from "../../i18n/utils"
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+const translatedPath = useTranslatedPath(lang);
 ---
 
 <footer
@@ -17,7 +21,7 @@ import Blurgradientleft from "../assets/Blurgradientleft.astro";
         </div>
         <p class="mt-2 text-sm text-slate-400">
           <span class="mt-6 text-sm font-normal text-slate-400">
-            © 2023 Tuist. <br /> All rights reserved
+            © 2023 Tuist. <br /> {t('footer.rights_reserved')}
           </span>
         </p>
         <a
@@ -33,13 +37,13 @@ import Blurgradientleft from "../assets/Blurgradientleft.astro";
       <div class="grid grid-cols-2 gap-8 xl:col-span-3">
         <div class="md:grid md:grid-cols-2 md:gap-8">
           <div>
-            <h3 class="text-white">Learn</h3>
+            <h3 class="text-white">{t('footer.learn')}</h3>
             <ul role="list" class="mt-4 space-y-2">
               <li>
                 <a
                   class="text-sm text-slate-400 inline-flex items-center"
                   href="https://docs.tuist.io"
-                  >Documentation</a
+                  >{t('footer.learn.documentation')}</a
                 >
               </li>
               <li>
@@ -47,31 +51,13 @@ import Blurgradientleft from "../assets/Blurgradientleft.astro";
                   href="https://docs.tuist.io/reference/project-description/project"
                   class="text-sm text-slate-400"
                 >
-                  Reference
-                </a>
-              </li>
-
-              <li>
-                <a
-                  href="https://chat.openai.com/g/g-z9dLWHPID-xcodegpt"
-                  class="text-sm text-slate-400"
-                >
-                  XcodeGPT
-                </a>
-              </li>
-
-              <li>
-                <a
-                  href="https://chat.openai.com/g/g-06dgAxNvw-tuistgpt"
-                  class="text-sm text-slate-400"
-                >
-                  TuistGPT
+                  {t('footer.learn.reference')}
                 </a>
               </li>
             </ul>
           </div>
           <div class="mt-12 md:mt-0">
-            <h3 class="text-white">Open Source</h3>
+            <h3 class="text-white">{t('footer.open_source')}</h3>
             <ul role="list" class="mt-4 space-y-2">
               <li>
                 <a
@@ -102,7 +88,7 @@ import Blurgradientleft from "../assets/Blurgradientleft.astro";
         </div>
         <div class="md:grid md:grid-cols-2 md:gap-8">
           <div>
-            <h3 class="text-white">Community</h3>
+            <h3 class="text-white">{t('footer.community')}</h3>
             <ul role="list" class="mt-4 space-y-2">
               <li>
                 <a
@@ -117,7 +103,7 @@ import Blurgradientleft from "../assets/Blurgradientleft.astro";
                   href="https://github.com/tuist/tuist/discussions"
                   class="text-sm text-slate-400"
                 >
-                  Discussions
+                  {t('footer.community.discussions')}
                 </a>
               </li>
               <li>
@@ -147,22 +133,22 @@ import Blurgradientleft from "../assets/Blurgradientleft.astro";
             </ul>
           </div>
           <div class="mt-12 md:mt-0">
-            <h3 class="text-white">Company</h3>
+            <h3 class="text-white">Tuist Cloud</h3>
             <ul role="list" class="mt-4 space-y-2">
               <li>
                 <a
-                  href="/about"
+                  href={translatedPath("/about")}
                   class="text-sm text-slate-400"
                 >
-                  About
+                  {t('footer.company.about')}
                 </a>
               </li>
               <li>
                 <a
-                  href="/longevity"
+                  href={translatedPath("/longevity")}
                   class="text-sm text-slate-400"
                 >
-                  Longevity Manifesto
+                  {t('footer.company.longevity_manifesto')}
                 </a>
               </li>
               <li>
@@ -170,31 +156,31 @@ import Blurgradientleft from "../assets/Blurgradientleft.astro";
                   href="https://status.cloud.tuist.io"
                   class="text-sm text-slate-400"
                 >
-                  Tuist Cloud Status
+                  {t('footer.company.tuist_cloud_status')}
                 </a>
               </li>
               <li>
                 <a
-                  href="/terms"
+                  href={translatedPath("/terms")}
                   class="text-sm text-slate-400"
                 >
-                  Tuist Cloud Terms of service
+                  {t("footer.company.tuist_cloud_terms")}
                 </a>
               </li>
               <li>
                 <a
-                  href="/privacy"
+                  href={translatedPath("/privacy")}
                   class="text-sm text-slate-400"
                 >
-                  Tuist Cloud Privacy policy
+                  {t('footer.company.tuist_cloud_privacy')}
                 </a>
               </li>
               <li>
                 <a
-                  href="/cookies"
+                  href={translatedPath("/cookies")}
                   class="text-sm text-slate-400"
                 >
-                  Tuist Cloud Cookie policy
+                  {t('footer.company.tuist_cloud_cookie')}
                 </a>
               </li>
             </ul>

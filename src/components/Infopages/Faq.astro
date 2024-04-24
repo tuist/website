@@ -1,3 +1,9 @@
+---
+import {useTranslations, getLangFromUrl} from "../../i18n/utils"
+
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+---
 <section
   aria-labelledby="faq"
   id="faq-section"
@@ -8,19 +14,19 @@
       <div class="md:pr-12">
         <span
           class="text-transparent bg-clip-text font-medium tracking-widest bg-gradient-to-r from-cyan-400 via-cyan-500 to-indigo-500 text-xs uppercase"
-          >FAQS</span
+          >{t('home.faq.subtitle')}</span
         >
-        <p class="text-3xl mt-8 font-normal text-white">
-          Fully automated, fully supported
+        <p class="text-2xl md:text-3xl mt-8 font-normal text-white">
+          {t('home.faq.title')}
         </p>
         <p class="max-w-2xl mt-4 text-sm text-slate-400">
-          Join the vibrant Tuist community of passionate users, contributors, and maintainers who are ready to support you every step of the way on your journey.
+          {t('home.faq.description')}
         </p>
       </div>
       <div class="col-span-2">
         <div x-data="{ active: false }" class="mx-auto w-full space-y-4">
           <div class="space-y-3 divide-y divide-white/5">
-            <div class="font-semibold text-white">Project generation</div>
+            <div class="font-semibold text-white">Tuist</div>
 
             <div
               class=""
@@ -40,7 +46,7 @@
                   :aria-expanded="expanded"
                   class="flex w-full items-center justify-between tracking-wide text-sm text-slate-400 focus:text-cyan-400 py-3 text-left"
                   aria-expanded="false">
-                  <span>Can I automate the migration?</span>
+                  <span>{t('home.faq.tuist.question-1')}</span>
                   <span
                     x-show="expanded"
                     aria-hidden="true"
@@ -56,7 +62,7 @@
 
               <div x-show="expanded" x-collapse="" style="display: none;">
                 <div class="text-sm text-slate-400 pt-5">
-                  While we offer tools to assist in the migration process, automating it reliably can be challenging due to Xcode projects' implicit configurations resolved at build-time. Therefore, we recommend a manual approach, which presents a valuable opportunity to clean up your project and achieve greater consistency.
+                  {t('home.faq.tuist.answer-1')}
                 </div>
               </div>
             </div>
@@ -78,7 +84,7 @@
                   :aria-expanded="expanded"
                   class="flex w-full items-center justify-between tracking-wide text-sm text-slate-400 focus:text-cyan-400 py-3 text-left"
                   aria-expanded="false">
-                  <span>How does it compare to other generation tools?</span>
+                  <span>{t('home.faq.tuist.question-2')}</span>
                   <span
                     x-show="expanded"
                     aria-hidden="true"
@@ -94,7 +100,7 @@
 
               <div x-show="expanded" x-collapse="" style="display: none;">
                 <div class="text-sm text-slate-400 pt-5">
-                  Unlike other project generation tools, Tuist goes beyond simply generating projects. We view project generation as a means to an end, leveraging the project information to validate, optimize, and automate workflows. With our Swift-based solution, teams are spared the burden of building and maintaining their own tooling upon project generation, ensuring a streamlined and efficient development process.
+                  {t('home.faq.tuist.answer-2')}
                 </div>
               </div>
             </div>
@@ -115,7 +121,7 @@
                   :aria-expanded="expanded"
                   class="flex w-full items-center justify-between tracking-wide text-sm text-slate-400 focus:text-cyan-400 py-3 text-left"
                   aria-expanded="false">
-                  <span>How strong is the dependency on Tuist?</span>
+                  <span>{t('home.faq.tuist.question-3')}</span>
                   <span
                     x-show="expanded"
                     aria-hidden="true"
@@ -131,12 +137,12 @@
 
               <div x-show="expanded" x-collapse="" style="display: none;">
                 <div class="text-sm text-slate-400 pt-5">
-                  It's weak. The generated projects don't include any references to Tuist. If you ever decide to move away from Tuist or if we discontinue maintaining the tool, you can simply add the generated Xcode project to your Git repository, and you're good to go. Making it easier for users to transition away from Tuist is a design principle we adhere to.
+                  {t('home.faq.tuist.answer-3')}
                 </div>
               </div>
             </div>
 
-            <div class="font-semibold text-white pt-12">Cache</div>
+            <div class="font-semibold text-white pt-12">Tuist Cloud</div>
             <div
               x-data="{
         id: 4,
@@ -154,7 +160,7 @@
                   :aria-expanded="expanded"
                   class="flex w-full items-center justify-between tracking-wide text-sm text-slate-400 focus:text-cyan-400 py-3 text-left"
                   aria-expanded="false">
-                  <span>What do I need for caching to work?</span>
+                  <span>{t('home.faq.cloud.question-1')}</span>
                   <span
                     x-show="expanded"
                     aria-hidden="true"
@@ -170,7 +176,7 @@
 
               <div x-show="expanded" x-collapse="" style="display: none;">
                 <div class="text-sm text-slate-400 pt-5">
-                  To enable caching, you'll need to define your projects with Tuist and ensure that the configuration is explicit. If there are any implicit configurations that Tuist is not aware of, such as build-time linking, the build artifacts won't be cached. Additionally, there may be certain project scenarios that are not handled seamlessly. However, we are more than willing to collaborate with you to iterate and find solutions to make them work effectively.
+                  {t('home.faq.cloud.answer-1')}
                 </div>
               </div>
             </div>
@@ -191,7 +197,7 @@
                   :aria-expanded="expanded"
                   class="flex w-full items-center justify-between tracking-wide text-sm text-slate-400 focus:text-cyan-400 py-3 text-left"
                   aria-expanded="false">
-                  <span>How does it work?</span>
+                  <span>{t('home.faq.cloud.question-2')}</span>
                   <span
                     x-show="expanded"
                     aria-hidden="true"
@@ -207,7 +213,7 @@
 
               <div x-show="expanded" x-collapse="" style="display: none;">
                 <div class="text-sm text-slate-400 pt-5">
-                  The process involves generating a fingerprint for each target in the project targets graph, which takes into account their metadata, dependencies on files and other targets. This fingerprint serves as an indicator of whether any changes have occurred and if the target needs to be recompiled. During the generation phase, we check the cache for targets using their fingerprint. If pre-existing binaries are found, we utilize them instead of generating new targets with the corresponding source files.
+                  {t('home.faq.cloud.answer-2')}
                 </div>
               </div>
             </div>
@@ -228,7 +234,7 @@
                   :aria-expanded="expanded"
                   class="flex w-full items-center justify-between tracking-wide text-sm text-slate-400 focus:text-cyan-400 py-3 text-left"
                   aria-expanded="false">
-                  <span>Can I share the cache across environments?</span>
+                  <span>{t('home.faq.cloud.question-3')}</span>
                   <span
                     x-show="expanded"
                     aria-hidden="true"
@@ -244,7 +250,7 @@
 
               <div x-show="expanded" x-collapse="" style="display: none;">
                 <div class="text-sm text-slate-400 pt-5">
-                  Absolutely! To achieve this, you'll require a server that adheres to a predefined contract. You have the option to devise your own solution or leverage Tuist Cloud, which not only enables cache sharing but also offers additional useful features for building apps at scale.
+                  {t('home.faq.cloud.answer-3')}
                 </div>
               </div>
             </div>

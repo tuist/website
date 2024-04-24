@@ -4,7 +4,7 @@ const authorsCollection = defineCollection({
   type: "data",
   schema: z.object({
     name: z.string(),
-    twitter_handle: z.string().optional(),
+    x_handle: z.string().optional(),
     mastodon_url: z.string().optional(),
     github_handle: z.string(),
   }),
@@ -37,7 +37,7 @@ const postsCollection = defineCollection({
     interviewee_name: z.string(),
     og_image: z.string().optional(),
     interviewee_url: z.string().optional(),
-    interviewee_twitter_handle: z.string().optional(),
+    interviewee_x_handle: z.string().optional(),
     interviewee_avatar: z.string(),
     type: z.literal('interview')
   })),

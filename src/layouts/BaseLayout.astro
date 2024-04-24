@@ -2,10 +2,14 @@
 import BaseHead from "../components/BaseHead.astro";
 import Navigation from "../components/global/Navigation.astro";
 import Footer from "../components/global/Footer.astro";
+import { getLangFromUrl } from '../i18n/utils';
+
+const { url } = Astro.props;
+const lang = getLangFromUrl(url);
 ---
 
 <html
-  lang="en"
+  lang={lang}
   class="scroll-smooth selection:bg-cyan-500 selection:text-white"
 >
   <head> 
@@ -74,9 +78,9 @@ import Footer from "../components/global/Footer.astro";
     });
   </script>
   <body class="bg-vulcan-900">
-    <Navigation />
+    <Navigation lang={lang} url={url}/>
     <!-- <ContactWidget /> -->
     <slot />
-    <Footer />
+    <Footer lang={lang}/>
   </body>
 </html>

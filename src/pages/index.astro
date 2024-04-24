@@ -1,15 +1,18 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 
-import LogocCloudOne from "../components/testimonials/LogoCloudOne.astro";
-import FeatureFour from "../components/features/FeatureFour.astro";
-import FeatureTwo from "../components/features/FeatureTwo.astro";
-import FeatureThree from "../components/features/FeatureThree.astro";
-import TestimonialOne from "../components/testimonials/TestimonialOne.astro";
+import Companies from "../components/testimonials/Companies.astro";
+import TuistCloud from "../components/features/TuistCloud.astro";
+import Hero from "../components/features/Hero.astro";
+import TuistFeatures from "../components/features/TuistFeatures.astro";
+import Testimonials from "../components/testimonials/Testimonials.astro";
 import Faq from "../components/Infopages/Faq.astro";
-import CtaThree from "../components/ctas/CtaThree.astro";
+import MigrationHelp from "../components/ctas/MigrationHelp.astro";
 import metadata from '../utils/metadata.json';
 import { AstroSeo } from "@astrolib/seo";
+import { useTranslatedPath, getLangFromUrl } from "../i18n/utils";
+const lang = getLangFromUrl(Astro.url);
+const translatedPath = useTranslatedPath(lang);
 ---
 
 <AstroSeo
@@ -22,7 +25,7 @@ import { AstroSeo } from "@astrolib/seo";
     description: metadata.description,
     images: [
       {
-        url: `${metadata.url}/og-image.jpg`,
+        url: `${metadata.url}${translatedPath("/og-image.jpg")}`,
         alt: "Tuist logo",
         type: "image/jpg",
         height: 630,
@@ -37,19 +40,12 @@ import { AstroSeo } from "@astrolib/seo";
     cardType: "summary_large_image",
   }}
 />
-<BaseLayout>
-  <!-- <HeroTwo /> -->
-  <FeatureTwo />
-  <LogocCloudOne />
-  <FeatureFour />
-  <TestimonialOne />
-
-
-  <!-- <FeatureOne /> -->
-  <FeatureThree />
-  <!-- <Pricing /> -->
-  <Faq />
-  <CtaThree />
-
-  <!-- <Cta /> -->
+<BaseLayout url={Astro.url}>
+  <Hero lang={lang}/>
+  <Companies lang={lang}/>
+  <TuistFeatures lang={lang}/>
+  <Testimonials lang={lang}/>
+  <TuistCloud lang={lang}/>
+  <Faq lang={lang}/>
+  <MigrationHelp lang={lang}/>
 </BaseLayout>

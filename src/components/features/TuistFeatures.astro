@@ -1,0 +1,65 @@
+---
+import Verticalgrid from "../assets/VerticalGrid.astro";
+import {useTranslations, getLangFromUrl} from "../../i18n/utils"
+const { lang } = Astro.props;
+
+const t = useTranslations(lang);
+---
+
+<section aria-labelledby="Featurethree" id="Featurethree " class="relative">
+  <Verticalgrid />
+  <div class="max-w-7xl px-8 md:px-12 lg:px-32 mx-auto py-12 lg:py-24 relative">
+    <div class="max-w-2xl mx-auto lg:text-center">
+      <div>
+        <span
+          class="text-transparent bg-clip-text font-medium tracking-widest bg-gradient-to-r from-cyan-400 via-teal-500 to-indigo-500 text-xs uppercase"
+          >{t('home.tuist_features.subtitle')}</span
+        ><p class="text-2xl md:text-3xl mt-8 font-normal text-white">
+            {t('home.tuist_features.slogan')}
+        </p>
+      </div>
+    </div>
+    <ul
+      class="grid grid-cols-1 lg:text-center gap-6 mt-12 list-none lg:grid-cols-4 lg:gap-12 lg:mt-24"
+      role="list">
+      <li>
+        <div>
+          <p class="text-lg font-medium text-white lg:text-xl">
+            {t('home.tuist_features.zero_conflicts.title')}
+          </p>
+        </div>
+        <div class="mt-2 text-base text-slate-400">
+          {t('home.tuist_features.zero_conflicts.description')}
+        </div>
+      </li>
+      <li>
+        <div>
+          <p class="text-lg font-medium text-white lg:text-xl">{t('home.tuist_features.focused_projects.title')}</p>
+        </div>
+        <div class="mt-2 text-base text-slate-400">
+          {t('home.tuist_features.focused_projects.description')}
+        </div>
+      </li>
+      <li>
+        <div>
+          <p class="text-lg font-medium text-white lg:text-xl">
+            {t('home.tuist_features.bus_factor.title')}
+          </p>
+        </div>
+        <div class="mt-2 text-base text-slate-400">
+          {t('home.tuist_features.bus_factor.description')}
+        </div>
+      </li>
+      <li>
+        <div>
+          <p class="text-lg font-medium text-white lg:text-xl">
+            {t('home.tuist_features.conceptual_compression.title')}
+          </p>
+        </div>
+        <div class="mt-2 text-base text-slate-400">
+          {t('home.tuist_features.conceptual_compression.description')}          
+        </div>
+      </li>
+    </ul>
+  </div>
+</section>

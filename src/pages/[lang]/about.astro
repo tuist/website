@@ -1,0 +1,12 @@
+---
+import About from "../about.astro"
+import { languagesExceptDefault } from "../../i18n/ui";
+
+export async function getStaticPaths() {
+  return languagesExceptDefault.map((lang) => {
+    return { params: { lang } };
+  });
+}
+---
+
+<About/>

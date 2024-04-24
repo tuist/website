@@ -3,19 +3,23 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import Cookies from "../components/Infopages/Cookies.astro";
 import { AstroSeo } from "@astrolib/seo";
 import metadata from '../utils/metadata.json';
+import { useTranslations, getLangFromUrl, useTranslatedPath } from "../i18n/utils";
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+const translatedPath = useTranslatedPath(lang);
 ---
 
 <AstroSeo
-title="Tuist Cloud Cookie Policy"
-description=`Read about Tuist Cloud's cookie policy.`
+title={t('cookies.og.title')}
+description={t('cookies.og.description')}
 canonical={metadata.url}
 openGraph={{
   url: metadata.url,
-  title: "Tuist Cloud Cookie Policy",
-  description: `Read about Tuist Cloud's cookie policy.`,
+  title: t('cookies.og.title'),
+  description: t('cookies.og.description'),
   images: [
     {
-      url: `${metadata.url}/og-images/cookies.jpg`,
+      url: `${metadata.url}${translatedPath('/og-images/cookies.jpg')}`,
       alt: "Tuist Cloud's cookie policy",
       type: "image/jpg",
       height: 630,
@@ -30,6 +34,6 @@ twitter={{
   cardType: "summary_large_image",
 }}
 />
-<BaseLayout>
+<BaseLayout url={Astro.url}>
   <Cookies />
 </BaseLayout>

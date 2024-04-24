@@ -3,6 +3,9 @@ import { getCollection } from "astro:content";
 const allAuthors = await getCollection('authors')
 const allPosts = await getCollection('posts')
 import { format } from "timeago.js";
+import { useTranslations } from "../i18n/utils";
+const { lang } = Astro.props;
+const t = useTranslations(lang);
 ---
 
 <section
@@ -16,12 +19,12 @@ import { format } from "timeago.js";
         <div class="w-full">
           <span
             class="text-transparent bg-clip-text font-medium tracking-widest bg-gradient-to-r from-cyan-400 via-cyan-500 to-indigo-500 text-xs uppercase"
-            >Blog</span
+            >{t('blog.subtitle')}</span
           >
-          <h2 class="text-3xl mt-8 font-normal text-white">Stay updated</h2>
+          <h2 class="text-3xl mt-8 font-normal text-white">{t('blog.title')}</h2>
           <div class="max-w-lg mt-3">
             <p class="text-lg text-slate-400">
-              Discover engaging stories and expert insights on our blog.
+              {t('blog.description')}
             </p>
           </div>
         </div>
@@ -36,7 +39,7 @@ import { format } from "timeago.js";
               .slice(0, 3)
               .join("-");
             const author = allAuthors.find((author) => author.id === post.data.author)
-            const timeAgoDate = format(date, "en_US");
+            const timeAgoDate = format(date, lang);
             return (
               <div class="grid grid-cols-1 gap-4 pt-4 lg:grid-cols-3 lg:pt-12">
                 <div class="flex flex-row space-x-5 flex-shrink-0 mb-6 lg:space-x-0 lg:flex-col lg:pr-12 lg:mb-0 lg:pl-4">
@@ -44,10 +47,10 @@ import { format } from "timeago.js";
                     <p class="text-sm text-slate-400">{timeAgoDate}</p>
                     {!isInterview && (
                       <p class="text-sm text-slate-400">
-                        Written by:{" "}
+                        {t('blog.written-by')}:{" "}
                         <a
                           class="hover:underline"
-                          href={author?.data?.twitter_handle ? `https://twitter.com/${author?.data?.twitter_handle}` : null}
+                          href={author?.data?.x_handle ? `https://twitter.com/${author?.data?.x_handle}` : null}
                         >
                           {author?.data?.name}
                         </a>
@@ -58,7 +61,7 @@ import { format } from "timeago.js";
                         Interviewee:{" "}
                         <a
                           class="hover:underline"
-                          href={`https://twitter.com/${post.data.interviewee_twitter_handle}`}
+                          href={`https://twitter.com/${post.data.interviewee_x_handle}`}
                         >
                           {post.data.type === 'interview' ? post.data.interviewee_name : null}
                         </a>
@@ -86,7 +89,7 @@ import { format } from "timeago.js";
                       href={`/blog/${post.slug}`}
                       class="text-sm leading-6 text-sky-600 hover:text-white"
                     >
-                      Read more <span aria-hidden="true">&rarr;</span>
+                      {t('blog.read-more')} <span aria-hidden="true">&rarr;</span>
                     </a>
                   </p>
                 </div>

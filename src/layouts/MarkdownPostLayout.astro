@@ -1,13 +1,16 @@
 ---
 import BaseLayout from "./BaseLayout.astro";
-const { entry } = Astro.props;
+const { entry, url } = Astro.props;
 import { AstroSeo } from "@astrolib/seo";
 import { format } from "timeago.js";
 import metadata from "../utils/metadata.json";
 import { getCollection } from "astro:content";
+import { useTranslations, getLangFromUrl } from "../i18n/utils";
+const lang = getLangFromUrl(url);
+const t = useTranslations(lang);
 
 const date = entry.slug.split("/").slice(0, 3).join("-");
-const timeAgoDate = format(date, "en_US");
+const timeAgoDate = format(date, lang);
 const title = `${entry.data.title} - Tuist`;
 const allAuhors = await getCollection("authors");
 const author = allAuhors.find((author) => author.id === entry.data.author);
@@ -44,7 +47,7 @@ const intervieweeAvatar = entry.data.interviewee_avatar;
     cardType: "summary_large_image",
   }}
 />
-<BaseLayout>
+<BaseLayout url={url}>
   <section class="relative overflow-x-hidden">
     <svg
       class="absolute blur-3xl right-0 top-0 opacity-80"
@@ -125,7 +128,7 @@ const intervieweeAvatar = entry.data.interviewee_avatar;
                     )
                   }
     
-                  {!isInterview && <>Written by: {author?.data?.name}</>}
+                  {!isInterview && <>{t('blog.written-by')}: {author?.data?.name}</>}
                 </p>
                 <span aria-hidden="true">·</span><div
                   class="flex text-slate-400 text-sm"
@@ -162,13 +165,13 @@ const intervieweeAvatar = entry.data.interviewee_avatar;
                     )
                   }
                   {
-                    author?.data?.twitter_handle && (
+                    author?.data?.x_handle && (
                       <a
-                        href={`https://twitter.com/${author?.data?.twitter_handle}`}
+                        href={`https://x.com/${author?.data?.x_handle}`}
                         type="button"
                         class="relative transition duration-500 ease-in-out transform -ml-px inline-flex items-center rounded-r-lg border border-slate-700 dark px-4 py-2 text-xs font-light text-white focus:z-10 focus:border-cyan-300 focus:outline-none focus:ring-1 focus:ring-cyan-300"
                       >
-                        Twitter
+                        X
                       </a>
                     )
                   }

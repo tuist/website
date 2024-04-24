@@ -1,7 +1,10 @@
 ---
 import Verticalgrid from "../assets/VerticalGrid.astro";
 import Calculator from "../Calculator";
-import FeatureBase from "../FeatureBase";
+import { useTranslations, getLangFromUrl } from "../../i18n/utils";
+const { lang, url } = Astro.props;
+
+const t = useTranslations(lang);
 ---
 
 <section
@@ -11,23 +14,31 @@ import FeatureBase from "../FeatureBase";
 >
   <Verticalgrid />
   <div class="max-w-7xl px-8 md:px-32 mx-auto py-12 md:py-24 relative">
-    <div class="flex items-center flex-col-reverse md:flex-row md:space-x-32 md:space-y-0">
+    <div
+      class="flex items-center flex-col-reverse md:flex-row md:space-x-32 md:space-y-0"
+    >
       <div class="max-w-xl mt-6 flex flex-col items-center md:items-start">
         <span
           class="text-transparent bg-clip-text font-medium tracking-widest bg-gradient-to-r from-cyan-400 via-cyan-500 to-indigo-500 text-xs uppercase"
           >Tuist Cloud</span
         >
         <p class="text-3xl mt-8 font-normal text-white">
-          Develop features at the speed of light
+          {t("cloud.hero.title")}
         </p>
         <p class="max-w-2xl mt-4 text-lg text-slate-400">
-          Your developers' productivity is inversely proportional to the size of the project. With Tuist Cloud, you can break that rule and make your developers faster, regardless of the size of the project.
+          {t("cloud.hero.subtitle")}
         </p>
-       <div class="py-10">
-        <FeatureBase client:visible/>
-       </div>
+        <div class="py-10">
+          <a
+            href="https://docs.tuist.io/documentation/tuist/tuist-cloud-get-started"
+            data-featurebase-feedback-portal
+            class="px-6 py-3 text-sm text-center text-white hover:to-indigo-400 duration-200 bg-gradient-to-r from-sky-400 to-indigo-500 font-medium hover:bg-white/5 rounded-xl hover:text-white focus:outline-none focus-visible:outline-black focus-visible:ring-black"
+          >
+            {t('cloud.hero.cta')}
+          </a>
+        </div>
       </div>
-      <img class="mt-20" src="/logos/cloud-logo.png" height="300" width="300"/>
+      <img class="mt-20" src="/logos/cloud-logo.png" height="300" width="300" />
     </div>
     <div>
       <ul
@@ -39,102 +50,82 @@ import FeatureBase from "../FeatureBase";
             <div
               class="flex items-center justify-center w-12 h-12 text-white shadow-indigo-500/20 bg-gradient-to-tr shadow-2xl from-vulcan-900 to-vulcan-700 rounded-xl"
             >
-
-
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M5.25 14.25h13.5m-13.5 0a3 3 0 01-3-3m3 3a3 3 0 100 6h13.5a3 3 0 100-6m-16.5-3a3 3 0 013-3h13.5a3 3 0 013 3m-19.5 0a4.5 4.5 0 01.9-2.7L5.737 5.1a3.375 3.375 0 012.7-1.35h7.126c1.062 0 2.062.5 2.7 1.35l2.587 3.45a4.5 4.5 0 01.9 2.7m0 0a3 3 0 01-3 3m0 3h.008v.008h-.008v-.008zm0-6h.008v.008h-.008v-.008zm-3 6h.008v.008h-.008v-.008zm0-6h.008v.008h-.008v-.008z" />
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M15.59 14.37a6 6 0 0 1-5.84 7.38v-4.8m5.84-2.58a14.98 14.98 0 0 0 6.16-12.12A14.98 14.98 0 0 0 9.631 8.41m5.96 5.96a14.926 14.926 0 0 1-5.841 2.58m-.119-8.54a6 6 0 0 0-7.381 5.84h4.8m2.581-5.84a14.927 14.927 0 0 0-2.58 5.84m2.699 2.7c-.103.021-.207.041-.311.06a15.09 15.09 0 0 1-2.448-2.448 14.9 14.9 0 0 1 .06-.312m-2.24 2.39a4.493 4.493 0 0 0-1.757 4.306 4.493 4.493 0 0 0 4.306-1.758M16.5 9a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0Z" />
+            </svg>
+            
+            </div>
+            <p class="mt-5 text-lg font-medium text-white lg:text-xl">
+              {t('cloud.features.1.title')}
+            </p>
+          </div>
+          <div class="mt-2 text-base text-slate-400">
+            {t('cloud.features.1.description')}
+          </div>
+        </li>
+        <li>
+          <div>
+            <div
+              class="flex items-center justify-center w-12 h-12 text-white shadow-indigo-500/20 bg-gradient-to-tr shadow-2xl from-vulcan-900 to-vulcan-700 rounded-xl"
+            >
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+            </svg>
+            
+            </div>
+            <p class="mt-5 text-lg font-medium text-white lg:text-xl">
+              {t('cloud.features.2.title')}
+            </p>
+          </div>
+          <div class="mt-2 text-base text-slate-400">
+            {t('cloud.features.2.description')}
+          </div>
+        </li>
+        <li>
+          <div>
+            <div
+              class="flex items-center justify-center w-12 h-12 text-white shadow-indigo-500/20 bg-gradient-to-tr shadow-2xl from-vulcan-900 to-vulcan-700 rounded-xl"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="w-6 h-6"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M7.5 14.25v2.25m3-4.5v4.5m3-6.75v6.75m3-9v9M6 20.25h12A2.25 2.25 0 0020.25 18V6A2.25 2.25 0 0018 3.75H6A2.25 2.25 0 003.75 6v12A2.25 2.25 0 006 20.25z"
+                ></path>
               </svg>
-              
             </div>
             <p class="mt-5 text-lg font-medium text-white lg:text-xl">
-              Binary caching
+              {t('cloud.features.3.title')}
             </p>
           </div>
           <div class="mt-2 text-base text-slate-400">
-            Preserve cache artifacts and distribute them between local and CI
-            environments to accelerate your workflows.
-          </div>
-        </li>
-        <li>
-          <div>
-            <div
-              class="flex items-center justify-center w-12 h-12 text-white shadow-indigo-500/20 bg-gradient-to-tr shadow-2xl from-vulcan-900 to-vulcan-700 rounded-xl"
-            >
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M7.217 10.907a2.25 2.25 0 100 2.186m0-2.186c.18.324.283.696.283 1.093s-.103.77-.283 1.093m0-2.186l9.566-5.314m-9.566 7.5l9.566 5.314m0 0a2.25 2.25 0 103.935 2.186 2.25 2.25 0 00-3.935-2.186zm0-12.814a2.25 2.25 0 103.933-2.185 2.25 2.25 0 00-3.933 2.185z" />
-            </svg>
-            
-            </div>
-            <p class="mt-5 text-lg font-medium text-white lg:text-xl">
-              Incrementality across envs
-            </p>
-          </div>
-          <div class="mt-2 text-base text-slate-400">
-            Build and test projects faster by skipping redundant compilations and unaffected tests.
-          </div>
-        </li>
-        <li>
-          <div>
-            <div
-              class="flex items-center justify-center w-12 h-12 text-white shadow-indigo-500/20 bg-gradient-to-tr shadow-2xl from-vulcan-900 to-vulcan-700 rounded-xl"
-            >
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M7.5 14.25v2.25m3-4.5v4.5m3-6.75v6.75m3-9v9M6 20.25h12A2.25 2.25 0 0020.25 18V6A2.25 2.25 0 0018 3.75H6A2.25 2.25 0 003.75 6v12A2.25 2.25 0 006 20.25z" />
-            </svg>
-            
-            </div>
-            <p class="mt-5 text-lg font-medium text-white lg:text-xl">
-              Build & project insights
-            </p>
-          </div>
-          <div class="mt-2 text-base text-slate-400">
-            We provide teams the data and tools to make informed decisions, detect regressions, and maintain project health.
+            {t('cloud.features.3.description')}
           </div>
         </li>
       </ul>
     </div>
-    <div
-      class="flex flex-col gap-y-20 mt-20 lg:grid-cols-8 lg:mt-36"
-    >
+    <div class="flex flex-col gap-y-20 mt-20 lg:grid-cols-8 lg:mt-36">
       <div class="col-span-1 md:col-span-3">
-        <h2 class="mt-6 text-3xl font-normal text-white">Return of Investment</h2>
+        <h2 class="mt-6 text-3xl font-normal text-white">
+          {t('cloud.roi.title')}
+        </h2>
         <p class="mt-5 text-lg text-slate-400">
-          Organizations face expenses due to developer inefficiencies. Tuist
-          Cloud optimizes workflows and infrastructure, making developers faster and their work more enjoyable by:
+          {t('cloud.roi.descrription')}
         </p>
 
-        <ul class="mt-12 list-none space-y-5" role="list">
-          <li>
-            <div class="text-base text-slate-400">
-              <strong class="text-white">01. Slow builds</strong>
-              ― Resulting from Xcode's inability to share build artifacts across
-              environments.
-            </div>
-          </li>
-          <li>
-            <div class="text-base text-slate-400">
-              <strong class="text-white">02. Debugging regressions</strong> ― Stemming
-              from the absence of tools to monitor project health.
-            </div>
-          </li>
-          <li>
-            <div class="text-base text-slate-400">
-              <strong class="text-white">03. Sharing builds</strong> ― Often leaving
-              individuals waiting for the next nightly release.
-            </div>
-          </li>
-          <li>
-            <div class="text-base text-slate-400">
-              <strong class="text-white">04. Retrying flaky tests</strong> ― Due
-              to the all-or-nothing approach to run test suites.
-            </div>
-          </li>
-        </ul>
       </div>
       <section
-        class="flex flex-col p-[0.060rem] shadow-2xl rounded-3xl bg-gradient-to-b from-indigo-500 to-cyan-500 col-span-5">
+        class="flex flex-col p-[0.060rem] shadow-2xl rounded-3xl bg-gradient-to-b from-indigo-500 to-cyan-500 col-span-5"
+      >
         <div class="bg-vulcan-900 px-6 sm:px-8 pt-8 pb-10 rounded-3xl h-full">
-          <Calculator client:visible/>
+          <Calculator client:visible url={url}/>
         </div>
       </section>
       <!-- <div class="mt-12 lg:mt-0 w-full lg:ml-auto bg-indigo-500 rounded-md p-4">

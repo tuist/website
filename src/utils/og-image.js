@@ -3,18 +3,23 @@ import satori from "satori";
 import sharp from "sharp";
 
 export default async function ogImage(
-  { header, title, footer } = {
+  { header, title, footer, lang } = {
     header: "Tuist",
     title: "Title",
     footer: "Footer",
+    lang: "en"
   },
   { width, height } = { width: 1200, height: 600 }
 ) {
-  const regularInter = await fs.readFile(
-    "./public/fonts/inter/Inter-Regular.ttf"
+  const regularNotoSans = await fs.readFile(
+    "./public/fonts/Noto_Sans/static/NotoSans-Regular.ttf"
   );
-  const boldInter = await fs.readFile("./public/fonts/inter/Inter-Bold.ttf");
-
+  const regularNotoSansJP = await fs.readFile(
+    "./public/fonts/Noto_Sans_JP/static/NotoSansJP-Regular.ttf"
+  );
+  const regularNotoSansKR = await fs.readFile(
+    "./public/fonts/Noto_Sans_KR/static/NotoSansKR-Regular.ttf"
+  );
   const svg = await satori(
     {
       type: "div",
@@ -27,7 +32,7 @@ export default async function ogImage(
               style: {
                 fontSize: 30,
                 marginLeft: 10,
-                fontWeight: 800,
+                fontWeight: 400,
                 textTransform: "uppercase",
                 letterSpacing: 1,
                 backgroundImage:
@@ -47,10 +52,10 @@ export default async function ogImage(
                   props: {
                     children: title,
                     style: {
-                      fontFamily: "Inter",
+                      fontFamily: `NotoSans-${lang}`,
                       display: "flex",
                       fontSize: 50,
-                      fontWeight: 800,
+                      fontWeight: 400,
                       textAlign: "left",
                       flex: 1,
                     },
@@ -85,7 +90,7 @@ export default async function ogImage(
           },
         ],
         style: {
-          fontFamily: "Inter",
+          fontFamily: `NotoSans-${lang}`,
           display: "flex",
           height: "100%",
           width: "100%",
@@ -106,15 +111,21 @@ export default async function ogImage(
       height: height,
       fonts: [
         {
-          name: "Inter",
-          data: regularInter,
+          name: "NotoSans-en",
+          data: regularNotoSans,
           weight: 400,
           style: "normal",
         },
         {
-          name: "Inter",
-          data: boldInter,
-          weight: 800,
+          name: "NotoSans-ja",
+          data: regularNotoSansJP,
+          weight: 400,
+          style: "normal",
+        },
+        {
+          name: "NotoSans-ko",
+          data: regularNotoSansKR,
+          weight: 400,
           style: "normal",
         },
       ],

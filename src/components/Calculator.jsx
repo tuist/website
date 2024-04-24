@@ -1,9 +1,13 @@
 import { useState } from "preact/hooks";
 import approx from "approximate-number";
+import { useTranslations, getLangFromUrl } from "../i18n/utils";
 
 export default function Calculator(
-  { showTitle, showDescription } = { showTitle: true, showDescription: true }
+  { showTitle, showDescription, url } = { showTitle: true, showDescription: true }
 ) {
+  const lang = getLangFromUrl(url);
+  const t = useTranslations(lang);
+
   const [developersCount, setDevelopersCount] = useState(20);
   const [buildTimeSaved, setBuildTimeSaved] = useState(70);
   const [averageBuildTime, setAverageBuildTime] = useState(10);
@@ -58,82 +62,82 @@ export default function Calculator(
           min="1"
           max="100"
           value={developersCount}
-          description={`How many developers are on the project?`}
+          description={t('cloud.roi.calculator.developers.question')}
           setValue={setDevelopersCount}
-          name={(value) => `${value} developers`}
+          name={(value) => t('cloud.roi.calculator.developers.title', {developers: value})}
           id="developers"
         />
         <Slider
           min="1"
           max="60"
           value={averageBuildTime}
-          description={`How long does the project take (minutes) to build?`}
+          description={t('cloud.roi.calculator.minutes.question')}
           setValue={setAverageBuildTime}
-          name={(value) => `${value} minutes`}
+          name={(value) => t('cloud.roi.calculator.minutes.title', {minutes: value})}
           id="build-time"
         />
         <Slider
           min="1"
           max="100"
           value={buildTimeSaved}
-          description={`In average in every build.`}
+          description={t('cloud.roi.calculator.time-saved.question')}
           setValue={setBuildTimeSaved}
-          name={(value) => `${value}% of time saved`}
+          name={(value) => t('cloud.roi.calculator.time-saved.title', {percentage: value})}
           id="build-time-saved"
         />
         <Slider
           min="1000"
           max="20000"
           value={averageMonthlySalary}
-          description={`What is the cost to the company?`}
+          description={t('cloud.roi.calculator.salary.question')}
           setValue={setAverageMonthlySalary}
-          name={(value) => `Monthly salary of $${value}`}
+          name={(value) => t('cloud.roi.calculator.salary.title', {salary: value})}
           id="salary"
         />
         <Slider
           min="1"
           max="100"
           value={ciBuildCost}
-          description={`On CI (e.g. GitHub Actions, Bitrise...)`}
+          description={t('cloud.roi.calculator.ci-cost.question')}
           setValue={setCIBuildCost}
-          name={(value) => `$${value / 100} per build minute`}
+          name={(value) => t('cloud.roi.calculator.ci-cost.title', {cost: value/100})}
           id="ci-build-cost"
         />
         <Slider
           min="1"
           max="50"
           value={localBuilds}
-          description={`Per developer and day.`}
+          description={t('cloud.roi.calculator.local-builds.question')}
           setValue={setLocalBuilds}
-          name={(value) => `${value} local clean builds`}
+          name={(value) => t('cloud.roi.calculator.local-builds.title', {builds: value})}
           id="local-builds"
         />
         <Slider
           min="1"
           max="50"
           value={ciBuilds}
-          description={`Per developer and day.`}
+          description={t('cloud.roi.calculator.ci-builds.question')}
           setValue={setCIBuilds}
-          name={(value) => `${value} CI clean builds`}
+          name={(value) => t('cloud.roi.calculator.ci-builds.title', {builds: value})}
           id="ci-builds"
         />
       </div>
       <div class="grid grid-cols-2 mt-10">
         <div class="flex flex-col gap-y-3 ">
           <div class="uppercase text-slate-500 text-xs">
-            Annual Developer Hours Saved
+            {t('cloud.roi.calculator.annual-hours-saved')}
           </div>
           <div class="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-br from-indigo-300 to-cyan-500">
-            {approx(timeSaved)} h/year
+            {approx(timeSaved)} {t('cloud.roi.calculator.annual-hours-saved.unit')}
           </div>
         </div>
 
         <div class="flex flex-col gap-y-3">
           <div class="uppercase text-slate-500 text-xs">
-            Annual R&D Cost Recapture
+            {t('cloud.roi.calculator.annual-r&d-cost-recapture')}
           </div>
           <div class="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-br from-indigo-300 to-cyan-500">
-            ${approx(moneySaved)}
+            {t('cloud.roi.calculator.annual-r&d-cost-recapture.unit', {money: approx(moneySaved)})}
           </div>
         </div>
       </div>
@@ -142,7 +146,7 @@ export default function Calculator(
         aria-label="Sign up for testing"
         href="https://docs.tuist.io/cloud/what-is-cloud"
       >
-        Save ${approx(moneySaved)}
+      {t('cloud.roi.calculator.cta', {money: approx(moneySaved)})}
       </a>
     </div>
   );

@@ -1,5 +1,9 @@
 ---
 import RoundedGrid from "../assets/RoundedGrid.astro";
+import { useTranslations, getLangFromUrl } from "../../i18n/utils";
+
+const { lang } = Astro.props;
+const t = useTranslations(lang);
 ---
 
 <section
@@ -14,18 +18,18 @@ import RoundedGrid from "../assets/RoundedGrid.astro";
           <div class="lg:inline-flex items-center gap-3">
             <p
               class="bg-gradient-to-r from-cyan-400 via-cyan-500 to-indigo-500 text-transparent bg-clip-text border-white mt-3 lg:mt-0 uppercase">
-              Get on the cloud
+              {t('cloud.cta.subtitle')}
             </p>
           </div>
           <p class="text-4xl mt-12 font-normal tracking-tight text-white">
-            Boost your development with Tuist Cloud
+            {t('cloud.cta.title')}
           </p>
         </div>
         <div class="flex flex-col sm:flex-row mt-12 lg:justify-center">
           <a
             href="https://docs.tuist.io/cloud/what-is-cloud"
             class="inline-flex items-center justify-center px-6 py-3 text-center text-white hover:to-indigo-400 duration-200 bg-gradient-to-r from-sky-400 to-indigo-500 font-medium hover:bg-white/5 rounded-xl hover:text-white focus:outline-none focus-visible:outline-black focus-visible:ring-black">
-            Get Started &nbsp;&nbsp; &rarr;
+            {t('cloud.cta.button')} &nbsp;&nbsp; &rarr;
           </a>
         </div>l
       </div>
