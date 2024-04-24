@@ -3,6 +3,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import metadata from '../utils/metadata.json'
 import BlogPosts from "../components/BlogPosts.astro";
 import { AstroSeo } from "@astrolib/seo";
+const url =  Astro.url;
 ---
 
 <AstroSeo
@@ -31,5 +32,5 @@ import { AstroSeo } from "@astrolib/seo";
   }}
 />
 <BaseLayout>
-  <BlogPosts />
+  <BlogPosts url={url} />
 </BaseLayout>
