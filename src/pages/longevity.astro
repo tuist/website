@@ -3,20 +3,24 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import Longevity from "../components/Infopages/Longevity.astro";
 import { AstroSeo } from "@astrolib/seo";
 import metadata from '../utils/metadata.json';
+import { useTranslations, getLangFromUrl, useTranslatedPath } from "../i18n/utils";
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+const translatedPath = useTranslatedPath(lang);
 ---
 
 <AstroSeo
-title="Longevity Manifesto"
-description=`Tuist is designed for the long-term and we want to make sure that it stays that way. This document is a manifesto that outlines how we plan to achieve that.`,
+title={t("longevity.og.title")}
+description={t("longevity.og.description")},
 canonical={metadata.url}
 openGraph={{
   url: metadata.url,
-  title: "Longevity Manifesto",
-  description: `Tuist is designed for the long-term and we want to make sure that it stays that way. This document is a manifesto that outlines how we plan to achieve that.`,
+  title: t("longevity.og.title"),
+  description: t("longevity.og.description"),
   images: [
     {
-      url: `${metadata.url}/og-images/longevity.jpg`,
-      alt: "Longevity Manifesto",
+      url: `${metadata.url}${translatedPath('/og-images/longevity.jpg')}`,
+      alt: t("longevity.og.title"),
       type: "image/jpg",
       height: 630,
       width: 1200

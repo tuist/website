@@ -3,20 +3,24 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import Privacy from "../components/Infopages/Privacy.astro";
 import { AstroSeo } from "@astrolib/seo";
 import metadata from '../utils/metadata.json';
+import { useTranslations, getLangFromUrl, useTranslatedPath } from "../i18n/utils";
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+const translatedPath = useTranslatedPath(lang);
 ---
 
 <AstroSeo
-title="Tuist Cloud Privacy Policy"
-description=`Read about Tuist Cloud's privacy policy.`
+title={t('privacy.og.title')}
+description={t('privacy.og.description')}
 canonical={metadata.url}
 openGraph={{
   url: metadata.url,
-  title: "Tuist Cloud Privacy Policy",
-  description: `Read about Tuist Cloud's privacy policy.`,
+  title: t('privacy.og.title'),
+  description: t('privacy.og.description'),
   images: [
     {
-      url: `${metadata.url}/og-images/privacy.jpg`,
-      alt: "Tuist Cloud privacy policy",
+      url: `${metadata.url}${translatedPath('/og-images/privacy.jpg')}`,
+      alt: t('privacy.og.title'),
       type: "image/jpg",
       height: 630,
       width: 1200

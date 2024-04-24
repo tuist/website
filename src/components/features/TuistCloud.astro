@@ -15,16 +15,16 @@ const translatedPath = useTranslatedPath(lang);
   <Verticalgrid />
   <div class="max-w-7xl px-8 md:px-12 lg:px-32 mx-auto py-12 lg:py-24 relative">
     <div>
-      <div class="max-w-full flex flex-row items-center">
+      <div class="max-w-full flex flex-col-reverse md:flex-row items-center">
         <div class="flex-1">
-          <span
-            class="text-transparent bg-clip-text font-medium tracking-widest bg-gradient-to-r from-cyan-400 via-cyan-500 to-indigo-500 text-xs uppercase"
-            >Tuist Cloud</span
+          <div
+            class="text-transparent text-center bg-clip-text font-medium tracking-widest bg-gradient-to-r from-cyan-400 via-cyan-500 to-indigo-500 text-xs uppercase"
+            >Tuist Cloud</div
           >
-          <p class="text-3xl mt-8 font-normal text-white">
+          <p class="text-2xl md:text-3xl mt-8 font-normal text-white">
             {t("home.cloud.slogan")}
           </p>
-          <p class="max-w-2xl mt-4 text-lg text-slate-400">
+          <p class="max-w-2xl mt-4 text-base text-slate-400">
             {t('home.cloud.description')}
           </p>
           <a
@@ -36,7 +36,7 @@ const translatedPath = useTranslatedPath(lang);
           </a>
         </div>
         <div>
-          <img height="250" width="250" src="/logos/cloud-logo.png" />
+          <img class="w-36" src="/logos/cloud-logo.png" />
         </div>
       </div>
     </div>

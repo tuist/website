@@ -1,11 +1,8 @@
 {
     "nav.blog": "ブログ",
     "nav.docs": "ドキュメンテーション",
-    "nav.slack": "スラック",
-    "nav.github": "ギットハブ",
+    "nav.slack": "Slack",
+    "nav.github": "GitHub",
     "nav.cloud": "トゥイスト・クラウド",
-    "cloud.hero.title": "光の速さで機能を開発する",
-    "home.og.image.title": "Xcode開発ワークフローのスーパーチャージ",
-    "home.og.image.header": "Tuist",
-    "home.og.image.footer": "tuist.io · @tuistio"
+    "cloud.hero.title": "光の速さで機能を開発する"
 }

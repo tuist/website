@@ -6,20 +6,23 @@ import PricingThree from "../components/pricing/PricingThree.astro";
 import FaqThree from "../components/Infopages/FaqThree.astro";
 import CtaFour from "../components/ctas/CtaFour.astro";
 import FeatureOne from "../components/features/FeatureOne.astro";
-
+import { useTranslations, getLangFromUrl, useTranslatedPath } from "../i18n/utils";
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+const translatedPath = useTranslatedPath(lang);
 ---
 
 <AstroSeo
-  title="Tuist Cloud - A premium extension for Tuist users"
-  description=`Discover Tuist Cloud: a premium extension for Tuist users. Boost productivity, enhance collaboration, make informed decisions, and ensure your project's health. Exclusive features tailored for those who demand excellence.`
+  title={t('cloud.og.title')}
+  description={t('cloud.og.description')}
   canonical={metadata.url}
   openGraph={{
     url: metadata.url,
-    title: "Tuist Cloud - A premium extension for Tuist users",
-    description: `Discover Tuist Cloud: a premium extension for Tuist users. Boost productivity, enhance collaboration, make informed decisions, and ensure your project's health. Exclusive features tailored for those who demand excellence.`,
+    title: t('cloud.og.title'),
+    description: t('cloud.og.description'),
     images: [
       {
-        url: `${metadata.url}/cloud/og-image.jpg`,
+        url: `${metadata.url}${translatedPath('/cloud/og-image.jpg')}`,
         alt: "Tuist Cloud",
         type: "image/jpg",
         height: 630,

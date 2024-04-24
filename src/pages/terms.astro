@@ -3,20 +3,24 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import Terms from "../components/Infopages/Terms.astro";
 import { AstroSeo } from "@astrolib/seo";
 import metadata from '../utils/metadata.json';
+import { useTranslations, getLangFromUrl, useTranslatedPath } from "../i18n/utils";
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+const translatedPath = useTranslatedPath(lang);
 ---
 
 <AstroSeo
-title="Tuist Cloud Terms of Service"
-description=`Read about Tuist Cloud's terms of service.`
+title={t("terms.og.title")}
+description={t("terms.og.description")}
 canonical={metadata.url}
 openGraph={{
   url: metadata.url,
-  title: "Tuist Cloud Terms of Service",
-  description: `Read about Tuist Cloud's terms of service.`,
+  title: t("terms.og.title"),
+  description: t("terms.og.description"),
   images: [
     {
-      url: `${metadata.url}/og-images/terms.jpg`,
-      alt: "Tuist Cloud Terms of Service",
+      url: `${metadata.url}${translatedPath("/og-images/terms.jpg")}`,
+      alt: t("terms.og.title"),
       type: "image/jpg",
       height: 630,
       width: 1200
