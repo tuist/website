@@ -3,7 +3,7 @@ import { getCollection } from "astro:content";
 const allAuthors = await getCollection('authors')
 const allPosts = await getCollection('posts')
 import { format } from "timeago.js";
-import { useTranslations, getLangFromUrl } from "../i18n/utils";
+import { useTranslations } from "../i18n/utils";
 const { lang } = Astro.props;
 const t = useTranslations(lang);
 ---

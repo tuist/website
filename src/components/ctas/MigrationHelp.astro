@@ -1,8 +1,8 @@
 ---
 import RoundedGrid from "../assets/RoundedGrid.astro";
 import {useTranslations, getLangFromUrl} from "../../i18n/utils"
+const { lang } = Astro.props;
 
-const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 ---
 

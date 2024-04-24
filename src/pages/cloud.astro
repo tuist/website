@@ -7,6 +7,7 @@ import FaqThree from "../components/Infopages/FaqThree.astro";
 import CtaFour from "../components/ctas/CtaFour.astro";
 import FeatureOne from "../components/features/FeatureOne.astro";
 import { useTranslations, getLangFromUrl, useTranslatedPath } from "../i18n/utils";
+const url = Astro.url;
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 const translatedPath = useTranslatedPath(lang);
@@ -37,9 +38,9 @@ const translatedPath = useTranslatedPath(lang);
     cardType: "summary_large_image",
   }}
 />
-<BaseLayout>
-    <FeatureOne/>
-    <PricingThree />
-    <FaqThree />
-    <CtaFour />
+<BaseLayout url={Astro.url}>
+    <FeatureOne url={url} lang={lang}/>
+    <PricingThree lang={lang}/>
+    <FaqThree lang={lang}/>
+    <CtaFour lang={lang}/>
 </BaseLayout>

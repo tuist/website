@@ -1,7 +1,7 @@
 ---
 import Blurgradientleft from "../assets/Blurgradientleft.astro";
 import {useTranslations, getLangFromUrl, useTranslatedPath} from "../../i18n/utils"
-const lang = getLangFromUrl(Astro.url);
+const { lang } = Astro.props;
 const t = useTranslations(lang);
 const translatedPath = useTranslatedPath(lang);
 ---

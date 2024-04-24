@@ -15,4 +15,4 @@ export async function getStaticPaths() {
 const { entry } = Astro.props;
 ---
 
-<MarkdownPostLayout entry={entry}/>
+<MarkdownPostLayout entry={entry} url={Astro.url}/>

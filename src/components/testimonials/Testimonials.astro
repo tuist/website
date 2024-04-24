@@ -4,9 +4,9 @@ import { getCollection } from "astro:content";
 import RandomTestimonial from "./RandomTestimonial.jsx";
 const allTestimonials = await getCollection('testimonials')
 
-import {useTranslations, getLangFromUrl} from "../../i18n/utils"
+import {useTranslations} from "../../i18n/utils"
 
-const lang = getLangFromUrl(Astro.url);
+const { lang } = Astro.props;
 const t = useTranslations(lang);
 ---
 

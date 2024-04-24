@@ -40,12 +40,12 @@ const translatedPath = useTranslatedPath(lang);
     cardType: "summary_large_image",
   }}
 />
-<BaseLayout>
-  <Hero />
-  <Companies />
-  <TuistFeatures />
-  <Testimonials />
-  <TuistCloud />
-  <Faq />
-  <MigrationHelp />
+<BaseLayout url={Astro.url}>
+  <Hero lang={lang}/>
+  <Companies lang={lang}/>
+  <TuistFeatures lang={lang}/>
+  <Testimonials lang={lang}/>
+  <TuistCloud lang={lang}/>
+  <Faq lang={lang}/>
+  <MigrationHelp lang={lang}/>
 </BaseLayout>

@@ -1,18 +1,17 @@
 ---
 import {useTranslations, getLangFromUrl, useTranslatedPath, getLangFromPath} from "../../i18n/utils"
 import {ui as languages} from "../../i18n/ui"
-const url = Astro.url;
-const lang = getLangFromUrl(url);
+const { lang, url } = Astro.props;
 const t = useTranslations(lang);
 const translatedPath = useTranslatedPath(lang);
-const languageTranslatedPaths = Object.fromEntries(Object.keys(languages).map((destLanguage) => {
-  return [destLanguage, (path) => {
-    const rawPath = path.replace(`/${getLangFromPath(path)}`, ``)
-    // @ts-ignore
-    return useTranslatedPath(destLanguage)(rawPath)
-  }]
-}))
 
+const languageTranslatedPaths = Object.fromEntries(Object.keys(languages).map((destLanguage) => {
+  if (!url) { return [destLanguage, "#"]}
+  const rawPath = url.pathname.replace(`/${getLangFromPath(url.pathname)}`, ``)
+  // @ts-ignore
+  const path = useTranslatedPath(destLanguage)(rawPath)
+  return [destLanguage, path]
+}))
 ---
 <section
   aria-labelledby="navigation"
@@ -88,7 +87,7 @@ const languageTranslatedPaths = Object.fromEntries(Object.keys(languages).map((d
             <div :class="open ? '' : 'hidden'" class="absolute lg:right-0 mt-2 w-56 origin-center lg:origin-top-right rounded-md bg-vulcan-900 shadow-lg ring-1 ring-white ring-opacity-10 focus:outline-none" role="menu" aria-orientation="vertical" aria-labelledby="menu-button" tabindex="-1">
               <div class="py-1" role="none">
                 {Object.keys(languages).map((lang) => (
-                  <a href={languageTranslatedPaths[lang](url.pathname)} class="text-gray-200 block px-4 py-2 text-sm uppercase hover:text-indigo-500" role="menuitem" tabindex="-1" id="menu-item-0">{lang}</a>
+                  <a href={languageTranslatedPaths[lang]} class="text-gray-200 block px-4 py-2 text-sm uppercase hover:text-indigo-500" role="menuitem" tabindex="-1" id="menu-item-0">{lang}</a>
                  ))}
               </div>
             </div>

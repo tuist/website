@@ -2,8 +2,8 @@
 import Verticalgrid from "../assets/VerticalGrid.astro";
 import Calculator from "../Calculator";
 import { useTranslations, getLangFromUrl } from "../../i18n/utils";
+const { lang, url } = Astro.props;
 
-const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 ---
 
@@ -125,7 +125,7 @@ const t = useTranslations(lang);
         class="flex flex-col p-[0.060rem] shadow-2xl rounded-3xl bg-gradient-to-b from-indigo-500 to-cyan-500 col-span-5"
       >
         <div class="bg-vulcan-900 px-6 sm:px-8 pt-8 pb-10 rounded-3xl h-full">
-          <Calculator client:visible url={Astro.url}/>
+          <Calculator client:visible url={url}/>
         </div>
       </section>
       <!-- <div class="mt-12 lg:mt-0 w-full lg:ml-auto bg-indigo-500 rounded-md p-4">

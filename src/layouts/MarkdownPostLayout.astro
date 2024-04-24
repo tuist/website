@@ -1,13 +1,12 @@
 ---
 import BaseLayout from "./BaseLayout.astro";
-const { entry } = Astro.props;
+const { entry, url } = Astro.props;
 import { AstroSeo } from "@astrolib/seo";
 import { format } from "timeago.js";
 import metadata from "../utils/metadata.json";
 import { getCollection } from "astro:content";
 import { useTranslations, getLangFromUrl } from "../i18n/utils";
-
-const lang = getLangFromUrl(Astro.url);
+const lang = getLangFromUrl(url);
 const t = useTranslations(lang);
 
 const date = entry.slug.split("/").slice(0, 3).join("-");
@@ -48,7 +47,7 @@ const intervieweeAvatar = entry.data.interviewee_avatar;
     cardType: "summary_large_image",
   }}
 />
-<BaseLayout>
+<BaseLayout url={url}>
   <section class="relative overflow-x-hidden">
     <svg
       class="absolute blur-3xl right-0 top-0 opacity-80"

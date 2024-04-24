@@ -3,8 +3,7 @@ import { Code } from "astro/components";
 import Verticalgrid from "../assets/VerticalGrid.astro";
 import { Companies } from "../Companies";
 import {useTranslations, getLangFromUrl} from "../../i18n/utils"
-
-const lang = getLangFromUrl(Astro.url);
+const { lang } = Astro.props;
 const t = useTranslations(lang);
 ---
 
