@@ -1,14 +1,22 @@
 ---
-import {useTranslations, getLangFromUrl, useTranslatedPath} from "../../i18n/utils"
-
+import {useTranslations, getLangFromUrl, useTranslatedPath, getLangFromPath} from "../../i18n/utils"
+import {ui as languages} from "../../i18n/ui"
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 const translatedPath = useTranslatedPath(lang);
+const languageTranslatedPaths = Object.fromEntries(Object.keys(languages).map((destLanguage) => {
+  return [destLanguage, () => {
+    const rawPath = Astro.url.pathname.replace(`/${getLangFromPath(Astro.url.pathname)}`, ``)
+    // @ts-ignore
+    return useTranslatedPath(destLanguage)(rawPath)
+  }]
+}))
+
 ---
 <section
   aria-labelledby="navigation"
   id="navigation"
-  class="overflow-hidden relatve bg-vulcan-900/20 border-b border-white/5 backdrop-blur-2xl lg:bg-vulcan-900/0 z-50 fixed w-full">
+  class="relatve bg-vulcan-900/20 border-b border-white/5 backdrop-blur-2xl lg:bg-vulcan-900/0 z-50 fixed w-full">
   <div class="w-full mx-auto max-w-7xl relative">
     <div
       x-data="{ open: false }"
@@ -68,11 +76,29 @@ const translatedPath = useTranslatedPath(lang);
           href="https://github.com/tuist/tuist">{t("nav.github")}</a
         >
 
-        <a
+        <div class="flex flex-col md:margin-y-2 space-y-6 mt-3 lg:mt-0 lg:space-y-0 lg:flex-row items-center lg:ml-auto md:space-x-6">
+          <div class="relative inline-block" x-data="{ open: false }">
+            <button class="text-white uppercase flex flex-row items-center text-sm" x-on:click="open = ! open">
+              {lang} 
+              <svg class="-mr-1 h-5 w-5 text-gray-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
+              </svg>
+            </button>
+            <div :class="open ? '' : 'hidden'" class="absolute lg:right-0 mt-2 w-56 origin-center lg:origin-top-right rounded-md bg-vulcan-900 shadow-lg ring-1 ring-white ring-opacity-10 focus:outline-none" role="menu" aria-orientation="vertical" aria-labelledby="menu-button" tabindex="-1">
+              <div class="py-1" role="none">
+                {Object.keys(languages).map((lang) => (
+                  <a href={languageTranslatedPaths[lang]()} class="text-gray-200 block px-4 py-2 text-sm uppercase hover:text-indigo-500" role="menuitem" tabindex="-1" id="menu-item-0">{lang}</a>
+                 ))}
+              </div>
+            </div>
+          </div>
+
+          <a
           href={translatedPath("/cloud")}
-          class="inline-flex items-center justify-center px-6 py-2 text-sm text-center text-white hover:to-indigo-400 duration-200 bg-gradient-to-r from-sky-400 to-indigo-500 font-medium hover:bg-white/5 rounded-xl hover:text-white focus:outline-none focus-visible:outline-black focus-visible:ring-black lg:ml-auto">
+          class="inline-flex items-center justify-center px-6 py-2 text-sm text-center text-white hover:to-indigo-400 duration-200 bg-gradient-to-r from-sky-400 to-indigo-500 font-medium hover:bg-white/5 rounded-xl hover:text-white focus:outline-none focus-visible:outline-black focus-visible:ring-black">
           {t("nav.cloud")}
         </a>
+        </div>
       </nav>
     </div>
   </div>
