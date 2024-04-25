@@ -6,6 +6,7 @@ import PricingThree from "../components/pricing/PricingThree.astro";
 import FaqThree from "../components/Infopages/FaqThree.astro";
 import CtaFour from "../components/ctas/CtaFour.astro";
 import FeatureOne from "../components/features/FeatureOne.astro";
+import CloudOpenSourceProgram from "../components/CloudOpenSourceProgram.astro"
 import { useTranslations, getLangFromUrl, useTranslatedPath } from "../i18n/utils";
 const url = Astro.url;
 const lang = getLangFromUrl(Astro.url);
@@ -42,5 +43,6 @@ const translatedPath = useTranslatedPath(lang);
     <FeatureOne url={url} lang={lang}/>
     <PricingThree lang={lang}/>
     <FaqThree lang={lang}/>
+    <CloudOpenSourceProgram lang={lang}/>
     <CtaFour lang={lang}/>
 </BaseLayout>

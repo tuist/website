@@ -1,0 +1,42 @@
+---
+import Verticalgrid from "./assets/VerticalGrid.astro";
+
+import {useTranslations} from "../i18n/utils"
+
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+---
+
+<section
+  aria-labelledby="testimonials"
+  id="testimonials "
+  class="relative overflow-x-hidden">
+  <Verticalgrid />
+  <div class="max-w-7xl px-8 md:px-12 lg:px-32 mx-auto py-12 lg:pt-24 relative">
+    <div class="max-w-2xl mx-auto text-center">
+      <div>
+        <span
+          class="text-transparent bg-clip-text font-medium tracking-widest bg-gradient-to-r from-cyan-400 via-cyan-500 to-indigo-500 text-xs uppercase"
+          >{t('cloud.oss.subtitle')}</span
+        >
+        <p class="text-2xl md:text-3xl mt-8 font-normal text-white">
+          {t('cloud.oss.title')}
+        </p>
+        <p class="max-w-2xl mt-4 text-lg text-slate-400">
+          {t('cloud.oss.description')}
+        </p>
+        <a
+        class="inline-flex items-center justify-center w-full px-6 py-3 text-center text-white duration-200 bg-vulcan-800 font-medium hover:bg-white/5 rounded-xl hover:text-white focus:outline-none focus-visible:outline-black focus-visible:ring-black mt-8"
+        aria-label="Wannabe tier"
+        href="mailto:contact@tuist.io?subject=Tuist%20Cloud%20Open%20Source%20program&body=Hi%2C%0A%0AI%20want%20to%20be%20part%20of%20the%20Tuist%20Cloud%20Open%20Source%20program.%20Here's%20the%20information%20about%20my%20project%3A%0A%0A-%20Repository%3A%20%7Burl-here%7D%0A-%20Description%3A%20%7Bdescription-here%7D%0A%0AThanks">{t('cloud.oss.cta')}</a>
+      </div>
+    </div>
+  </div>
+  <!-- <div class="pb-24">
+    <div class="mx-auto">
+      <div class="flex flex-row justify-center">
+        <RandomTestimonial testimonials={allTestimonials}/>
+      </div>
+    </div>
+  </div> -->
+</section>
