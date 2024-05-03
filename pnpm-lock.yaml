@@ -16,7 +16,7 @@ dependencies:
     version: 2.1.0
   '@astrojs/preact':
     specifier: ^3.0.0
-    version: 3.2.0(preact@10.20.2)
+    version: 3.2.0(preact@10.21.0)
   '@astrojs/rss':
     specifier: ^4.0.0
     version: 4.0.5
@@ -55,7 +55,7 @@ dependencies:
     version: 1.1.2
   preact:
     specifier: ^10.16.0
-    version: 10.20.2
+    version: 10.21.0
   sanitize-html:
     specifier: ^2.11.0
     version: 2.13.0
@@ -227,7 +227,7 @@ packages:
       mrmime: 2.0.0
     dev: false
 
-  /@astrojs/preact@3.2.0(preact@10.20.2):
+  /@astrojs/preact@3.2.0(preact@10.21.0):
     resolution: {integrity: sha512-p49NO/EgMbO5tCugFYXPQVAJelww46hXt947uGjXC8IchslS4MNqj4lH0ZzNGeeK1hRKXovz7/LK6AXJgMxleA==}
     engines: {node: ^18.17.1 || ^20.3.0 || >=21.0.0}
     peerDependencies:
@@ -235,12 +235,12 @@ packages:
     dependencies:
       '@babel/plugin-transform-react-jsx': 7.23.4(@babel/core@7.24.4)
       '@babel/plugin-transform-react-jsx-development': 7.22.5
-      '@preact/preset-vite': 2.8.2(preact@10.20.2)
-      '@preact/signals': 1.2.3(preact@10.20.2)
+      '@preact/preset-vite': 2.8.2(preact@10.21.0)
+      '@preact/signals': 1.2.3(preact@10.21.0)
       babel-plugin-transform-hook-names: 1.0.2
-      preact: 10.20.2
-      preact-render-to-string: 6.3.1(preact@10.20.2)
-      preact-ssr-prepass: 1.2.1(preact@10.20.2)
+      preact: 10.21.0
+      preact-render-to-string: 6.3.1(preact@10.21.0)
+      preact-ssr-prepass: 1.2.1(preact@10.21.0)
     transitivePeerDependencies:
       - '@babel/core'
       - supports-color
@@ -1028,7 +1028,7 @@ packages:
     requiresBuild: true
     optional: true
 
-  /@preact/preset-vite@2.8.2(preact@10.20.2):
+  /@preact/preset-vite@2.8.2(preact@10.21.0):
     resolution: {integrity: sha512-m3tl+M8IO8jgiHnk+7LSTFl8axdPXloewi7iGVLdmCwf34XOzEUur0bZVewW4DUbUipFjTS2CXu27+5f/oexBA==}
     peerDependencies:
       '@babel/core': 7.x
@@ -1036,7 +1036,7 @@ packages:
     dependencies:
       '@babel/plugin-transform-react-jsx': 7.23.4(@babel/core@7.24.4)
       '@babel/plugin-transform-react-jsx-development': 7.22.5
-      '@prefresh/vite': 2.4.5(preact@10.20.2)
+      '@prefresh/vite': 2.4.5(preact@10.21.0)
       '@rollup/pluginutils': 4.2.1
       babel-plugin-transform-hook-names: 1.0.2
       debug: 4.3.4
@@ -1055,32 +1055,32 @@ packages:
     resolution: {integrity: sha512-O/XGxwP85h1F7+ouqTMOIZ3+V1whfaV9ToIVcuyGriD4JkSD00cQo54BKdqjvBJxbenvp7ynfqRHEwI6e+NIhw==}
     dev: false
 
-  /@preact/signals@1.2.3(preact@10.20.2):
+  /@preact/signals@1.2.3(preact@10.21.0):
     resolution: {integrity: sha512-M2DXse3Wi8HwjI1d2vQWOLJ3lHogvqTsJYvl4ofXRXgMFQzJ7kmlZvlt5i8x5S5VwgZu0ghru4HkLqOoFfU2JQ==}
     peerDependencies:
       preact: 10.x
     dependencies:
       '@preact/signals-core': 1.6.0
-      preact: 10.20.2
+      preact: 10.21.0
     dev: false
 
   /@prefresh/babel-plugin@0.5.1:
     resolution: {integrity: sha512-uG3jGEAysxWoyG3XkYfjYHgaySFrSsaEb4GagLzYaxlydbuREtaX+FTxuIidp241RaLl85XoHg9Ej6E4+V1pcg==}
     dev: false
 
-  /@prefresh/core@1.5.2(preact@10.20.2):
+  /@prefresh/core@1.5.2(preact@10.21.0):
     resolution: {integrity: sha512-A/08vkaM1FogrCII5PZKCrygxSsc11obExBScm3JF1CryK2uDS3ZXeni7FeKCx1nYdUkj4UcJxzPzc1WliMzZA==}
     peerDependencies:
       preact: ^10.0.0
     dependencies:
-      preact: 10.20.2
+      preact: 10.21.0
     dev: false
 
   /@prefresh/utils@1.2.0:
     resolution: {integrity: sha512-KtC/fZw+oqtwOLUFM9UtiitB0JsVX0zLKNyRTA332sqREqSALIIQQxdUCS1P3xR/jT1e2e8/5rwH6gdcMLEmsQ==}
     dev: false
 
-  /@prefresh/vite@2.4.5(preact@10.20.2):
+  /@prefresh/vite@2.4.5(preact@10.21.0):
     resolution: {integrity: sha512-iForDVJ2M8gQYnm5pHumvTEJjGGc7YNYC0GVKnHFL+GvFfKHfH9Rpq67nUAzNbjuLEpqEOUuQVQajMazWu2ZNQ==}
     peerDependencies:
       preact: ^10.4.0
@@ -1088,10 +1088,10 @@ packages:
     dependencies:
       '@babel/core': 7.24.4
       '@prefresh/babel-plugin': 0.5.1
-      '@prefresh/core': 1.5.2(preact@10.20.2)
+      '@prefresh/core': 1.5.2(preact@10.21.0)
       '@prefresh/utils': 1.2.0
       '@rollup/pluginutils': 4.2.1
-      preact: 10.20.2
+      preact: 10.21.0
     transitivePeerDependencies:
       - supports-color
     dev: false
@@ -1593,7 +1593,7 @@ packages:
     requiresBuild: true
     dependencies:
       bare-events: 2.2.2
-      bare-path: 2.1.1
+      bare-path: 2.1.2
       bare-stream: 1.0.0
     optional: true
 
@@ -1602,8 +1602,8 @@ packages:
     requiresBuild: true
     optional: true
 
-  /bare-path@2.1.1:
-    resolution: {integrity: sha512-OHM+iwRDRMDBsSW7kl3dO62JyHdBKO3B25FB9vNQBPcGHMo4+eA8Yj41Lfbk3pS/seDY+siNge0LdRTulAau/A==}
+  /bare-path@2.1.2:
+    resolution: {integrity: sha512-o7KSt4prEphWUHa3QUwCxUI00R86VdjiuxmJK0iNVDHYPGo+HsDaVCnqCmPbf/MiW1ok8F4p3m8RTHlWk8K2ig==}
     requiresBuild: true
     dependencies:
       bare-os: 2.3.0
@@ -3722,25 +3722,25 @@ packages:
       picocolors: 1.0.0
       source-map-js: 1.2.0
 
-  /preact-render-to-string@6.3.1(preact@10.20.2):
+  /preact-render-to-string@6.3.1(preact@10.21.0):
     resolution: {integrity: sha512-NQ28WrjLtWY6lKDlTxnFpKHZdpjfF+oE6V4tZ0rTrunHrtZp6Dm0oFrcJalt/5PNeqJz4j1DuZDS0Y6rCBoqDA==}
     peerDependencies:
       preact: '>=10'
     dependencies:
-      preact: 10.20.2
+      preact: 10.21.0
       pretty-format: 3.8.0
     dev: false
 
-  /preact-ssr-prepass@1.2.1(preact@10.20.2):
+  /preact-ssr-prepass@1.2.1(preact@10.21.0):
     resolution: {integrity: sha512-bLgbUfy8nL+PZghAPpyk9MF+cmXjdwEnxYPaJBmwbzFQqzIz8dQVBqjwB60RqZ9So/vIf6BRfHCiwFGuMCyfbQ==}
     peerDependencies:
       preact: '>=10 || ^10.0.0-beta.0 || ^10.0.0-alpha.0'
     dependencies:
-      preact: 10.20.2
+      preact: 10.21.0
     dev: false
 
-  /preact@10.20.2:
-    resolution: {integrity: sha512-S1d1ernz3KQ+Y2awUxKakpfOg2CEmJmwOP+6igPx6dgr6pgDvenqYviyokWso2rhHvGtTlWWnJDa7RaPbQerTg==}
+  /preact@10.21.0:
+    resolution: {integrity: sha512-aQAIxtzWEwH8ou+OovWVSVNlFImL7xUCwJX3YMqA3U8iKCNC34999fFOnWjYNsylgfPgMexpbk7WYOLtKr/mxg==}
     dev: false
 
   /prebuild-install@7.1.2:
@@ -4329,7 +4329,7 @@ packages:
       tar-stream: 3.1.7
     optionalDependencies:
       bare-fs: 2.3.0
-      bare-path: 2.1.1
+      bare-path: 2.1.2
     optional: true
 
   /tar-stream@2.2.0:
