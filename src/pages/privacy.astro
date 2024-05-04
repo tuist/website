@@ -1,0 +1,39 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Privacy from "../components/Infopages/Privacy.astro";
+import { AstroSeo } from "@astrolib/seo";
+import metadata from '../utils/metadata.json';
+import { useTranslations, getLangFromUrl, useTranslatedPath } from "../i18n/utils";
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+const translatedPath = useTranslatedPath(lang);
+---
+
+<AstroSeo
+title={t('privacy.og.title')}
+description={t('privacy.og.description')}
+canonical={metadata.url}
+openGraph={{
+  url: metadata.url,
+  title: t('privacy.og.title'),
+  description: t('privacy.og.description'),
+  images: [
+    {
+      url: `${metadata.url}${translatedPath('/og-images/privacy.jpg')}`,
+      alt: t('privacy.og.title'),
+      type: "image/jpg",
+      height: 630,
+      width: 1200
+    },
+  ],
+  site_name: "Tuist",
+}}
+twitter={{
+  handle: "@tuistio",
+  site: "@tuistio",
+  cardType: "summary_large_image",
+}}
+/>
+<BaseLayout>
+  <Privacy />
+</BaseLayout>

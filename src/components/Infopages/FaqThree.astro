@@ -1,0 +1,82 @@
+---
+import { useTranslations, getLangFromUrl } from "../../i18n/utils";
+
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+---
+
+<section
+  aria-labelledby="faq"
+  id="faq-section"
+  class="relative scroll-mt-24 border-y border-white/5">
+  <div class="max-w-7xl px-8 md:px-12 lg:px-32 mx-auto py-12 lg:py-24 relative">
+    <div>
+      <div class="max-w-xl">
+        <div class="w-full">
+          <span
+            class="text-transparent bg-clip-text font-medium tracking-widest bg-gradient-to-r from-cyan-400 via-cyan-500 to-indigo-500 text-xs uppercase"
+            >Faq</span
+          >
+          <h2 class="text-3xl mt-8 font-normal text-white">
+            {t('cloud.faq.title')}
+          </h2>
+          <div class="max-w-lg mt-3">
+            <p class="text-lg text-slate-400">
+              {t('cloud.faq.description')}
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="mt-12 space-y-12 divide-y-2 divide-white/5">
+        <div class="grid grid-cols-1 gap-4 pt-4 lg:grid-cols-3 lg:pt-12">
+          <div class="flex flex-col flex-shrink-0 mb-6 lg:pr-12 md:mb-0">
+            <span class="text-lg text-white">
+              {t('cloud.faq.question-1')}
+            </span>
+          </div>
+          <div class="lg:col-span-2">
+            <p class="text-sm text-slate-400">
+              {t('cloud.faq.answer-1')}
+            </p>
+          </div>
+        </div>
+        <div class="grid grid-cols-1 gap-4 pt-4 lg:grid-cols-3 lg:pt-12">
+          <div class="flex flex-col flex-shrink-0 mb-6 lg:pr-12 md:mb-0">
+            <span class="text-lg text-white">
+              {t('cloud.faq.question-2')}
+            </span>
+          </div>
+          <div class="space-y-4 lg:col-span-2">
+            <p class="text-sm text-slate-400">
+              {t('cloud.faq.answer-2')}
+            </p>
+          </div>
+        </div>
+        <div class="grid grid-cols-1 gap-4 pt-4 lg:grid-cols-3 lg:pt-12">
+          <div class="flex flex-col flex-shrink-0 mb-6 lg:pr-12 md:mb-0">
+            <span class="text-lg text-white">
+              {t('cloud.faq.question-3')}
+            </span>
+          </div>
+          <div class="lg:col-span-2">
+            <p class="text-sm text-slate-400">
+              {t('cloud.faq.answer-3')}
+            </p>
+          </div>
+        </div>
+        <div class="grid grid-cols-1 gap-4 pt-4 lg:grid-cols-3 lg:pt-12">
+          <div class="flex flex-col flex-shrink-0 mb-6 lg:pr-12 md:mb-0">
+            <span class="text-lg text-white">
+              {t('cloud.faq.question-4')}
+            </span>
+          </div>
+          <div class="lg:col-span-2">
+            <p class="text-sm text-slate-400">
+              {t('cloud.faq.answer-4')}
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

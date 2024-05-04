@@ -1,0 +1,7 @@
+{
+  "name": "Alon Zilbershtein",
+  "role": "Staff Software Engineer",
+  "company": "Chegg",
+  "testimony": "It made a the transition to SPM  and the migration of our private pods to our monorepo super easy. We were able to create a framework template, making option to build a modular project very simple. After integrating Tuist, we reduced our build time by 30%!  We have no more project file conflicts and honestly - once you try it, you’ll never go back.",
+  "avatar_href": "/images/testimonials/alon.jpeg"
+}

@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# mise description="Serve the website locally"
+
+pnpm run -C $MISE_PROJECT_ROOT dev

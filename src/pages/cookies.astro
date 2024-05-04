@@ -1,0 +1,39 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Cookies from "../components/Infopages/Cookies.astro";
+import { AstroSeo } from "@astrolib/seo";
+import metadata from '../utils/metadata.json';
+import { useTranslations, getLangFromUrl, useTranslatedPath } from "../i18n/utils";
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+const translatedPath = useTranslatedPath(lang);
+---
+
+<AstroSeo
+title={t('cookies.og.title')}
+description={t('cookies.og.description')}
+canonical={metadata.url}
+openGraph={{
+  url: metadata.url,
+  title: t('cookies.og.title'),
+  description: t('cookies.og.description'),
+  images: [
+    {
+      url: `${metadata.url}${translatedPath('/og-images/cookies.jpg')}`,
+      alt: "Tuist Cloud's cookie policy",
+      type: "image/jpg",
+      height: 630,
+      width: 1200
+    },
+  ],
+  site_name: "Tuist",
+}}
+twitter={{
+  handle: "@tuistio",
+  site: "@tuistio",
+  cardType: "summary_large_image",
+}}
+/>
+<BaseLayout url={Astro.url}>
+  <Cookies />
+</BaseLayout>

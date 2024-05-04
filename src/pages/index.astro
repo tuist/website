@@ -1,0 +1,51 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+import Companies from "../components/testimonials/Companies.astro";
+import TuistCloud from "../components/features/TuistCloud.astro";
+import Hero from "../components/features/Hero.astro";
+import TuistFeatures from "../components/features/TuistFeatures.astro";
+import Testimonials from "../components/testimonials/Testimonials.astro";
+import Faq from "../components/Infopages/Faq.astro";
+import MigrationHelp from "../components/ctas/MigrationHelp.astro";
+import metadata from '../utils/metadata.json';
+import { AstroSeo } from "@astrolib/seo";
+import { useTranslatedPath, getLangFromUrl } from "../i18n/utils";
+const lang = getLangFromUrl(Astro.url);
+const translatedPath = useTranslatedPath(lang);
+---
+
+<AstroSeo
+  title={`Tuist - ${metadata.description}`}
+  description={metadata.description}
+  canonical={metadata.url}
+  openGraph={{
+    url: metadata.url,
+    title: "Tuist",
+    description: metadata.description,
+    images: [
+      {
+        url: `${metadata.url}${translatedPath("/og-image.jpg")}`,
+        alt: "Tuist logo",
+        type: "image/jpg",
+        height: 630,
+        width: 1200
+      }
+    ],
+    site_name: "Tuist",
+  }}
+  twitter={{
+    handle: "@tuistio",
+    site: "@tuistio",
+    cardType: "summary_large_image",
+  }}
+/>
+<BaseLayout url={Astro.url}>
+  <Hero lang={lang}/>
+  <Companies lang={lang}/>
+  <TuistFeatures lang={lang}/>
+  <Testimonials lang={lang}/>
+  <TuistCloud lang={lang}/>
+  <Faq lang={lang}/>
+  <MigrationHelp lang={lang}/>
+</BaseLayout>

@@ -1,0 +1,52 @@
+---
+import RoundedGrid from "../assets/RoundedGrid.astro";
+---
+
+<section
+  aria-labelledby="cta"
+  id="cta "
+  class="relative border-t border-white/5 overflow-hidden">
+  <RoundedGrid />
+  <div
+    class="relative items-center w-full px-5 py-12 mx-auto md:px-12 lg:px-16 max-w-7xl lg:pb-32 lg:pt-56">
+    <div class="relative items-center">
+      <div class="">
+        <div class="max-w-xl text-center mx-auto">
+          <div class="lg:inline-flex items-center gap-3">
+            <p
+              class="bg-gradient-to-r from-cyan-400 via-cyan-500 to-indigo-500 text-transparent bg-clip-text border-white mt-3 lg:mt-0 uppercase">
+              we are about to land
+            </p>
+          </div>
+          <p class="text-4xl mt-12 font-normal tracking-tight text-white">
+            Coming Soon
+          </p>
+          <p class="mt-4 text-slate-400 max-w-sm mx-auto">
+            In the mean time, sign up for our monthly newsletter to stay up to
+            day,
+          </p>
+        </div>
+        <div class="flex flex-col sm:flex-row mt-12 lg:justify-center">
+          <form action="#" class="mt-12 sm:mx-auto sm:flex sm:max-w-lg">
+            <div class="min-w-0 flex-1">
+              <label for="cta-email" class="sr-only">Email address</label>
+              <input
+                id="cta-email"
+                type="email"
+                class="block w-full px-4 py-3 border bg-transparent border-white/10 rounded-xl appearance-none text-cyan-300 placeholder-white/50 focus:border-cyan-300 focus:bg-transparent focus:outline-none focus:ring-cyan-300 sm:text-sm"
+                placeholder="Enter your email"
+              />
+            </div>
+            <div class="mt-4 sm:mt-0 sm:ml-3">
+              <button
+                type="submit"
+                class="block winline-flex items-center justify-center w-full px-6 py-3 text-center text-white hover:to-indigo-400 duration-200 bg-gradient-to-r from-sky-400 to-indigo-500 font-medium rounded-xl hover:text-white focus:outline-none focus-visible:outline-black focus-visible:ring-black"
+                >Notify me</button
+              >
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

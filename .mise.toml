@@ -1,0 +1,7 @@
+[tools]
+"nodejs" = "20.10.0"
+"pnpm" = "8.11.0"
+"dagger" = "0.11.2"
+
+[plugins]
+dagger = "https://github.com/virtualstaticvoid/asdf-dagger.git"

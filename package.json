@@ -1,0 +1,40 @@
+{
+  "name": "@tuist/website",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "astro": "astro"
+  },
+  "devDependencies": {
+    "@astrojs/tailwind": "^5.0.0",
+    "@tailwindcss/typography": "^0.5.9",
+    "@types/alpinejs": "^3.7.1",
+    "astro": "^4.0.0",
+    "fast-glob": "^3.2.12",
+    "tailwindcss": "^3.2.7"
+  },
+  "dependencies": {
+    "@astrojs/mdx": "^2.0.0",
+    "@astrojs/netlify": "^5.0.0",
+    "@astrojs/partytown": "^2.0.2",
+    "@astrojs/preact": "^3.0.0",
+    "@astrojs/rss": "^4.0.0",
+    "@astrojs/sitemap": "^3.0.0",
+    "@astrolib/seo": "^0.6.0",
+    "@tailwindcss/forms": "^0.5.3",
+    "@tailwindcss/line-clamp": "^0.4.2",
+    "@tuist/website": "link:",
+    "approximate-number": "^2.1.1",
+    "astro-compressor": "^0.4.1",
+    "astro-embed": "^0.7.0",
+    "install": "^0.13.0",
+    "markdown-it": "^14.0.0",
+    "mdx-embed": "^1.1.2",
+    "preact": "^10.16.0",
+    "sanitize-html": "^2.11.0",
+    "satori": "^0.10.1",
+    "timeago.js": "^4.0.2"
+  }
+}

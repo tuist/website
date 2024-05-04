@@ -1,0 +1,40 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import About from "../components/Infopages/About.astro";
+import { AstroSeo } from "@astrolib/seo";
+import metadata from '../utils/metadata.json';
+import { useTranslations, getLangFromUrl, useTranslatedPath } from "../i18n/utils";
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+const translatedPath = useTranslatedPath(lang);
+---
+
+<AstroSeo
+title={t('about.og.title')}
+description={t('about.og.description')},
+canonical={metadata.url}
+openGraph={{
+  url: metadata.url,
+  title: t('about.og.title'),
+  description: t('about.og.description'),
+  images: [
+    {
+      url: `${metadata.url}${translatedPath('/og-images/about.jpg')}`,
+      alt: t('about.og.title'),
+      type: "image/jpg",
+      height: 630,
+      width: 1200
+    },
+  ],
+  site_name: "Tuist",
+}}
+twitter={{
+  handle: "@tuistio",
+  site: "@tuistio",
+  cardType: "summary_large_image",
+}}
+/>
+
+<BaseLayout url={Astro.url}>
+  <About />
+</BaseLayout>

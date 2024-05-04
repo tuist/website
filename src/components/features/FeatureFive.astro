@@ -1,0 +1,85 @@
+---
+import Verticalgrid from "../assets/VerticalGrid.astro";
+---
+
+<section aria-labelledby="Featurefive" id="Featurefive " class="relative">
+  <Verticalgrid />
+  <div
+    class="max-w-7xl px-8 md:px-12 lg:px-32 mx-auto py-12 lg:py-24 relative space-y-24">
+    <div class="grid grid-cols-1 gap-4 mt-6 list-none lg:grid-cols-2 lg:gap-24">
+      <div>
+        <span
+          class="text-transparent bg-clip-text font-medium tracking-widest bg-gradient-to-r from-cyan-400 via-teal-500 to-indigo-500 text-xs uppercase"
+          >Caching</span
+        ><p class="text-3xl mt-8 font-normal text-white">
+          Reduce your build times by 90%
+        </p>
+        <p class="max-w-2xl mt-4 text-lg text-slate-400">
+          Turbocharge your workflows by harnessing the power of reusable frameworks and libraries, seamlessly accelerating development across both local and remote environments.
+        </p>
+        <div class="mt-6">
+          <a
+            href="https://docs.tuist.io/cloud/binary-caching"
+            class="inline-flex items-center justify-center px-6 py-3 text-sm font-normal text-white bg-white/5 rounded-xl group focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-2 hover:bg-transparent duration-200 border-2 border-white/10 active:bg-cyan-50 active:text-white focus-visible:outline-cyan-50 hover:border-white hover:text-white">
+            Read more
+          </a>
+        </div>
+      </div>
+      <div class="lg:mt-0 mt-12 h-full">
+        <img
+          alt="Lexington thumbnail"
+          class="rounded-2xl shadow-2xl shadow-vulcan-900/50 w-full"
+          src="/assets/card2.svg"
+        />
+      </div>
+    </div>
+    <ul
+      class="grid grid-cols-2 gap-6 mt-12 list-none md:grid-cols-4 lg:gap-12 lg:mt-24"
+      role="list">
+      <li>
+        <div>
+          <p class="text-sm font-medium text-cyan-400">01.</p>
+          <p class="text-lg mt-6 font-medium text-white lg:text-xl">
+            Local
+          </p>
+        </div>
+        <div class="mt-2 text-base text-slate-400">
+          Optimize your workflow by priming the local cache and leveraging precompiled binaries for the dependencies specific to your target, ensuring unparalleled efficiency and speed.
+        </div>
+      </li>
+      <li>
+        <div>
+          <p class="text-sm font-medium text-cyan-400">02.</p>
+          <p class="text-lg mt-6 font-medium text-white lg:text-xl">
+            Remote
+          </p>
+        </div>
+        <div class="mt-2 text-base text-slate-400">
+          Boost productivity with streamlined workflows: warm the local cache, leverage target-specific binaries, and effortlessly share the cache remotely across environments. Unleash unmatched development efficiency.
+        </div>
+      </li>
+      <li>
+        <div>
+          <p class="text-sm font-medium text-cyan-400">03.</p>
+          <p class="text-lg mt-6 font-medium text-white lg:text-xl">
+            Dependencies
+          </p>
+        </div>
+        <div class="mt-2 text-base text-slate-400">
+          Unleash your development potential with cached Swift Packages. Safeguard and preserve previously resolved and downloaded packages, ensuring uninterrupted access to valuable resources.
+        </div>
+      </li>
+      <li>
+        <div>
+          <p class="text-sm font-medium text-cyan-400">04.</p>
+          <p class="text-lg mt-6 font-medium text-white lg:text-xl">
+            Simple
+          </p>
+        </div>
+        <div class="mt-2 text-base text-slate-400">
+          Escape the complexity of advanced build systems and embrace the simplicity of Tuist. Say goodbye to cumbersome setups and hello to effortless productivity.
+        </div>
+      </li>
+    </ul>
+  </div>
+</section>

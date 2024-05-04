@@ -1,0 +1,38 @@
+---
+import RoundedGrid from "../assets/RoundedGrid.astro";
+import { useTranslations, getLangFromUrl } from "../../i18n/utils";
+
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+---
+
+<section
+  aria-labelledby="cta"
+  id="cta "
+  class="relative border-t border-white/5 overflow-hidden">
+  <RoundedGrid />
+  <div class="max-w-7xl px-8 md:px-12 lg:px-32 mx-auto py-12 lg:py-24 relative">
+    <div class="relative items-center">
+      <div class="">
+        <div class="max-w-xl lg:text-center mx-auto">
+          <div class="lg:inline-flex items-center gap-3">
+            <p
+              class="bg-gradient-to-r from-cyan-400 via-cyan-500 to-indigo-500 text-transparent bg-clip-text border-white mt-3 lg:mt-0 uppercase">
+              {t('cloud.cta.subtitle')}
+            </p>
+          </div>
+          <p class="text-4xl mt-12 font-normal tracking-tight text-white">
+            {t('cloud.cta.title')}
+          </p>
+        </div>
+        <div class="flex flex-col sm:flex-row mt-12 lg:justify-center">
+          <a
+            href="https://docs.tuist.io/cloud/what-is-cloud"
+            class="inline-flex items-center justify-center px-6 py-3 text-center text-white hover:to-indigo-400 duration-200 bg-gradient-to-r from-sky-400 to-indigo-500 font-medium hover:bg-white/5 rounded-xl hover:text-white focus:outline-none focus-visible:outline-black focus-visible:ring-black">
+            {t('cloud.cta.button')} &nbsp;&nbsp; &rarr;
+          </a>
+        </div>l
+      </div>
+    </div>
+  </div>
+</section>

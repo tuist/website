@@ -1,0 +1,278 @@
+---
+import Verticalgrid from "../assets/VerticalGrid.astro";
+---
+<section aria-labelledby="Faqtwo" id="Faqtwo " class="relative">
+  <Verticalgrid />
+  <div class="max-w-7xl px-8 md:px-12 lg:px-32 mx-auto py-12 lg:pt-24 relative">
+    <div class="max-w-2xl mx-auto text-center">
+      <div>
+        <span
+          class="text-transparent bg-clip-text font-medium tracking-widest bg-gradient-to-r from-cyan-400 via-teal-500 to-indigo-500 text-xs uppercase"
+          >Faq 2</span
+        ><p class="text-3xl mt-8 font-normal text-white">
+          Fully automated, fully supported
+        </p>
+        <p class="max-w-xl mx-auto mt-4 text-lg text-slate-400">
+          Self-serve or work with a representative, we're here to help with the
+          capital journey that works for you.
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="max-w-7xl px-8 md:px-12 lg:px-32 mx-auto py-12 lg:py-24 relative">
+    <div
+      class="relative mx-auto border rounded-3xl border-white/5 bg-vulcan-900"
+      x-data="{selected:null}">
+      <ul class="list-none" role="list" @click="open = !open">
+        <li class="relative border-b border-white/5">
+          <button
+            type="button"
+            class="w-full px-8 py-6 text-left"
+            @click="selected !== 1 ? selected = 1 : selected = null">
+            <div class="flex items-center justify-between text-white">
+              <p
+                class="text-sm text-slate-400 hover:text-cyan-400 duration-200">
+                Can I use Unwrapped for client projects?
+              </p>
+              <svg
+                :class="{'rotate-180': open, 'rotate-0': !open}"
+                xmlns="http://www.w3.org/2000/svg"
+                class="inline w-5 h-5 ml-4 transition-transform duration-200 transform rotate-180"
+                viewBox="0 0 20 20"
+                fill="currentColor">
+                <path
+                  fill-rule="evenodd"
+                  d="M14.707 12.707a1 1 0 01-1.414 0L10 9.414l-3.293 3.293a1 1 0 01-1.414-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 010 1.414z"
+                  clip-rule="evenodd"></path>
+              </svg>
+            </div>
+          </button>
+          <div
+            class="relative overflow-hidden transition-all duration-700 max-h-0"
+            style=""
+            x-ref="container1"
+            x-bind:style="selected == 1 ? 'max-height: ' + $refs.container1.scrollHeight + 'px' : ''">
+            <div class="px-8 pt-4 pb-20 text-slate-400 text-sm">
+              Aye! You can do so, what you are not allowed is using it to create
+              derivative competing products.
+            </div>
+          </div>
+        </li>
+        <li class="relative border-b border-white/5">
+          <button
+            type="button"
+            class="w-full px-8 py-6 text-left"
+            @click="selected !== 2 ? selected = 2 : selected = null">
+            <div class="flex items-center justify-between text-white">
+              <p
+                class="text-sm text-slate-400 hover:text-cyan-400 duration-200">
+                Where is Unwrapped made?
+              </p>
+              <svg
+                :class="{'rotate-180': open, 'rotate-0': !open}"
+                xmlns="http://www.w3.org/2000/svg"
+                class="inline w-5 h-5 ml-4 transition-transform duration-200 transform rotate-180"
+                viewBox="0 0 20 20"
+                fill="currentColor">
+                <path
+                  fill-rule="evenodd"
+                  d="M14.707 12.707a1 1 0 01-1.414 0L10 9.414l-3.293 3.293a1 1 0 01-1.414-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 010 1.414z"
+                  clip-rule="evenodd"></path>
+              </svg>
+            </div>
+          </button>
+          <div
+            class="relative overflow-hidden transition-all duration-700 max-h-0"
+            style=""
+            x-ref="container2"
+            x-bind:style="selected == 2 ? 'max-height: ' + $refs.container2.scrollHeight + 'px' : ''">
+            <div class="px-8 pt-4 pb-20 text-slate-400 text-sm">
+              The wireframes are built for Figma
+            </div>
+          </div>
+        </li>
+        <li class="relative border-b border-white/5">
+          <button
+            type="button"
+            class="w-full px-8 py-6 text-left"
+            @click="selected !== 3 ? selected = 3 : selected = null">
+            <div class="flex items-center justify-between text-white">
+              <p
+                class="text-sm text-slate-400 hover:text-cyan-400 duration-200">
+                Can I use Unwrapped for open source projects?
+              </p>
+              <svg
+                :class="{'rotate-180': open, 'rotate-0': !open}"
+                xmlns="http://www.w3.org/2000/svg"
+                class="inline w-5 h-5 ml-4 transition-transform duration-200 transform rotate-180"
+                viewBox="0 0 20 20"
+                fill="currentColor">
+                <path
+                  fill-rule="evenodd"
+                  d="M14.707 12.707a1 1 0 01-1.414 0L10 9.414l-3.293 3.293a1 1 0 01-1.414-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 010 1.414z"
+                  clip-rule="evenodd"></path>
+              </svg>
+            </div>
+          </button>
+          <div
+            class="relative overflow-hidden transition-all duration-700 max-h-0"
+            style=""
+            x-ref="container2"
+            x-bind:style="selected == 3 ? 'max-height: ' + $refs.container2.scrollHeight + 'px' : ''">
+            <div class="px-8 pt-4 pb-20 text-slate-400 text-sm">
+              Of course, but only if this is a website and not a derivative
+              component library, theme builder, or other product where the
+              primary purpose is clearly to bundle and/or redistribute
+              Unwrapped.
+            </div>
+          </div>
+        </li>
+        <li class="relative border-b border-white/5">
+          <button
+            type="button"
+            class="w-full px-8 py-6 text-left"
+            @click="selected !== 4 ? selected = 4 : selected = null">
+            <div class="flex items-center justify-between text-white">
+              <p
+                class="text-sm text-slate-400 hover:text-cyan-400 duration-200">
+                Can I sell templates/themes that I made with Unwrapped?
+              </p>
+              <svg
+                :class="{'rotate-180': open, 'rotate-0': !open}"
+                xmlns="http://www.w3.org/2000/svg"
+                class="inline w-5 h-5 ml-4 transition-transform duration-200 transform rotate-180"
+                viewBox="0 0 20 20"
+                fill="currentColor">
+                <path
+                  fill-rule="evenodd"
+                  d="M14.707 12.707a1 1 0 01-1.414 0L10 9.414l-3.293 3.293a1 1 0 01-1.414-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 010 1.414z"
+                  clip-rule="evenodd"></path>
+              </svg>
+            </div>
+          </button>
+          <div
+            class="relative overflow-hidden transition-all duration-700 max-h-0"
+            style=""
+            x-ref="container2"
+            x-bind:style="selected == 4 ? 'max-height: ' + $refs.container2.scrollHeight + 'px' : ''">
+            <div class="px-8 pt-4 pb-20 text-slate-400 text-sm">
+              Absolutely not. You can't to create derivative products like
+              themes, UI kits, page builders, or anything else where you
+              supplying the resources for someone else to use to build their own
+              website.
+            </div>
+          </div>
+        </li>
+        <li class="relative border-b border-white/5">
+          <button
+            type="button"
+            class="w-full px-8 py-6 text-left"
+            @click="selected !== 5 ? selected = 5 : selected = null">
+            <div class="flex items-center justify-between text-white">
+              <p
+                class="text-sm text-slate-400 hover:text-cyan-400 duration-200">
+                Can I use Unwrapped for the commercial projects that I work on?
+              </p>
+              <svg
+                :class="{'rotate-180': open, 'rotate-0': !open}"
+                xmlns="http://www.w3.org/2000/svg"
+                class="inline w-5 h-5 ml-4 transition-transform duration-200 transform rotate-180"
+                viewBox="0 0 20 20"
+                fill="currentColor">
+                <path
+                  fill-rule="evenodd"
+                  d="M14.707 12.707a1 1 0 01-1.414 0L10 9.414l-3.293 3.293a1 1 0 01-1.414-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 010 1.414z"
+                  clip-rule="evenodd"></path>
+              </svg>
+            </div>
+          </button>
+          <div
+            class="relative overflow-hidden transition-all duration-700 max-h-0"
+            style=""
+            x-ref="container2"
+            x-bind:style="selected == 5 ? 'max-height: ' + $refs.container2.scrollHeight + 'px' : ''">
+            <div class="px-8 pt-4 pb-20 text-slate-400 text-sm">
+              Sure you can. The license allows you to build as many of your own
+              projects as you want and need, no matter if this are public
+              websites or SaaS applications.
+            </div>
+          </div>
+        </li>
+        <li class="relative border-b border-white/5">
+          <button
+            type="button"
+            class="w-full px-8 py-6 text-left"
+            @click="selected !== 6 ? selected = 6 : selected = null">
+            <div class="flex items-center justify-between text-white">
+              <p
+                class="text-sm text-slate-400 hover:text-cyan-400 duration-200">
+                What does "free updates" include?
+              </p>
+              <svg
+                :class="{'rotate-180': open, 'rotate-0': !open}"
+                xmlns="http://www.w3.org/2000/svg"
+                class="inline w-5 h-5 ml-4 transition-transform duration-200 transform rotate-180"
+                viewBox="0 0 20 20"
+                fill="currentColor">
+                <path
+                  fill-rule="evenodd"
+                  d="M14.707 12.707a1 1 0 01-1.414 0L10 9.414l-3.293 3.293a1 1 0 01-1.414-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 010 1.414z"
+                  clip-rule="evenodd"></path>
+              </svg>
+            </div>
+          </button>
+          <div
+            class="relative overflow-hidden transition-all duration-700 max-h-0"
+            style=""
+            x-ref="container2"
+            x-bind:style="selected == 6 ? 'max-height: ' + $refs.container2.scrollHeight + 'px' : ''">
+            <div class="px-8 pt-4 pb-20 text-slate-400 text-sm">
+              I keep adding new wireframes so all of them become free for
+              existing customers.
+            </div>
+          </div>
+        </li>
+        <!----- Last -->
+        <li class="relative">
+          <button
+            type="button"
+            class="w-full px-8 py-6 text-left"
+            @click="selected !== 7 ? selected = 7 : selected = null">
+            <div class="flex items-center justify-between text-white">
+              <p
+                class="text-sm text-slate-400 hover:text-cyan-400 duration-200">
+                What does your refund policy?
+              </p>
+              <svg
+                :class="{'rotate-180': open, 'rotate-0': !open}"
+                xmlns="http://www.w3.org/2000/svg"
+                class="inline w-5 h-5 ml-4 transition-transform duration-200 transform rotate-180"
+                viewBox="0 0 20 20"
+                fill="currentColor">
+                <path
+                  fill-rule="evenodd"
+                  d="M14.707 12.707a1 1 0 01-1.414 0L10 9.414l-3.293 3.293a1 1 0 01-1.414-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 010 1.414z"
+                  clip-rule="evenodd"></path>
+              </svg>
+            </div>
+          </button>
+          <div
+            class="relative overflow-hidden transition-all duration-700 max-h-0"
+            style=""
+            x-ref="container3"
+            x-bind:style="selected == 7 ? 'max-height: ' + $refs.container3.scrollHeight + 'px' : ''">
+            <div class="px-8 pt-4 pb-20 text-slate-400 text-sm">
+              If you’re not satisfied, please contact me and describe the refund
+              reason. Once I receive your refund request, I will inspect it and
+              notify you about the decision. Usually, I can’t make a refund
+              because the product is digital. But I am responsible for the
+              quality of the products and provide a refund if you’re not
+              satisfied with it. The return right applies to all products
+              presented on the unwrapped.design website.
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>

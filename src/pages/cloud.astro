@@ -1,0 +1,48 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import metadata from '../utils/metadata.json'
+import { AstroSeo } from "@astrolib/seo";
+import PricingThree from "../components/pricing/PricingThree.astro";
+import FaqThree from "../components/Infopages/FaqThree.astro";
+import CtaFour from "../components/ctas/CtaFour.astro";
+import FeatureOne from "../components/features/FeatureOne.astro";
+import CloudOpenSourceProgram from "../components/CloudOpenSourceProgram.astro"
+import { useTranslations, getLangFromUrl, useTranslatedPath } from "../i18n/utils";
+const url = Astro.url;
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+const translatedPath = useTranslatedPath(lang);
+---
+
+<AstroSeo
+  title={t('cloud.og.title')}
+  description={t('cloud.og.description')}
+  canonical={metadata.url}
+  openGraph={{
+    url: metadata.url,
+    title: t('cloud.og.title'),
+    description: t('cloud.og.description'),
+    images: [
+      {
+        url: `${metadata.url}${translatedPath('/cloud/og-image.jpg')}`,
+        alt: "Tuist Cloud",
+        type: "image/jpg",
+        height: 630,
+        width: 1200
+      },
+    ],
+    site_name: "Tuist",
+  }}
+  twitter={{
+    handle: "@tuistio",
+    site: "@tuistio",
+    cardType: "summary_large_image",
+  }}
+/>
+<BaseLayout url={Astro.url}>
+    <FeatureOne url={url} lang={lang}/>
+    <PricingThree lang={lang}/>
+    <FaqThree lang={lang}/>
+    <CloudOpenSourceProgram lang={lang}/>
+    <CtaFour lang={lang}/>
+</BaseLayout>
