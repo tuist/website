@@ -93,6 +93,23 @@ const t = useTranslations(lang);
               </svg>
               <span class="ml-4">{t("server.plans.air.feature-3")}</span>
             </li>
+            <li class="flex items-center">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="w-6 h-6 opacity-70"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                ></path>
+              </svg>
+              <span class="ml-4">{t("server.plans.air.feature-4")}</span>
+            </li>
           </ul>
           <a
             class="inline-flex items-center justify-center w-full px-6 py-3 text-center text-white duration-200 bg-vulcan-800 font-medium hover:bg-white/5 rounded-xl hover:text-white focus:outline-none focus-visible:outline-black focus-visible:ring-black mt-8"
@@ -107,12 +124,12 @@ const t = useTranslations(lang);
       >
         <div class="bg-vulcan-900 px-6 sm:px-8 lg:py-8 rounded-3xl h-full">
           <h3 class="mt-5 text-xl text-white">
-            <span class="text-3xl">{t("server.plans.enterprise.name")}</span> — {
-              t("server.plans.enterprise.price")
+            <span class="text-3xl">{t("server.plans.pro.name")}</span> — {
+              t("server.plans.pro.price")
             }
           </h3>
           <p class="mt-2 text-base text-slate-400">
-            {t("server.plans.enterprise.description")}
+            {t("server.plans.pro.description")}
           </p>
           <ul
             role="list"
@@ -133,7 +150,7 @@ const t = useTranslations(lang);
                   d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
                 ></path>
               </svg>
-              <span class="ml-4">{t("server.plans.enterprise.feature-1")}</span>
+              <span class="ml-4">{t("server.plans.pro.feature-1")}</span>
             </li>
             <li class="flex items-center">
               <svg
@@ -150,7 +167,7 @@ const t = useTranslations(lang);
                   d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
                 ></path>
               </svg>
-              <span class="ml-4">{t("server.plans.enterprise.feature-2")}</span>
+              <span class="ml-4">{t("server.plans.pro.feature-2")}</span>
             </li>
             <li class="flex items-center">
               <svg
@@ -167,7 +184,7 @@ const t = useTranslations(lang);
                   d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
                 ></path>
               </svg>
-              <span class="ml-4">{t("server.plans.enterprise.feature-3")}</span>
+              <span class="ml-4">{t("server.plans.pro.feature-3")}</span>
             </li>
             <li class="flex items-center">
               <svg
@@ -184,48 +201,14 @@ const t = useTranslations(lang);
                   d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
                 ></path>
               </svg>
-              <span class="ml-4">{t("server.plans.enterprise.feature-4")}</span>
-            </li>
-            <li class="flex items-center">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke-width="1.5"
-                stroke="currentColor"
-                class="w-6 h-6 opacity-70"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-                ></path>
-              </svg>
-              <span class="ml-4">{t("server.plans.enterprise.feature-5")}</span>
-            </li>
-            <li class="flex items-center">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke-width="1.5"
-                stroke="currentColor"
-                class="w-6 h-6 opacity-70"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-                ></path>
-              </svg>
-              <span class="ml-4">{t("server.plans.enterprise.feature-6")}</span>
+              <span class="ml-4">{t("server.plans.pro.feature-4")}</span>
             </li>
           </ul>
           <a
             class="inline-flex items-center justify-center w-full px-6 py-3 text-center text-white hover:to-indigo-400 duration-200 bg-gradient-to-r from-sky-400 to-indigo-500 font-medium rounded-xl hover:text-white focus:outline-none focus-visible:outline-black focus-visible:ring-black mt-8"
             aria-label="Indie hacker tier"
             href="https://docs.tuist.io/cloud/get-started"
-            >{t("server.plans.enterprise.cta")}</a
+            >{t("server.plans.pro.cta")}</a
           >
         </div>
       </section>
