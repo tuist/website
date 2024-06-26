@@ -1,7 +1,12 @@
 ---
 import Verticalgrid from "../assets/VerticalGrid.astro";
-import {useTranslations, getLangFromUrl, useTranslatedPath} from "../../i18n/utils"
-const { lang } = Astro.props;
+import {
+  useTranslations,
+  getLangFromUrl,
+  useTranslatedPath,
+} from "../../i18n/utils";
+const { lang, url } = Astro.props;
+import Calculator from "../Calculator";
 
 const t = useTranslations(lang);
 const translatedPath = useTranslatedPath(lang);
@@ -18,21 +23,22 @@ const translatedPath = useTranslatedPath(lang);
       <div class="max-w-full flex flex-col-reverse md:flex-row items-center">
         <div class="flex-1">
           <div
-            class="text-transparent text-center bg-clip-text font-medium tracking-widest bg-gradient-to-r from-cyan-400 via-cyan-500 to-indigo-500 text-xs uppercase"
-            >Tuist Cloud</div
+            class="text-transparent bg-clip-text font-medium tracking-widest bg-gradient-to-r from-cyan-400 via-cyan-500 to-indigo-500 text-xs uppercase"
           >
+            {t('home.cloud.subtitle')}
+          </div>
           <p class="text-2xl md:text-3xl mt-8 font-normal text-white">
             {t("home.cloud.slogan")}
           </p>
           <p class="max-w-2xl mt-4 text-base text-slate-400">
-            {t('home.cloud.description')}
+            {t("home.cloud.description")}
           </p>
           <a
             class="inline-flex items-center justify-center px-6 py-3 text-center text-white hover:to-indigo-400 duration-200 bg-gradient-to-r from-sky-400 to-indigo-500 font-medium rounded-xl hover:text-white focus:outline-none focus-visible:outline-black focus-visible:ring-black mt-8 no-underline"
             aria-label="Sign up for testing"
             href={translatedPath("/cloud")}
           >
-            {t('home.cloud.cta')}
+            {t("home.cloud.cta")}
           </a>
         </div>
         <div>
@@ -60,15 +66,13 @@ const translatedPath = useTranslatedPath(lang);
                   d="m222.72 67.91l-88-48.18a13.9 13.9 0 0 0-13.44 0l-88 48.18A14 14 0 0 0 26 80.18v95.64a14 14 0 0 0 7.28 12.27l88 48.18a13.92 13.92 0 0 0 13.44 0l88-48.18a14 14 0 0 0 7.28-12.27V80.18a14 14 0 0 0-7.28-12.27ZM127 30.25a2 2 0 0 1 1.92 0L212.51 76l-33.94 18.57l-84.52-46.26ZM122 223l-83-45.43a2 2 0 0 1-1-1.75V86.66l84 46ZM43.49 76l38.07-20.85l84.51 46.26L128 122.24ZM218 175.82a2 2 0 0 1-1 1.75L134 223v-90.36l36-19.71V152a6 6 0 0 0 12 0v-45.63l36-19.71Z"
                 ></path></svg
               >
-
-              
             </div>
             <p class="mt-5 text-lg font-medium text-white lg:text-xl">
-              {t('home.cloud.feature-1.title')}
+              {t("home.cloud.feature-1.title")}
             </p>
           </div>
           <div class="mt-2 text-base text-slate-400">
-            {t('home.cloud.feature-1.description')}
+            {t("home.cloud.feature-1.description")}
           </div>
         </li>
         <li>
@@ -76,17 +80,27 @@ const translatedPath = useTranslatedPath(lang);
             <div
               class="flex items-center justify-center w-12 h-12 text-white shadow-indigo-500/20 bg-gradient-to-tr shadow-2xl from-vulcan-900 to-vulcan-700 rounded-xl"
             >
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
-            </svg>
-            
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="w-6 h-6"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+                ></path>
+              </svg>
             </div>
             <p class="mt-5 text-lg font-medium text-white lg:text-xl">
-              {t('home.cloud.feature-2.title')}
+              {t("home.cloud.feature-2.title")}
             </p>
           </div>
           <div class="mt-2 text-base text-slate-400">
-            {t('home.cloud.feature-2.description')}
+            {t("home.cloud.feature-2.description")}
           </div>
         </li>
         <li>
@@ -94,20 +108,51 @@ const translatedPath = useTranslatedPath(lang);
             <div
               class="flex items-center justify-center w-12 h-12 text-white shadow-indigo-500/20 bg-gradient-to-tr shadow-2xl from-vulcan-900 to-vulcan-700 rounded-xl"
             >
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M7.5 14.25v2.25m3-4.5v4.5m3-6.75v6.75m3-9v9M6 20.25h12A2.25 2.25 0 0 0 20.25 18V6A2.25 2.25 0 0 0 18 3.75H6A2.25 2.25 0 0 0 3.75 6v12A2.25 2.25 0 0 0 6 20.25Z" />
-            </svg>
-            
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="w-6 h-6"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M7.5 14.25v2.25m3-4.5v4.5m3-6.75v6.75m3-9v9M6 20.25h12A2.25 2.25 0 0 0 20.25 18V6A2.25 2.25 0 0 0 18 3.75H6A2.25 2.25 0 0 0 3.75 6v12A2.25 2.25 0 0 0 6 20.25Z"
+                ></path>
+              </svg>
             </div>
             <p class="mt-5 text-lg font-medium text-white lg:text-xl">
-              {t('home.cloud.feature-3.title')}
+              {t("home.cloud.feature-3.title")}
             </p>
           </div>
           <div class="mt-2 text-base text-slate-400">
-            {t('home.cloud.feature-3.description')}
+            {t("home.cloud.feature-3.description")}
           </div>
         </li>
       </ul>
     </div>
+    <div class="flex flex-col gap-y-20 mt-20 lg:grid-cols-8 lg:mt-36">
+      <div class="col-span-1 md:col-span-3">
+        <h2 class="mt-6 text-3xl font-normal text-white">
+          {t('cloud.roi.title')}
+        </h2>
+        <p class="mt-5 text-lg text-slate-400">
+          {t('cloud.roi.descrription')}
+        </p>
+
+      </div>
+      <section
+        class="flex flex-col p-[0.060rem] shadow-2xl rounded-3xl bg-gradient-to-b from-indigo-500 to-cyan-500 col-span-5"
+      >
+        <div class="bg-vulcan-900 px-6 sm:px-8 pt-8 pb-10 rounded-3xl h-full">
+          <Calculator client:visible url={url}/>
+        </div>
+      </section>
+      <!-- <div class="mt-12 lg:mt-0 w-full lg:ml-auto bg-indigo-500 rounded-md p-4">
+      </div> -->
+    </div>
   </div>
 </section>
+
