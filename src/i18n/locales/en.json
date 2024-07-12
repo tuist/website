@@ -64,7 +64,7 @@
   "server.plans.subtitle": "Plans",
   "server.plans.title": "Choose the plan that fits your needs",
   "cloud.roi.calculator.annual-hours-saved.unit": "h/year",
-  "cloud.roi.calculator.annual-hours-saved": "Annual Developer Hours Saved",
+  "cloud.roi.calculator.annual-hours-saved": "Annual Developer and CI Hours Saved",
   "cloud.roi.calculator.annual-r&d-cost-recapture.unit": "${{money}}",
   "cloud.roi.calculator.annual-r&d-cost-recapture": "Annual R&D Cost Recapture",
   "cloud.roi.calculator.ci-builds.question": "Per developer and day",

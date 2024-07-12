@@ -13,37 +13,37 @@ export default function Calculator(
   const [averageBuildTime, setAverageBuildTime] = useState(10);
   const [averageMonthlySalary, setAverageMonthlySalary] = useState(7000);
   const [ciBuildCost, setCIBuildCost] = useState(8);
-  const [localBuilds, setLocalBuilds] = useState(20);
+  const [localBuilds, setLocalBuilds] = useState(5);
   const [ciBuilds, setCIBuilds] = useState(20);
+  const numberOfWorkingDaysPerYear = 251;
+  const numberOfWorkingMinutesPerMonth = 160 * 60;
+  /**
+   * The factor to multiply the build time with to get the time saved.
+   */
+  const buildTimeSavedFactor = buildTimeSaved / 100;
 
   const ciMoneySaved =
     (ciBuildCost *
       ciBuilds *
       averageBuildTime *
       developersCount *
-      22 *
-      12 *
-      buildTimeSaved) /
-    100;
+      numberOfWorkingDaysPerYear *
+      buildTimeSavedFactor);
   const localMoneySaved =
-    ((averageMonthlySalary / 22 / 8 / 60) /* Developer price per minute */ *
+    ((averageMonthlySalary / numberOfWorkingMinutesPerMonth) /* Developer price per minute */ *
       localBuilds *
       averageBuildTime *
       developersCount *
-      22 *
-      12 *
-      buildTimeSaved) /
-    100;
-  const moneySaved = ciMoneySaved + localMoneySaved;
+      numberOfWorkingDaysPerYear *
+      buildTimeSavedFactor);
+  const moneySaved = ciMoneySaved + localMoneySaved - (localBuilds + ciBuilds) * 0.5 * numberOfWorkingDaysPerYear;
   const timeSaved =
     ((ciBuilds + localBuilds) *
       developersCount *
       averageBuildTime *
-      22 *
-      12 *
-      buildTimeSaved) /
-    100.0 /
-    60.0;
+      buildTimeSavedFactor *
+      numberOfWorkingDaysPerYear * 1.0
+    ) / 60.0;
 
   return (
     <div>
@@ -87,7 +87,7 @@ export default function Calculator(
         />
         <Slider
           min={1000}
-          max={2000}
+          max={15000}
           value={averageMonthlySalary}
           description={t('cloud.roi.calculator.salary.question')}
           setValue={setAverageMonthlySalary}
