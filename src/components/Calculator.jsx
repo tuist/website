@@ -13,37 +13,37 @@ export default function Calculator(
   const [averageBuildTime, setAverageBuildTime] = useState(10);
   const [averageMonthlySalary, setAverageMonthlySalary] = useState(7000);
   const [ciBuildCost, setCIBuildCost] = useState(8);
-  const [localBuilds, setLocalBuilds] = useState(20);
+  const [localBuilds, setLocalBuilds] = useState(5);
   const [ciBuilds, setCIBuilds] = useState(20);
+  const numberOfWorkingDaysPerYear = 251;
+  const numberOfWorkingMinutesPerMonth = 160 * 60;
+  /**
+   * The factor to multiply the build time with to get the time saved.
+   */
+  const buildTimeSavedFactor = buildTimeSaved / 100;
 
   const ciMoneySaved =
     (ciBuildCost *
       ciBuilds *
       averageBuildTime *
       developersCount *
-      22 *
-      12 *
-      buildTimeSaved) /
-    100;
+      numberOfWorkingDaysPerYear *
+      buildTimeSavedFactor);
   const localMoneySaved =
-    ((averageMonthlySalary / 22 / 8 / 60) /* Developer price per minute */ *
+    ((averageMonthlySalary / numberOfWorkingMinutesPerMonth) /* Developer price per minute */ *
       localBuilds *
       averageBuildTime *
       developersCount *
-      22 *
-      12 *
-      buildTimeSaved) /
-    100;
-  const moneySaved = ciMoneySaved + localMoneySaved;
+      numberOfWorkingDaysPerYear *
+      buildTimeSavedFactor);
+  const moneySaved = ciMoneySaved + localMoneySaved - (localBuilds + ciBuilds) * 0.5 * numberOfWorkingDaysPerYear;
   const timeSaved =
     ((ciBuilds + localBuilds) *
       developersCount *
       averageBuildTime *
-      22 *
-      12 *
-      buildTimeSaved) /
-    100 /
-    60;
+      buildTimeSavedFactor *
+      numberOfWorkingDaysPerYear * 1.0
+    ) / 60.0;
 
   return (
     <div>
@@ -59,8 +59,8 @@ export default function Calculator(
       )}
       <div class="grid grid-rows-3 grid-cols-2 grid-flow-row gap-8">
         <Slider
-          min="1"
-          max="100"
+          min={1}
+          max={100}
           value={developersCount}
           description={t('cloud.roi.calculator.developers.question')}
           setValue={setDevelopersCount}
@@ -68,8 +68,8 @@ export default function Calculator(
           id="developers"
         />
         <Slider
-          min="1"
-          max="60"
+          min={1}
+          max={60}
           value={averageBuildTime}
           description={t('cloud.roi.calculator.minutes.question')}
           setValue={setAverageBuildTime}
@@ -77,8 +77,8 @@ export default function Calculator(
           id="build-time"
         />
         <Slider
-          min="1"
-          max="100"
+          min={1}
+          max={100}
           value={buildTimeSaved}
           description={t('cloud.roi.calculator.time-saved.question')}
           setValue={setBuildTimeSaved}
@@ -86,8 +86,8 @@ export default function Calculator(
           id="build-time-saved"
         />
         <Slider
-          min="1000"
-          max="20000"
+          min={1000}
+          max={15000}
           value={averageMonthlySalary}
           description={t('cloud.roi.calculator.salary.question')}
           setValue={setAverageMonthlySalary}
@@ -95,8 +95,8 @@ export default function Calculator(
           id="salary"
         />
         <Slider
-          min="1"
-          max="100"
+          min={1}
+          max={100}
           value={ciBuildCost}
           description={t('cloud.roi.calculator.ci-cost.question')}
           setValue={setCIBuildCost}
@@ -104,8 +104,8 @@ export default function Calculator(
           id="ci-build-cost"
         />
         <Slider
-          min="1"
-          max="50"
+          min={1}
+          max={50}
           value={localBuilds}
           description={t('cloud.roi.calculator.local-builds.question')}
           setValue={setLocalBuilds}
@@ -113,8 +113,8 @@ export default function Calculator(
           id="local-builds"
         />
         <Slider
-          min="1"
-          max="50"
+          min={1}
+          max={50}
           value={ciBuilds}
           description={t('cloud.roi.calculator.ci-builds.question')}
           setValue={setCIBuilds}
@@ -152,10 +152,6 @@ export default function Calculator(
   );
 }
 
-function addDots(number) {
-  return number.toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1.");
-}
-
 function Slider({
   min,
   max,
@@ -167,7 +163,7 @@ function Slider({
   className,
 }) {
   const handleChange = (e) => {
-    setValue(e.target.value);
+    setValue(Number(e.target.value));
   };
   return (
     <div class={`flex flex-col ${className}`}>

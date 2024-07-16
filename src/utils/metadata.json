@@ -1,6 +1,6 @@
 {
     "title": "Tuist",
-    "description": "Supercharge your Xcode development workflows",
+    "description": "A Swifty toolchain to build better Apple apps faster",
     "url": "https://tuist.io",
     "cloud": {
         "link": "https://docs.tuist.io/cloud/get-started",

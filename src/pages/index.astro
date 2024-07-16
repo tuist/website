@@ -10,9 +10,12 @@ import Faq from "../components/Infopages/Faq.astro";
 import MigrationHelp from "../components/ctas/MigrationHelp.astro";
 import metadata from '../utils/metadata.json';
 import { AstroSeo } from "@astrolib/seo";
+import PricingThree from "../components/pricing/PricingThree.astro";
 import { useTranslatedPath, getLangFromUrl } from "../i18n/utils";
 const lang = getLangFromUrl(Astro.url);
 const translatedPath = useTranslatedPath(lang);
+import CloudOpenSourceProgram from "../components/CloudOpenSourceProgram.astro"
+
 ---
 
 <AstroSeo
@@ -46,6 +49,8 @@ const translatedPath = useTranslatedPath(lang);
   <TuistFeatures lang={lang}/>
   <Testimonials lang={lang}/>
   <TuistCloud lang={lang}/>
+  <PricingThree lang={lang}/>
+  <CloudOpenSourceProgram lang={lang}/>
   <Faq lang={lang}/>
   <MigrationHelp lang={lang}/>
 </BaseLayout>
