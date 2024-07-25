@@ -7,7 +7,7 @@ export const CloudCTA = () => {
             <div className="flex flex-col p-[0.060rem] shadow-2xl rounded-3xl bg-gradient-to-b from-indigo-500 via-indigo-500/5">
               <div className="bg-vulcan-900 px-6 sm:px-8 lg:py-8 rounded-3xl h-full">
                 <h3 className="mt-5 text-xl text-white">
-                  <span className="text-2xl">Tuist Cloud</span>
+                  <span className="text-2xl">Tuist</span>
                 </h3>
                 <p className="flex flex-col order-last my-4 text-base text-slate-400 gap-y-3">
                 Speed up your workflows (and save money) with binary caching and selective testing, and get actionable insights to ensure your projects grow healthily.
