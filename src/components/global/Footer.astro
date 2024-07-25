@@ -57,30 +57,38 @@ const translatedPath = useTranslatedPath(lang);
             </ul>
           </div>
           <div class="mt-12 md:mt-0">
-            <h3 class="text-white">{t('footer.open_source')}</h3>
+            <h3 class="text-white">{t('footer.server')}</h3>
             <ul role="list" class="mt-4 space-y-2">
               <li>
                 <a
-                  href="https://github.com/tuist/tuist"
+                  href="https://status.tuist.io"
                   class="text-sm text-slate-400"
                 >
-                  Tuist
+                  {t('footer.server.status')}
                 </a>
               </li>
               <li>
                 <a
-                  href="https://github.com/tuist/XcodeProj"
+                  href={translatedPath("/terms")}
                   class="text-sm text-slate-400"
                 >
-                  XcodeProj
+                  {t("footer.server.terms")}
                 </a>
               </li>
               <li>
                 <a
-                  href="https://github.com/tuist/awesome-tuist"
+                  href={translatedPath("/privacy")}
                   class="text-sm text-slate-400"
                 >
-                  awesome-tuist
+                  {t('footer.server.privacy')}
+                </a>
+              </li>
+              <li>
+                <a
+                  href={translatedPath("/cookies")}
+                  class="text-sm text-slate-400"
+                >
+                  {t('footer.server.cookie')}
                 </a>
               </li>
             </ul>
@@ -169,34 +177,10 @@ const translatedPath = useTranslatedPath(lang);
               </li>
               <li>
                 <a
-                  href="https://status.tuist.io"
+                  href={translatedPath("/trademark-guidelines")}
                   class="text-sm text-slate-400"
                 >
-                  {t('footer.company.tuist_cloud_status')}
-                </a>
-              </li>
-              <li>
-                <a
-                  href={translatedPath("/terms")}
-                  class="text-sm text-slate-400"
-                >
-                  {t("footer.company.tuist_cloud_terms")}
-                </a>
-              </li>
-              <li>
-                <a
-                  href={translatedPath("/privacy")}
-                  class="text-sm text-slate-400"
-                >
-                  {t('footer.company.tuist_cloud_privacy')}
-                </a>
-              </li>
-              <li>
-                <a
-                  href={translatedPath("/cookies")}
-                  class="text-sm text-slate-400"
-                >
-                  {t('footer.company.tuist_cloud_cookie')}
+                  {t('footer.company.trademark_guidelines')}
                 </a>
               </li>
             </ul>
