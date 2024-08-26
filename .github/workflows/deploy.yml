@@ -29,8 +29,5 @@ jobs:
       - name: Install project dependencies
         run: mise run install
 
-      - name: Build
-        run: mise run build
-
       - name: Deploy
         run: mise run deploy
