@@ -32,7 +32,7 @@ Time (mean ± σ):     196.288 s ± 23.299 s    [User: 286.626 s, System: 12.698
 Range (min … max):   178.014 s … 235.620 s    5 runs
 ```
 
-~3 minutes doesn't seem that bad, but the times get worse when you add more Swift Macros to your project.
+~3 minutes seems reasonable, but the times get worse when you add more Swift Macros to your project.
 
 ## A non-API-stable SwiftSyntax
 
@@ -89,6 +89,6 @@ There are three possible solutions we might see Apple adopting:
 2. Using WebAssembly to run Swift Macros.
 3. Supporting fingerprint-based binary caching in Xcode and Swift Package Manager.
 
-1 would be highly beneficial for the community, but it will test Apple's willingness to invest in other platforms or leverage the community to make that happen. 2 would show Apple's willingness to embrace web technologies, avoid reinventing the wheel, and help advance the web ecosystem, but Apple hasn't had a good record of doing that in the past. 3 would be the most pragmatic solution, but it would require Apple to make a significant investment in the build system, which has been historically slow to evolve, and there are many projects out there that accidentally build through implicit configuration that might break if such a feature is introduced.
+(1) would be highly beneficial for the community, but it will test Apple's willingness to invest in other platforms or leverage the community to make that happen. (2) would show Apple's willingness to embrace web technologies, avoid reinventing the wheel, and help advance the web ecosystem, but Apple hasn't had a good record of doing that in the past. (3) would be the most pragmatic solution, but it would require Apple to make a significant investment in the build system, which has been historically slow to evolve, and there are many projects out there that accidentally build through implicit configuration that might break if such a feature is introduced.
 
 Regardless of what happens, Tuist will continue to address these challenges in the simplest and most fun way. If you are interested in learning more about Tuist, you can check out [our documentation](https://docs.tuist.io/).
