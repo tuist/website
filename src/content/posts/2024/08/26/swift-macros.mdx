@@ -14,7 +14,7 @@ However, Swift Macros quickly revealed a serious challenge: they can significant
 
 ## What is a Swift Macro?
 
-A Swift Macro is an executable that receives and outputs an abstract syntax tree (AST) via standard input and output. This process is called Macro Expansion. When a Swift Macro is added to an Xcode project, Xcode builds the Swift Macro into a static binary and then invokes it when the compiler encounters a piece of code that references a macro. Swift Macros typically depend on [SwiftSyntax](https://github.com/swiftlang/swift-syntax), a package for working with AST representations of Swift code. The compiler needs to compile SwiftSyntax along with its transitive dependencies, which exceed ten, and then link them statically against the binary to ensure the executable runs instantly.
+A Swift Macro is an executable that receives and outputs an abstract syntax tree (AST) via standard input and output. This process is called Macro Expansion. When a Swift Macro is added to an Xcode project, Xcode builds the Swift Macro into a static binary and then invokes it when the compiler encounters a piece of code that references a macro. Swift Macros typically depend on [SwiftSyntax](https://github.com/swiftlang/swift-syntax), a package for working with AST representations of Swift code. The compiler needs to compile SwiftSyntax along with its more than ten transitive dependencies and then link them statically against the binary to ensure the executable runs instantly.
 
 To back this blog post with data, we created a Swift Macro and used the [hyperfine](https://github.com/sharkdp/hyperfine) tool to measure the time it takes to create a clean release build of a recently-created Swift Macro:
 
