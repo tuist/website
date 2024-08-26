@@ -5,9 +5,11 @@
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
-    "astro": "astro"
+    "astro": "astro",
+    "deploy": "astro build && wrangler pages deploy dist --project-name tuist-website --branch main"
   },
   "devDependencies": {
+    "wrangler": "^3.64.0",
     "@astrojs/tailwind": "^5.0.0",
     "@tailwindcss/typography": "^0.5.9",
     "@types/alpinejs": "^3.7.1",

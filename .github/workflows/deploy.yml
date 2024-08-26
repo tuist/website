@@ -31,3 +31,6 @@ jobs:
 
       - name: Build
         run: mise run build
+
+      - name: Deploy
+        run: mise run deploy

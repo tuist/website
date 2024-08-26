@@ -1,0 +1,6 @@
+#!/bin/bash
+# mise description="Deploys the website"
+
+set -euo pipefail
+
+pnpm run -C $MISE_PROJECT_ROOT deploy
