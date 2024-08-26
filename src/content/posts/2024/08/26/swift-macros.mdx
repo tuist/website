@@ -8,7 +8,7 @@ author: pepicrft
 import { Image } from 'astro:assets';
 import cachedSwiftMacro from './cached-swift-macro.png';
 
-[Swift Macros](https://docs.swift.org/swift-book/documentation/the-swift-programming-language/macros/) were introduced in September 2023 alongside Xcode 15 and have become a powerful tool for developers to leverage the compiler to generate code. The community quickly adopted them and started building and [sharing them](https://github.com/krzysztofzablocki/Swift-Macros) as Swift Packages that teams could integrate into their projects. At Tuist, we started [Mockable](https://github.com/Kolos65/Mockable) as a tool to generate mocks from protocols, which we had previously been doing manually.
+[Swift Macros](https://docs.swift.org/swift-book/documentation/the-swift-programming-language/macros/) were introduced in September 2023 alongside Xcode 15 and have become a powerful tool for developers to leverage the compiler to generate code. The community quickly adopted them and started building and [sharing them](https://github.com/krzysztofzablocki/Swift-Macros) as Swift Packages that teams could integrate into their projects. At Tuist, we started using [Mockable](https://github.com/Kolos65/Mockable) as a tool to generate mocks from protocols, which we had previously been doing manually.
 
 However, Swift Macros quickly revealed a serious challenge: they can significantly increase build times, causing slow feedback cycles both locally and in CI environments. This blog post aims to explain where the build time slowness comes from, what potential solutions we might see Apple adopting, and what we can do in the meantime to mitigate the issue.
 
