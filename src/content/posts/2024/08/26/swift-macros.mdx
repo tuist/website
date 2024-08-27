@@ -36,7 +36,7 @@ Range (min … max):   178.014 s … 235.620 s    5 runs
 
 ## A non-API-stable SwiftSyntax
 
-If you add multiple macros that depend on multiple SwiftSyntax versions, the different versions of SwiftSyntax will have to be built. Let's assume five Swift Macros with five different versions of SwiftSyntax. The total increase in build time will be roughly the sum of the time it takes to compile each SwiftSyntax tree. Taking the above number as a reference, that would amount to a total of ~15 minutes.
+If you add multiple macros that depend on multiple SwiftSyntax versions, Swift Package Manager will fail to resolve the dependencies due to conflicting versions. As [PointFree](https://www.pointfree.co/blog/posts/116-being-a-good-citizen-in-the-land-of-swiftsyntax#be-as-flexible-as-possible-in-your-dependence-on-swiftsyntax) recommends, authors should be as flexible as possible in their dependence on SwiftSyntax.
 
 Softening the version requirements of SwiftSyntax in the Swift Macros might help, but it requires SwiftSyntax to be API-stable, which will hopefully happen according to [this comment](https://forums.swift.org/t/macro-adoption-concerns-around-swiftsyntax/66588/15) after the Swift 5.9-aligned release. Even with that in place, you'd still have to rely on Apple doing a good job of making the API stable—which I think is a fair assumption—and on developers adjusting their Swift Macros to soften the version requirements.
 
