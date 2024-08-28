@@ -1,0 +1,63 @@
+---
+title: "Get the new Tuist macOS app to streamline running Tuist Previews."
+categories: ["Product"]
+excerpt: "We've released a Tuist macOS app as the next step in making sharing your apps a joyful experience."
+author: fortmarek
+---
+
+import { Image } from "astro:assets";
+import menuBarApp from "./menu-bar-app.png";
+
+We have recently [released the first iteration](../06/url-centric-collaboration) of Tuist Previews. Previews provide a URL-centric way to share a build of your app with the rest of your team. In the first iteration the only way how to run Previews was through the Tuist CLI. To streamline running your Previews, we are releasing a new macOS menu bar app that automatically opens the Preview on your selected simulator instead.
+
+<div class="flex gap-0 flex-col items-center m-0">
+  <Image
+    class="m-0 w-[300px]"
+    src={menuBarApp}
+    alt="Screenshot of the Tuist macOS menu bar app"
+  />
+  <a class="m-0 no-underline" href="https://cloud.tuist.io/download">
+    Download the app
+  </a>
+</div>
+
+<em>
+  The macOS app is inspired by [Shopify's
+  Tophat](https://github.com/Shopify/tophat), but is tightly integrated in the
+  Tuist platform, requiring no additional configuration.
+</em>
+
+### How the Tuist app streamlines the Tuist Previews flow
+
+Until now, you would share and run Tuist Previews exclusively with the CLI:
+
+```sh
+tuist share Wikipedia --platforms iOS --configuration Debug
+tuist run https://cloud.tuist.io/tuist/wikipedia/previews/0191984a-8d33-754d-806b-bfecfd65f1c9
+```
+
+Clicking on the Preview link wouldn't do anything. This changes now. After you install the Tuist app on your Mac, opening the link in the browser will automatically run the shared app in the simulator that you selected in the menu bar app.
+
+To select a simulator, choose one from the list in the menu bar app. You can also pin your favorite simulators, copy their names and identifiers, and launch them.
+
+Check out the video below to see the new app in action:
+
+<iframe
+  title="Tuist macOS app: Streamline runinng Tuist Previews"
+  width="560"
+  height="315"
+  src="https://videos.tuist.io/videos/embed/09ef419a-7398-4fed-b848-0234ae0b8738"
+  frameborder="0"
+  allowfullscreen=""
+  sandbox="allow-same-origin allow-scripts allow-popups allow-forms"
+></iframe>
+
+### Future improvements
+
+In the future, you will be able to:
+
+- Run builds on your device, not only simulators
+- Download the latest builds of apps from your organizations
+- Run Android builds
+
+Do you have any suggestions or want to get involved? Let us know on our [GitHub](https://github.com/tuist/tuist/discussions) or join the [Slack community](https://slack.tuist.io/). The app is completely open source and you can find it [here](https://github.com/tuist/tuist/tree/main/app).
