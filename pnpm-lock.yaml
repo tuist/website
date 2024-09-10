@@ -31,7 +31,7 @@ importers:
         version: 0.6.0(astro@4.13.1(@types/node@18.19.39))
       '@tailwindcss/forms':
         specifier: ^0.5.3
-        version: 0.5.7(tailwindcss@3.4.10)
+        version: 0.5.9(tailwindcss@3.4.10)
       '@tailwindcss/line-clamp':
         specifier: ^0.4.2
         version: 0.4.4(tailwindcss@3.4.10)
@@ -1055,10 +1055,10 @@ packages:
     engines: {node: '>= 8.0.0'}
     hasBin: true
 
-  '@tailwindcss/forms@0.5.7':
-    resolution: {integrity: sha512-QE7X69iQI+ZXwldE+rzasvbJiyV/ju1FGHH0Qn2W3FKbuYtqp8LKcy6iSw79fVUT5/Vvf+0XgLCeYVG+UV6hOw==}
+  '@tailwindcss/forms@0.5.9':
+    resolution: {integrity: sha512-tM4XVr2+UVTxXJzey9Twx48c1gcxFStqn1pQz0tRsX8o3DvxhN5oY5pvyAbUx7VTaZxpej4Zzvc6h+1RJBzpIg==}
     peerDependencies:
-      tailwindcss: '>=3.0.0 || >= 3.0.0-alpha.1'
+      tailwindcss: '>=3.0.0 || >= 3.0.0-alpha.1 || >= 4.0.0-alpha.20'
 
   '@tailwindcss/line-clamp@0.4.4':
     resolution: {integrity: sha512-5U6SY5z8N42VtrCrKlsTAA35gy2VSyYtHWCsg1H87NU1SXnEfekTVlrga9fzUDrrHcGi2Lb5KenUWb4lRQT5/g==}
@@ -3974,7 +3974,7 @@ snapshots:
       fflate: 0.7.4
       string.prototype.codepointat: 0.2.1
 
-  '@tailwindcss/forms@0.5.7(tailwindcss@3.4.10)':
+  '@tailwindcss/forms@0.5.9(tailwindcss@3.4.10)':
     dependencies:
       mini-svg-data-uri: 1.4.4
       tailwindcss: 3.4.10
