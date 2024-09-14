@@ -36,7 +36,7 @@
     "mdx-embed": "^1.1.2",
     "preact": "^10.16.0",
     "sanitize-html": "^2.11.0",
-    "satori": "^0.10.1",
+    "satori": "^0.11.0",
     "timeago.js": "^4.0.2"
   }
 }
