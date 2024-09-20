@@ -1,0 +1,40 @@
+---
+title: "From first Swift line to a large and modular app with Xcode"
+categories: ["Releases"]
+excerpt: "Learn more about the new features and improvements in Tuist 4.26.0."
+author: pepicrft
+---
+
+You have an idea for an app—perhaps something for the exciting new [visionOS platform](https://developer.apple.com/visionos/). You open [Xcode](https://developer.apple.com/xcode/), the official development environment for Apple platforms, create a new project, hit run, and voilà, a "Hello World" is up and running in the simulator. That initial moment, from conceiving an idea to seeing it come to life, is crucial in keeping your motivation high. Apple has done a fantastic job making that process swift and seamless. But that first line of Swift code marks the beginning of a much longer journey, and as your app grows, the initial burst of enthusiasm can quickly fade as the complexity of development increases.
+
+At Tuist, we’ve had the opportunity to meet with many developers and companies who’ve been through this journey and were kind enough to share their experiences with us. Through these conversations, we identified recurring patterns and gained a deeper understanding of the challenges of scaling development—especially in the context of Xcode and Xcode projects. While we've shared this knowledge within our community on [Slack](https://slack.tuist.io/), we believe it’s worth bringing to a wider audience. Our goal is to help developers and companies recognize these challenges early on, so they can avoid common pitfalls and ensure a smoother development experience.
+
+We’ll do our best to connect the dots and share a story that ties it all together. But first things first… let’s talk about scaling.
+
+## Scale
+
+It’s true that if you’re a solo developer working on a small app with just one target in your Xcode project, you might assume you won’t encounter many challenges. However, you’d be surprised to learn that these challenges can arise sooner than expected. The term “scale” doesn’t have a strict definition; its meaning varies depending on the context. At Tuist, we think of scaling development as the process of ensuring that development remains enjoyable and productive, no matter the size of the app, project, or team involved. By decoupling these variables, you set the foundation for healthy, motivated teams, which often leads to better ideas—and ultimately, better apps.
+
+*Did you know that Ruby on Rails is designed to [optimize for developer happiness](https://rubyonrails.org/doctrine#optimize-for-programmer-happiness)?* Apple takes a similar approach with Xcode, especially when you're just getting started. But as your project grows, the fun and ease of development can begin to fade. So, why does this happen? To understand this shift, we need to examine a principle that Apple consistently applies in its tools, and which we believe plays a key role in why things stop being fun after a certain point: convenience through implicitness.
+
+## Convenience through implicitness
+
+Xcode and Xcode projects were once much simpler. Initially, there was only one platform to support: macOS. However, with the rise of open-source software and platforms like Git, the cost of producing software dropped, sparking an era of remarkable innovation. This innovation gave birth to new platforms, and as a result, Xcode and its projects had to evolve to meet the growing demands: sharing code, compiling a new programming language like Swift, supporting multiple platforms, and more. Managing such a vast ecosystem of app developers is no small feat, and Apple did an impressive job. They navigated the rapid pace of change while ensuring developers could transition smoothly.
+
+However, in addressing some of these challenges, Apple introduced a reliance on implicit behavior and side effects as part of the system’s design. While this approach worked well in practice, it also created a form of technical debt that developers continue to bear—and which still surfaces in the design of newer tools and systems. This may sound abstract, but let’s break it down and make things more concrete.
+
+## Sharing code
+
+Sooner or later, you'll have code shared with your app, either in frameworks or libraries created by yourself to share them with extensions or to create access boundaries and better architect your app, or consumed from other developers through third-party packages. Think of your project as a dependency acyclic graph (DAG) where every node represents a module, for example modelled by an Xcode target of product type library or framework. Listen, this is hard. The introduction or a removal of a module in the graph might have a ripple effect on the rest of the modules. A dynamic framework might require some upstram targets to embed them inside, or some transitive static symbols leaking through a dynamic module might require their Swift module interfaces to be exposed elsewhere in the graph. If this is too deep, think of the problem as you can't just add and remove elements in the graph as a drag and drop type of operation. With one or two modules, you might be able to get away with it, but as the graph grows, the complexity of the relationships between the modules increases, and the likelihood of breaking something also grows. This is a damn hard problem for developers to solve, and on top of that, things in your project might work accidentally.  Some developers that we had the opportunity to chat with in the past described the problem as "developers need to learn about how Xcode works". We don't think they should. Modularization is a common need in almost every project, and therefore it should simple by default.
+
+Should a module be static or dynamic? Should it be a framework or a library? Can this product type embed dynamic frameworks? And dynamic libraries? What are the implications of transitively linking this static library? These are questions that developers understandably ask themselves every day, and that we often do, and that we had to learn by reverse-engineering default Xcode-generated projects and validating the output products with App Store Connect. The surprising part, is that this knowledge that in our opinion is not talked about enough, can have serious implications in the app, from blowing the app at runtime, to increasing the size of your app unnecessarily.
+
+But if something like this is complex, what's a better solution? 
+
+
+{/* Through our work with Elixir and Erlang to extend Tuist capabilities with a server, we learned that some domains with the right modelling have the power to simplify the problem.  */}
+
+
+
+{/* Did you notice the strong appettite of developers trying to use the Swift Package Manager (SPM) as a project manager? */}
+
