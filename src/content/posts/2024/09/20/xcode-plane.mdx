@@ -31,7 +31,7 @@ Did you know that your project might compile successfully purely due to side eff
 
 Then there are the common questions developers face: *Should this module be static or dynamic? Should it be a framework or a library? Can this product type embed dynamic frameworks? And what about dynamic libraries? What are the implications of linking a static library transitively?* These are questions we ask ourselves frequently, and often have to answer by reverse-engineering Xcode-generated projects and validating outputs with App Store Connect. Surprisingly, this crucial knowledge—rarely discussed in depth—can have serious implications for your app, from runtime crashes to unnecessarily bloating its size.
 
-In this case, the convenience of implicitness manifests as implicitly linked dependencies and implicitly resolved linking types (static or dynamic) through [mergeable libraries](https://developer.apple.com/documentation/xcode/configuring-your-project-to-use-mergeable-libraries). These are additional variables that introduce build-time complexity and variability, which can not only impact build performance but also make certain features, like Swift Previews, work inconsistently.
+In this case, the convenience of implicitness manifests as longer build times or build errors. Implicitness, along with things like [mergeable libraries](https://developer.apple.com/documentation/xcode/configuring-your-project-to-use-mergeable-libraries), are additional variables that introduce build-time complexity and variability, which can not only impact build performance but also make certain features, like Swift Previews, work inconsistently.
 
 ## My Swift previews stopped working
 

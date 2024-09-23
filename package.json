@@ -9,13 +9,13 @@
     "deploy": "astro build && wrangler pages deploy dist --project-name tuist-website --branch main"
   },
   "devDependencies": {
-    "wrangler": "^3.64.0",
     "@astrojs/tailwind": "^5.0.0",
     "@tailwindcss/typography": "^0.5.9",
     "@types/alpinejs": "^3.7.1",
     "astro": "^4.0.0",
     "fast-glob": "^3.2.12",
-    "tailwindcss": "^3.2.7"
+    "tailwindcss": "^3.2.7",
+    "wrangler": "^3.64.0"
   },
   "dependencies": {
     "@astrojs/mdx": "^3.0.0",
@@ -25,6 +25,7 @@
     "@astrojs/rss": "^4.0.0",
     "@astrojs/sitemap": "^3.0.0",
     "@astrolib/seo": "^0.6.0",
+    "@mdx-js/react": "^3.0.1",
     "@tailwindcss/forms": "^0.5.3",
     "@tailwindcss/line-clamp": "^0.4.2",
     "@tuist/website": "link:",
@@ -35,6 +36,8 @@
     "markdown-it": "^14.0.0",
     "mdx-embed": "^1.1.2",
     "preact": "^10.16.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
     "sanitize-html": "^2.11.0",
     "satori": "^0.11.0",
     "timeago.js": "^4.0.2"
