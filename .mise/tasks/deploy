@@ -3,4 +3,9 @@
 
 set -euo pipefail
 
-pnpm run -C $MISE_PROJECT_ROOT deploy
+pnpm -C $MISE_PROJECT_ROOT exec astro build
+cat <<EOT > $MISE_PROJECT_ROOT/dist/_redirects
+https://tuist.io/* https://tuist.dev/:splat 301
+http://tuist.io/* http://tuist.dev/:splat 301
+EOT
+pnpm -C $MISE_PROJECT_ROOT wrangler pages deploy dist --project-name tuist-website --branch main
